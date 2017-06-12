@@ -1,0 +1,33 @@
+:root {
+  --charcoal-grey: #3e4247;
+}
+
+html {
+  color: var(--charcoal-grey);
+  font-family: "Fira Sans", "Helvetica", monospace;
+}
+
+a {
+  color: var(--charcoal-grey);
+  outline: none;
+  text-decoration: none;
+}
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header__logo {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.header__nav {
+  text-align: right;
+}
+
+.header__nav .nav__link:not(:last-child) {
+  margin-right: 2rem;
+}
