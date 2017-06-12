@@ -1,5 +1,6 @@
 :root {
   --charcoal-grey: #3e4247;
+  --black: #161616;
 }
 
 html {
@@ -13,15 +14,15 @@ a {
   text-decoration: none;
 }
 
-.wrap {
+.container {
   width: 1200px;
   margin: 0 auto;
 }
 
 .header__logo {
   display: inline-block;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .header__nav {
@@ -30,4 +31,14 @@ a {
 
 .header__nav .nav__link:not(:last-child) {
   margin-right: 2rem;
+}
+
+.banner {
+  background-color: var(--black);
+  text-align: center;
+}
+
+.banner__logo {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
