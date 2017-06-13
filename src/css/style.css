@@ -1,11 +1,19 @@
 :root {
   --charcoal-grey: #3e4247;
+  --slate-grey: #646971;
   --black: #161616;
+  --black-two: #000;
 }
 
 html {
   color: var(--charcoal-grey);
   font-family: "Fira Sans", "Helvetica", monospace;
+}
+
+body {
+  line-height: 1.5rem;
+  background-color: #eaebf0;
+  /*TODO: pattern>*/
 }
 
 a {
@@ -14,22 +22,21 @@ a {
   text-decoration: none;
 }
 
-.container {
-  width: 1200px;
-  margin: 0 auto;
+.main-header {
+  background-color: #fff;
 }
 
-.header__logo {
+.main-header__logo {
   display: inline-block;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
 
-.header__nav {
+.main-header__nav {
   text-align: right;
 }
 
-.header__nav .nav__link:not(:last-child) {
+.main-header__nav .nav__link:not(:last-child) {
   margin-right: 2rem;
 }
 
@@ -41,4 +48,75 @@ a {
 .banner__logo {
   margin-top: 5rem;
   margin-bottom: 5rem;
+}
+
+.content {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+.content__header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.content__header .title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2rem;
+}
+
+.content__header .description {
+  margin: .5rem 0 1rem;
+  line-height: 1.5rem;
+}
+
+.content__header .button {
+  padding: .75rem 2rem;
+  color: #fff;
+  background-color: var(--black-two);
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.complex-card {
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.complex-card:hover {
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,.3);
+  transition: box-shadow .25s ease;
+}
+
+.complex-card__image {
+  background: url("../images/complex.jpg");
+}
+
+.complex-card__info {
+  padding: 1.5rem 6.25rem 1.5rem 2rem;
+  background-color: #fff;
+}
+
+.complex-card__place {
+  margin: 0 0 1.5rem;
+  color: var(--slate-grey);
+  font-family: "Monaco", Consolas, "Lucida Console", monospace;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
+
+.complex-card__title {
+  margin: 0 0 .5rem;
+  color: var(--black-two);
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+}
+
+.complex-card__description {
+  margin: 0;
+  color: var(--charcoal-grey);
 }
