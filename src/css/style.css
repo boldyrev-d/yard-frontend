@@ -17,7 +17,7 @@ html {
 
 body {
   line-height: 1.5rem;
-  background: url("../images/bg-pattern.png") var(--bg-grey);
+  background: url("images/bg-pattern.png") var(--bg-grey);
   background-size: 1.5rem;
 }
 
@@ -96,10 +96,6 @@ a {
 .complex-card:hover {
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,.3);
   transition: box-shadow .25s ease;
-}
-
-.complex-card__image {
-  background: url("../images/complex.jpg");
 }
 
 .complex-card__info {
