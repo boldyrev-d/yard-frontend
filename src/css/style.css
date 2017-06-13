@@ -6,11 +6,13 @@
   --black-three: #111111;
   --hue-grey: #a9afb6;
   --bg-grey: #eaebf0;
+  --fira: "Fira Sans", "Helvetica", monospace;
+  --monaco: "Monaco", Consolas, "Lucida Console", monospace;
 }
 
 html {
   color: var(--charcoal-grey);
-  font-family: "Fira Sans", "Helvetica", monospace;
+  font-family: var(--fira);
 }
 
 body {
@@ -78,6 +80,7 @@ a {
 .content__header .button {
   padding: .75rem 2rem;
   color: #fff;
+  font-family: var(--fira);
   background-color: var(--black-two);
   border: none;
   border-radius: 2px;
@@ -107,7 +110,7 @@ a {
 .complex-card__place {
   margin: 0 0 1.5rem;
   color: var(--slate-grey);
-  font-family: "Monaco", Consolas, "Lucida Console", monospace;
+  font-family: var(--monaco);
   line-height: 1rem;
   text-transform: uppercase;
 }
