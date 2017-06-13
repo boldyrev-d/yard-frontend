@@ -3,6 +3,8 @@
   --slate-grey: #646971;
   --black: #161616;
   --black-two: #000;
+  --black-three: #111111;
+  --hue-grey: #a9afb6;
 }
 
 html {
@@ -119,4 +121,64 @@ a {
 .complex-card__description {
   margin: 0;
   color: var(--charcoal-grey);
+}
+
+.main-footer {
+  padding-top: 2rem;
+  padding-bottom: 1.75rem;
+  color: var(--hue-grey);
+  font-size: .875rem;
+  font-weight: 300;
+  background-color: var(--black-three);
+}
+
+.main-footer__title {
+  margin: 0 0 .5rem;
+  line-height: 1.4rem;
+  color: var(--slate-grey);
+}
+
+.main-footer__title--name {
+  margin-bottom: 0;
+}
+
+.main-footer__info {
+  margin: 0;
+}
+
+.main-footer__info--phone {
+  margin-top: 1rem;
+}
+
+.main-footer__divider {
+    height: 2px;
+    margin-bottom: 1rem;
+    color: var(--charcoal-grey);
+    background-color: var(--charcoal-grey);
+    border: none;
+}
+
+.main-footer__link {
+  display: block;
+  color: #fff;
+}
+
+.main-footer__link:not(:last-child) {
+  margin-bottom: .5rem;
+}
+
+.main-footer__link--arrow {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.main-footer__link--arrow:after {
+  margin-left: .5rem;
+  content: url("../images/combined-shape.svg")
+}
+
+.main-footer__warning {
+  margin: 6rem 0 0;
+  font-size: .6875rem;
+  line-height: 1.2rem;
 }
