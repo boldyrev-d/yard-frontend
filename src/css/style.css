@@ -5,6 +5,7 @@
   --black-two: #000;
   --black-three: #111111;
   --hue-grey: #a9afb6;
+  --bg-grey: #eaebf0;
 }
 
 html {
@@ -14,8 +15,8 @@ html {
 
 body {
   line-height: 1.5rem;
-  background-color: #eaebf0;
-  /*TODO: pattern>*/
+  background: url("../images/bg-pattern.png") var(--bg-grey);
+  background-size: 1.5rem;
 }
 
 a {
