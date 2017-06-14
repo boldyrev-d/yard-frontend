@@ -27,6 +27,17 @@ a {
   text-decoration: none;
 }
 
+.button {
+  padding: .75rem 2rem;
+  color: #fff;
+  font-family: var(--fira);
+  background-color: var(--black-two);
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
 .main-header {
   background-color: #fff;
 }
@@ -65,27 +76,16 @@ a {
   text-align: center;
 }
 
-.content__header .title {
+.content__title {
   margin: 0;
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 2rem;
 }
 
-.content__header .description {
+.content__description {
   margin: .5rem 0 1rem;
   line-height: 1.5rem;
-}
-
-.content__header .button {
-  padding: .75rem 2rem;
-  color: #fff;
-  font-family: var(--fira);
-  background-color: var(--black-two);
-  border: none;
-  border-radius: 2px;
-  outline: none;
-  cursor: pointer;
 }
 
 .complex-card {
