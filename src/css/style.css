@@ -158,13 +158,18 @@ a {
     border: none;
 }
 
-.main-footer__link {
-  display: block;
-  color: #fff;
+.main-footer__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
-.main-footer__link:not(:last-child) {
+.main-footer__list-item:not(:last-child) {
   margin-bottom: .5rem;
+}
+
+.main-footer__link {
+  color: #fff;
 }
 
 .main-footer__link--arrow {
