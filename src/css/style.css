@@ -159,9 +159,32 @@ a {
   padding: .5rem 1rem;
   font-size: .625rem;
   line-height: .625rem;
+  font-weight: 300;
   background-color: transparent;
   border: 1px solid var(--another-grey);
   color: var(--cool-blue);
+}
+
+/* TODO: fix slide effect */
+.complex-gallery__photos {
+  display: flex;
+  overflow-x: auto;
+}
+
+.complex-gallery__photo {
+  max-height: 400px;
+}
+
+.complex-gallery__button {
+  position: relative;
+  display: block;
+  margin-top: -3.75rem;
+  padding: .5rem 1rem;
+  font-size: .625rem;
+  line-height: .625rem;
+  font-weight: 300;
+  background-color: var(--cool-blue);
+  color: #fff;
 }
 
 .main-footer {
