@@ -7,7 +7,7 @@ gulp.task('browser-sync', function() {
   browserSync({
     server: {
       baseDir: 'src',
-      index: 'complexes.html'
+      index: 'complex.html'
     },
     notify: false
   });
