@@ -7,8 +7,11 @@
   --hue-grey: #a9afb6;
   --bg-grey: #eaebf0;
   --pale-grey: #eaebf0;
-  --fira: "Fira Sans", "Helvetica", monospace;
-  --monaco: "Monaco", Consolas, "Lucida Console", monospace;
+  --another-grey: #e0e0e1;
+  --cool-blue: #00779a;
+  --fira: "Fira Sans", "Helvetica", sans-serif;
+  --monaco: "Monaco", "Consolas", "Lucida Console", monospace;
+  --philosopher: "Philosopher", sans-serif;
 }
 
 html {
@@ -123,6 +126,42 @@ a {
 .complex-card__description {
   margin: 0;
   color: var(--charcoal-grey);
+}
+
+.complex-header {
+  padding: 1.5rem 0 1rem;
+  background-color: #fff;
+}
+
+.complex-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.complex-header__title {
+  margin: 0;
+  font-family: var(--philosopher);
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.complex-header__address {
+  display: block;
+  margin-top: .5rem;
+  font-family: var(--fira);
+  font-size: .875rem;
+  font-weight: 300;
+  color: var(--hue-grey);
+}
+
+.complex-header__button {
+  padding: .5rem 1rem;
+  font-size: .625rem;
+  line-height: .625rem;
+  background-color: transparent;
+  border: 1px solid var(--another-grey);
+  color: var(--cool-blue);
 }
 
 .main-footer {
