@@ -6,6 +6,7 @@
   --black-three: #111;
   --hue-grey: #a9afb6;
   --bg-grey: #eaebf0;
+  --pale-grey: #eaebf0;
   --fira: "Fira Sans", "Helvetica", monospace;
   --monaco: "Monaco", Consolas, "Lucida Console", monospace;
 }
@@ -40,6 +41,7 @@ a {
 
 .main-header {
   background-color: #fff;
+  border-bottom: 1px solid var(--pale-grey);
 }
 
 .main-header__logo {
@@ -52,7 +54,7 @@ a {
   text-align: right;
 }
 
-.main-header__nav .nav__link:not(:last-child) {
+.main-header__nav .main-header__link:not(:last-child) {
   margin-right: 2rem;
 }
 
