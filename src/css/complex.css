@@ -95,3 +95,32 @@
 .complex-summary__header .complex-summary__title:not(:last-child) {
   margin-right: 3rem;
 }
+
+.complex-summary__features {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.complex-summary__features .complex-summary__title {
+  margin-bottom: 1.125rem;
+}
+
+.complex-summary__feature {
+  display: flex;
+  margin: 0;
+  line-height: 1.5rem;
+}
+
+.complex-summary__feature:not(:last-child) {
+  margin-bottom: .6875rem;
+}
+
+.complex-summary__feature .feature__label {
+  width: 50%;
+  color: var(--hue-grey);
+}
+
+.complex-summary__feature .feature__value {
+  width: 50%;
+  font-weight: 500;
+}
