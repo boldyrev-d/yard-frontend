@@ -153,3 +153,49 @@
 .complex-summary__infrastructure .infrastructure-text:not(:last-child) {
   margin-bottom: .5rem;
 }
+
+.complex-offers-cards {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: var(--other-grey);
+}
+
+.complex-offers-cards .complex__title {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.complex-offers-card {
+  padding: 1.5rem 2rem;
+  background-color: #fff;
+}
+
+.complex-offers-card__title {
+  margin: 0 0 1.5rem;
+  font-family: var(--philosopher);
+  font-size: 1.25rem;
+  line-height: 1.375rem;
+}
+
+.complex-offers-card__feature {
+  margin-bottom: 1.5rem;
+}
+
+.complex-offers-card__feature .feature-title {
+  margin-bottom: .625rem;
+  color: var(--hue-grey);
+  line-height: 1.375rem;
+}
+
+.complex-offers-card__feature .feature-text {
+  line-height: 1.375rem;
+}
+
+.complex-offers-card__button-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.complex-offers-card__button {
+  line-height: 1rem;
+}
