@@ -64,8 +64,6 @@
 
 .complex-summary {
   background-color: #fff;
-  /* TODO: remove padding */
-  padding-bottom: 300px;
 }
 
 .complex-summary__header {
@@ -136,4 +134,22 @@
 
 .complex-summary__description .description-paragraph:last-child {
   margin-bottom: 0;
+}
+
+.complex-summary__infrastructure {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.complex-summary__infrastructure .complex__title {
+  margin-bottom: 1rem;
+}
+
+.complex-summary__infrastructure .infrastructure-text {
+  margin: 0;
+  line-height: 1.375rem;
+}
+
+.complex-summary__infrastructure .infrastructure-text:not(:last-child) {
+  margin-bottom: .5rem;
 }
