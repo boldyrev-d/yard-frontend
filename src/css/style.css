@@ -128,65 +128,6 @@ a {
   color: var(--charcoal-grey);
 }
 
-.complex-header {
-  padding: 1.5rem 0 1rem;
-  background-color: #fff;
-}
-
-.complex-header__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.complex-header__title {
-  margin: 0;
-  font-family: var(--philosopher);
-  font-size: 2rem;
-  line-height: 2rem;
-}
-
-.complex-header__address {
-  display: block;
-  margin-top: .5rem;
-  font-family: var(--fira);
-  font-size: .875rem;
-  font-weight: 300;
-  color: var(--hue-grey);
-}
-
-.complex-header__button {
-  padding: .5rem 1rem;
-  font-size: .625rem;
-  line-height: .625rem;
-  font-weight: 300;
-  background-color: transparent;
-  border: 1px solid var(--another-grey);
-  color: var(--cool-blue);
-}
-
-/* TODO: fix slide effect */
-.complex-gallery__photos {
-  display: flex;
-  overflow-x: auto;
-}
-
-.complex-gallery__photo {
-  max-height: 400px;
-}
-
-.complex-gallery__button {
-  position: relative;
-  display: block;
-  margin-top: -3.75rem;
-  padding: .5rem 1rem;
-  font-size: .625rem;
-  line-height: .625rem;
-  font-weight: 300;
-  background-color: var(--cool-blue);
-  color: #fff;
-}
-
 .main-footer {
   padding-top: 2rem;
   padding-bottom: 1.75rem;
