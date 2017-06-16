@@ -35,10 +35,15 @@
   color: var(--cool-blue);
 }
 
+.complex-gallery {
+  height: 400px;
+}
+
 /* TODO: fix slide effect */
 .complex-gallery__photos {
   display: flex;
   overflow-x: auto;
+  height: 400px;
 }
 
 .complex-gallery__photo {
@@ -55,4 +60,38 @@
   font-weight: 300;
   background-color: var(--cool-blue);
   color: #fff;
+}
+
+.complex-summary {
+  background-color: #fff;
+  /* TODO: remove padding */
+  padding-bottom: 300px;
+}
+
+.complex-summary__header {
+  display: flex;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid var(--another-grey);
+}
+
+.complex-summary__title {
+  margin: 0;
+  font-family: var(--philosopher);
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
+
+.complex-summary__subtitle {
+  display: block;
+  margin-top: .625rem;
+  font-family: var(--fira);
+  font-size: .875rem;
+  line-height: 1.375rem;
+  font-weight: 300;
+  color: var(--hue-grey);
+}
+
+.complex-summary__header .complex-summary__title:not(:last-child) {
+  margin-right: 3rem;
 }
