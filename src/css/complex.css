@@ -199,3 +199,43 @@
 .complex-offers-card__button {
   line-height: 1rem;
 }
+
+.district-guide {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: var(--charcoal-grey);
+}
+
+.district-guide__name {
+  margin-top: 7.25rem;
+  margin-bottom: 3rem;
+  font-family: var(--philosopher);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--hue-grey);
+}
+
+.district-guide__description {
+  margin-bottom: 3rem;
+  font-family: var(--philosopher);
+  font-size: 3rem;
+  line-height: 3.75rem;
+  color: #fff;
+}
+
+.district-guide__link {
+  position: relative;
+  color: var(--cool-blue);
+}
+
+.district-guide__link-arrow {
+  position: absolute;
+  right: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: var(--cool-blue);
+}
+
+.district-guide__image {
+  width: 100%;
+}
