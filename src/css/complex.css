@@ -202,7 +202,7 @@
 
 .district-guide {
   padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-bottom: 12.125rem;
   background-color: var(--charcoal-grey);
 }
 
@@ -238,4 +238,43 @@
 
 .district-guide__image {
   width: 100%;
+}
+
+.complex-location {
+  background-color: #fff;
+}
+
+.complex-location__card {
+  /* TODO: equalize cards height */
+  max-height: 306px;
+  margin-top: -130px;
+  margin-bottom: 4rem;
+  box-shadow: 0 6px 15px 3px rgba(0,0,0,.2);
+}
+
+.complex-location__map {
+  max-width: 100%;
+}
+
+.complex-location__nearby-places {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: #fff;
+}
+
+.complex-location__nearby-place {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--another-grey);
+}
+
+.complex-location__nearby-place .nearby-place__title {
+  margin: 0 0 .5rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+}
+
+.complex-location__nearby-place .nearby-place__distance {
+  line-height: 1.375rem;
+  margin: 0;
 }
