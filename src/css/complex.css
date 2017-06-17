@@ -1,0 +1,278 @@
+.complex-header {
+  padding: 1.5rem 0 1rem;
+  background-color: #fff;
+}
+
+.complex-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.complex-header__title {
+  margin: 0;
+  font-family: var(--philosopher);
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.complex-header__address {
+  display: block;
+  margin-top: .5rem;
+  font-family: var(--fira);
+  font-size: .875rem;
+  font-weight: 300;
+  color: var(--hue-grey);
+}
+
+.complex-header__button {
+  padding: .5rem 1rem;
+  font-size: .625rem;
+  line-height: .625rem;
+  font-weight: 300;
+  background-color: transparent;
+  border: 1px solid var(--another-grey);
+  color: var(--cool-blue);
+}
+
+.complex-gallery {
+  height: 400px;
+}
+
+/* TODO: fix slide effect */
+.complex-gallery__photos {
+  display: flex;
+  overflow-x: auto;
+  height: 400px;
+}
+
+.complex-gallery__photo {
+  max-height: 400px;
+}
+
+.complex-gallery__button {
+  position: relative;
+  display: block;
+  margin-top: -3.75rem;
+  padding: .5rem 1rem;
+  font-size: .625rem;
+  line-height: .625rem;
+  font-weight: 300;
+  background-color: var(--cool-blue);
+  color: #fff;
+}
+
+.complex-summary {
+  background-color: #fff;
+}
+
+.complex-summary__header {
+  display: flex;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid var(--another-grey);
+}
+
+.complex__title {
+  margin: 0;
+  font-family: var(--philosopher);
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
+
+.complex-summary__subtitle {
+  display: block;
+  margin-top: .625rem;
+  font-family: var(--fira);
+  font-size: .875rem;
+  line-height: 1.375rem;
+  font-weight: 300;
+  color: var(--hue-grey);
+}
+
+.complex-summary__header .complex__title:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.complex-summary__features {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.complex-summary__features .complex__title {
+  margin-bottom: 1.125rem;
+}
+
+.complex-summary__feature {
+  display: flex;
+  margin: 0;
+  line-height: 1.375rem;
+}
+
+.complex-summary__feature:not(:last-child) {
+  margin-bottom: .6875rem;
+}
+
+.complex-summary__feature .feature__label {
+  width: 50%;
+  color: var(--hue-grey);
+}
+
+.complex-summary__feature .feature__value {
+  width: 50%;
+  margin-left: 0;
+  font-weight: 500;
+}
+
+.complex-summary__description {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--another-grey);
+}
+
+.complex-summary__description .description-paragraph {
+  margin: 0 0 1.5rem;
+}
+
+.complex-summary__description .description-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.complex-summary__infrastructure {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.complex-summary__infrastructure .complex__title {
+  margin-bottom: 1rem;
+}
+
+.complex-summary__infrastructure .infrastructure-text {
+  margin: 0;
+  line-height: 1.375rem;
+}
+
+.complex-summary__infrastructure .infrastructure-text:not(:last-child) {
+  margin-bottom: .5rem;
+}
+
+.complex-offers-cards {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: var(--other-grey);
+}
+
+.complex-offers-cards .complex__title {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.complex-offers-card {
+  padding: 1.5rem 2rem;
+  background-color: #fff;
+}
+
+.complex-offers-card__title {
+  margin: 0 0 1.5rem;
+  font-family: var(--philosopher);
+  font-size: 1.25rem;
+  line-height: 1.375rem;
+}
+
+.complex-offers-card__feature {
+  margin-bottom: 1.5rem;
+}
+
+.complex-offers-card__feature .feature-title {
+  margin-bottom: .625rem;
+  color: var(--hue-grey);
+  line-height: 1.375rem;
+}
+
+.complex-offers-card__feature .feature-text {
+  line-height: 1.375rem;
+}
+
+.complex-offers-card__button-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.complex-offers-card__button {
+  line-height: 1rem;
+}
+
+.district-guide {
+  padding-top: 4rem;
+  padding-bottom: 12.125rem;
+  background-color: var(--charcoal-grey);
+}
+
+.district-guide__name {
+  margin-top: 7.25rem;
+  margin-bottom: 3rem;
+  font-family: var(--philosopher);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--hue-grey);
+}
+
+.district-guide__description {
+  margin-bottom: 3rem;
+  font-family: var(--philosopher);
+  font-size: 3rem;
+  line-height: 3.75rem;
+  color: #fff;
+}
+
+.district-guide__link {
+  position: relative;
+  color: var(--cool-blue);
+}
+
+.district-guide__link-arrow {
+  position: absolute;
+  right: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: var(--cool-blue);
+}
+
+.district-guide__image {
+  width: 100%;
+}
+
+.complex-location {
+  background-color: #fff;
+}
+
+.complex-location__card {
+  /* TODO: equalize cards height */
+  max-height: 306px;
+  margin-top: -130px;
+  margin-bottom: 4rem;
+  box-shadow: 0 6px 15px 3px rgba(0,0,0,.2);
+}
+
+.complex-location__map {
+  max-width: 100%;
+}
+
+.complex-location__nearby-places {
+  background-color: #fff;
+}
+
+.complex-location__nearby-place {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--another-grey);
+}
+
+.complex-location__nearby-place .nearby-place__title {
+  margin: 0 0 .5rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+}
+
+.complex-location__nearby-place .nearby-place__distance {
+  line-height: 1.375rem;
+  margin: 0;
+}
