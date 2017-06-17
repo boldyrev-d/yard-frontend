@@ -106,7 +106,7 @@
 .complex-summary__feature {
   display: flex;
   margin: 0;
-  line-height: 1.5rem;
+  line-height: 1.375rem;
 }
 
 .complex-summary__feature:not(:last-child) {
@@ -120,6 +120,7 @@
 
 .complex-summary__feature .feature__value {
   width: 50%;
+  margin-left: 0;
   font-weight: 500;
 }
 
