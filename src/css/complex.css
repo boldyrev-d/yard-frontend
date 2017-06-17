@@ -258,14 +258,11 @@
 }
 
 .complex-location__nearby-places {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
   background-color: #fff;
 }
 
 .complex-location__nearby-place {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding: 1.5rem;
   border-bottom: 1px solid var(--another-grey);
 }
 
