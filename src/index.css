@@ -1,5 +1,46 @@
+:root {
+  --charcoal-grey: #3e4247;
+  --slate-grey: #646971;
+  --black: #161616;
+  --black-two: #000;
+  --black-three: #111;
+  --hue-grey: #a9afb6;
+  --bg-grey: #eaebf0;
+  --pale-grey: #eaebf0;
+  --another-grey: #e0e0e1;
+  --other-grey: #f4f5f9;
+  --cool-blue: #00779a;
+  --fira: "Fira Sans", "Helvetica", sans-serif;
+  --monaco: "Monaco", "Consolas", "Lucida Console", monospace;
+  --philosopher: "Philosopher", sans-serif;
+}
+
+html {
+  color: var(--charcoal-grey);
+  font-family: var(--fira);
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  line-height: 1.5rem;
+  background: url("bg-pattern.png") var(--bg-grey);
+  background-size: 1.5rem;
+  text-rendering: optimizeLegibility !important; /* stylelint-disable-line declaration-no-important */
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--charcoal-grey);
+  outline: none;
+  text-decoration: none;
+}
+
+.button {
+  padding: .75rem 2rem;
+  color: #fff;
+  font-family: var(--fira);
+  background-color: var(--black-two);
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
 }
