@@ -33,14 +33,3 @@ a {
   outline: none;
   text-decoration: none;
 }
-
-.button {
-  padding: .75rem 2rem;
-  color: #fff;
-  font-family: var(--fira);
-  background-color: var(--black-two);
-  border: none;
-  border-radius: 2px;
-  outline: none;
-  cursor: pointer;
-}
