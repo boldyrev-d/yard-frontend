@@ -1,20 +1,7 @@
-/* TODO: remove this styles */
-
 :root {
   --charcoal-grey: #3e4247;
-  --slate-grey: #646971;
-  --black: #161616;
-  --black-two: #000;
-  --black-three: #111;
-  --hue-grey: #a9afb6;
   --bg-grey: #eaebf0;
-  --pale-grey: #eaebf0;
-  --another-grey: #e0e0e1;
-  --other-grey: #f4f5f9;
-  --cool-blue: #00779a;
   --fira: "Fira Sans", "Helvetica", sans-serif;
-  --monaco: "Monaco", "Consolas", "Lucida Console", monospace;
-  --philosopher: "Philosopher", sans-serif;
 }
 
 html {
