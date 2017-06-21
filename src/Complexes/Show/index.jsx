@@ -4,6 +4,7 @@ import Header from './Header';
 import Gallery from './Gallery';
 import Summary from './Summary';
 import Offers from './Offers';
+import DistrictGuide from './DestrictGuide';
 
 const Complex = () => (
   <div>
@@ -11,6 +12,7 @@ const Complex = () => (
     <Gallery/>
     <Summary/>
     <Offers/>
+    <DistrictGuide/>
   </div>
 );
 
