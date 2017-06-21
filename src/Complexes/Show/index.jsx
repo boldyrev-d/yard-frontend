@@ -4,12 +4,12 @@ import Header from './Header';
 import Gallery from './Gallery';
 import Summary from './Summary';
 
-export default () => {
-  return (
-    <div>
-      <Header/>
-      <Gallery/>
-      <Summary/>
-    </div>
-  );
-};
+const Complex = () => (
+  <div>
+    <Header/>
+    <Gallery/>
+    <Summary/>
+  </div>
+);
+
+export default Complex;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Grid} from 'react-flexbox-grid';
-import {colors, fonts} from '../constants';
+import {colors, fonts} from '../../constants';
 
 const Header = styled.section`
   padding: 1.5rem 0 1rem;

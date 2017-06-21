@@ -1,14 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Grid} from 'react-flexbox-grid';
-import {colors} from '../constants';
-import Photo1 from './Bitmap1.png';
-import Photo2 from './Bitmap2.png';
-import Photo3 from './Bitmap3.png';
-import Photo4 from './Bitmap4.png';
-import Photo5 from './Bitmap5.png';
-
-import {Button as BasicButton} from '../Button';
+import {colors} from '../../constants';
+import {Button as BasicButton} from '../../Button';
 
 const Gallery = styled.section`
   height: 400px;
@@ -39,12 +33,11 @@ export default () => {
   return (
     <Gallery>
       <Photos>
-        <Photo src={Photo1} alt="Photo1" title="Photo1" />
-        <Photo src={Photo2} alt="Photo2" title="Photo2" />
-        <Photo src={Photo3} alt="Photo3" title="Photo3" />
-        <Photo src={Photo4} alt="Photo4" title="Photo4" />
-        <Photo src={Photo5} alt="Photo5" title="Photo5" />
-        <Photo src={Photo1} alt="Photo1" title="Photo1" />
+        <Photo src={`${process.env.PUBLIC_URL}/images/complexImage1.png`} alt="complexImage1" title="complexImage1" />
+        <Photo src={`${process.env.PUBLIC_URL}/images/complexImage2.png`} alt="complexImage2" title="complexImage2" />
+        <Photo src={`${process.env.PUBLIC_URL}/images/complexImage3.png`} alt="complexImage3" title="complexImage3" />
+        <Photo src={`${process.env.PUBLIC_URL}/images/complexImage4.png`} alt="complexImage4" title="complexImage4" />
+        <Photo src={`${process.env.PUBLIC_URL}/images/complexImage5.png`} alt="complexImage5" title="complexImage5" />
       </Photos>
       <Grid>
         <Button>41 фотография</Button>
