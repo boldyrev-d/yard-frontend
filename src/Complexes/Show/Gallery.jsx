@@ -4,22 +4,19 @@ import {Grid} from 'react-flexbox-grid';
 import {colors} from '../../constants';
 import {Button as BasicButton} from '../../Button';
 
-const Gallery = styled.section`
-  height: 400px;
-`;
-
 const Photos = styled.div`
   display: flex;
+  position: relative;
+  justify-content: flex-start;
   overflow-x: auto;
-  height: 400px;
 `;
 
 const Photo = styled.img`
-  max-height: 400px;
+  height: 400px;
 `;
 
 const Button = styled(BasicButton)`
-  position: relative;
+  position: absolute;
   display: block;
   margin-top: -3.75rem;
   padding: .5rem 1rem;
@@ -31,7 +28,7 @@ const Button = styled(BasicButton)`
 `
 export default () => {
   return (
-    <Gallery>
+    <div>
       <Photos>
         <Photo src={`${process.env.PUBLIC_URL}/images/complexImage1.png`} alt="complexImage1" title="complexImage1" />
         <Photo src={`${process.env.PUBLIC_URL}/images/complexImage2.png`} alt="complexImage2" title="complexImage2" />
@@ -42,6 +39,6 @@ export default () => {
       <Grid>
         <Button>41 фотография</Button>
       </Grid>
-    </Gallery>
+    </div>
   )
 };
