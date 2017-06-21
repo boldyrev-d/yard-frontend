@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Grid, Row, Col} from 'react-flexbox-grid';
-import Button from '../../Button';
+import {Button} from '../../Button';
 
 const Header = styled.div`
   margin-bottom: 4rem;

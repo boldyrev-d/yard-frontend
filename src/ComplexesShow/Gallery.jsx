@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Grid} from 'react-flexbox-grid';
-import {colors, fonts} from '../constants';
+import {colors} from '../constants';
 import Photo1 from './Bitmap1.png';
 import Photo2 from './Bitmap2.png';
 import Photo3 from './Bitmap3.png';
 import Photo4 from './Bitmap4.png';
 import Photo5 from './Bitmap5.png';
+
+import {Button as BasicButton} from '../Button';
 
 const Gallery = styled.section`
   height: 400px;
@@ -22,23 +24,17 @@ const Photo = styled.img`
   max-height: 400px;
 `;
 
-const Button = styled.button`
+const Button = styled(BasicButton)`
   position: relative;
   display: block;
   margin-top: -3.75rem;
   padding: .5rem 1rem;
-  font-family: ${fonts.fira};
   font-size: .625rem;
   line-height: .625rem;
   font-weight: 300;
   background-color: ${colors.coolBlue};
   color: #fff;
-  border: none;
-  border-radius: 2px;
-  outline: none;
-  cursor: pointer;
-`;
-
+`
 export default () => {
   return (
     <Gallery>
