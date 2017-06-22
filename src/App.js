@@ -6,7 +6,7 @@ import ComplexesList from './ComplexesList';
 import Complex from './Complexes/Show';
 import Footer from './Footer';
 
-import {theme} from './constants';
+import {theme} from './themes';
 
 class App extends Component {
   render() {
