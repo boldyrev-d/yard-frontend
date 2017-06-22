@@ -4,7 +4,7 @@ import Header from './Header';
 import Gallery from './Gallery';
 import Summary from './Summary';
 import Offers from './Offers';
-import DistrictGuide from './DestrictGuide';
+import DistrictGuide from './DistrictGuide';
 import Location from './Location';
 
 const Complex = () => (

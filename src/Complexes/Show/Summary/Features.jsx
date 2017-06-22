@@ -15,7 +15,7 @@ const Title = styled.h2`
   line-height: 1.75rem;
 `;
 
-const Future = styled.dl`
+const Feature = styled.dl`
   display: flex;
   margin: 0;
   line-height: 1.375rem;
@@ -41,46 +41,46 @@ export default () => (
     <Title>Характеристики</Title>
     <Row>
       <Col lg={4}>
-        <Future>
+        <Feature>
           <Label>Количество квартир:</Label>
           <Value>1 503</Value>
-        </Future>
-        <Future>
+        </Feature>
+        <Feature>
           <Label>Статус:</Label>
           <Value>Квартиры</Value>
-        </Future>
-        <Future>
+        </Feature>
+        <Feature>
           <Label>Цены:</Label>
           <Value>от 5.3 до 143.5 млн</Value>
-        </Future>
+        </Feature>
       </Col>
       <Col lg={4}>
-        <Future>
+        <Feature>
           <Label>Количество квартир:</Label>
           <Value>1 503</Value>
-        </Future>
-        <Future>
+        </Feature>
+        <Feature>
           <Label>Количество квартир:</Label>
           <Value>1 503</Value>
-        </Future>
-        <Future>
+        </Feature>
+        <Feature>
           <Label>Количество квартир:</Label>
           <Value>1 503</Value>
-        </Future>
+        </Feature>
       </Col>
       <Col lg={4}>
-        <Future>
+        <Feature>
           <Label>Количество квартир:</Label>
           <Value>1 503</Value>
-        </Future>
-        <Future>
+        </Feature>
+        <Feature>
           <Label>Количество квартир:</Label>
           <Value>1 503</Value>
-        </Future>
-        <Future>
+        </Feature>
+        <Feature>
           <Label>Количество квартир:</Label>
           <Value>1 503</Value>
-        </Future>
+        </Feature>
       </Col>
     </Row>
   </Features>
