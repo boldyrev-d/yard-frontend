@@ -15,8 +15,8 @@ class App extends Component {
         <Router>
           <div className="App">
             <Header />
-              <Route exact path="/" component={ComplexesList} />
-              <Route path="/complexes/:id" component={Complex} />
+            <Route exact path="/" component={ComplexesList} />
+            <Route path="/complexes/:id" component={Complex} />
             <Footer />
           </div>
         </Router>
