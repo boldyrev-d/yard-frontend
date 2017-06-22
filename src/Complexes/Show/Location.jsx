@@ -6,7 +6,7 @@ const Location = styled.section`
   background-color: #fff;
 `;
 
-const MapIamge = styled.img`
+const MapImage = styled.img`
   margin-top: -130px;
   margin-bottom: 4rem;
   max-width: 100%;
@@ -44,7 +44,7 @@ export default () => {
       <Grid>
         <Row>
           <Col lg={6}>
-            <MapIamge
+            <MapImage
               src={`${process.env.PUBLIC_URL}/images/map.png`}
               alt="Якиманка"
               title="Якиманка"
