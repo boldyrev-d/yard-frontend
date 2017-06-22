@@ -4,6 +4,8 @@ import {Grid, Row, Col} from 'react-flexbox-grid';
 import {colors, fonts} from '../../constants';
 import {Link as RouterLink} from 'react-router-dom';
 
+import ImageSet from '../../ImageSet';
+
 const DistrictGuide = styled.section`
   padding-top: 4rem;
   padding-bottom: 12.125rem;
@@ -32,7 +34,7 @@ const Link = styled(RouterLink)`
   color: ${colors.coolBlue};
 `;
 
-const Image = styled.img`
+const Image = styled(ImageSet)`
   width: 100%;
 `;
 
@@ -48,10 +50,12 @@ export default () => {
           </Col>
           <Col lg={6}>
             <Image
-              src={`${process.env.PUBLIC_URL}/images/polyanka-photo.jpg`}
-              srcSet={`${process.env.PUBLIC_URL}/images/polyanka-photo@2x.jpg 2x, ${process.env.PUBLIC_URL}/images/polyanka-photo@3x.jpg 3x`}
-              alt="Якиманка" title="Якиманка"
-             />
+              x1={`${process.env.PUBLIC_URL}/images/polyanka-photo.jpg`}
+              x2={`${process.env.PUBLIC_URL}/images/polyanka-photo@2x.jpg`}
+              x3={`${process.env.PUBLIC_URL}/images/polyanka-photo@3x.jpg`}
+              alt={'Якиманка'}
+              title={'Якиманка'}
+            />
           </Col>
         </Row>
       </Grid>
