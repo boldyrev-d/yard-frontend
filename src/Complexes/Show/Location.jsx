@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Grid, Row, Col} from 'react-flexbox-grid';
-import {colors} from '../../constants';
 
 const Location = styled.section`
   background-color: #fff;
@@ -25,7 +24,7 @@ const Places = styled.div`
 
 const Place = styled.div`
   padding: 1.5rem;
-  border-bottom: 1px solid ${colors.anotherGrey};
+  border-bottom: 1px solid ${props => props.theme.anotherGrey};
 `;
 
 const Title = styled.p`

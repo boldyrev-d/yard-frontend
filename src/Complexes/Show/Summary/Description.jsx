@@ -1,16 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Row, Col} from 'react-flexbox-grid';
-import {colors, fonts} from '../../../constants';
 
 const Description = styled.section`
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid ${colors.anotherGrey};
+  border-bottom: 1px solid ${props => props.theme.anotherGrey};
 `;
 
 const Title = styled.h2`
   margin: 0;
-  font-family: ${fonts.philosopher};
+  font-family: ${props => props.theme.philosopher};
   font-size: 1.5rem;
   line-height: 1.75rem;
 `;

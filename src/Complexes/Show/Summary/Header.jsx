@@ -1,17 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import {colors, fonts} from '../../../constants';
 
 const Header = styled.header`
   display: flex;
   padding-top: 1.5rem;
   padding-bottom: 1.5em;
-  border-bottom: 1px solid ${colors.anotherGrey};
+  border-bottom: 1px solid ${props => props.theme.anotherGrey};
 `;
 
 const Title = styled.h2`
   margin: 0;
-  font-family: ${fonts.philosopher};
+  font-family: ${props => props.theme.philosopher};
   font-size: 1.5rem;
   line-height: 1.75rem;
 
@@ -23,11 +22,11 @@ const Title = styled.h2`
 const Subtitle = styled.small`
   display: block;
   margin-top: .625rem;
-  font-family: ${fonts.fira};
+  font-family: ${props => props.theme.fira};
   font-size: .875rem;
   line-height: 1.375rem;
   font-weight: 300;
-  color: ${colors.hueGrey};
+  color: ${props => props.theme.hueGrey};
 `;
 
 export default () => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Grid} from 'react-flexbox-grid';
-import {colors} from '../../constants';
 import {Button as BasicButton} from '../../Button';
 
 const Photos = styled.div`
@@ -23,7 +22,7 @@ const Button = styled(BasicButton)`
   font-size: .625rem;
   line-height: .625rem;
   font-weight: 300;
-  background-color: ${colors.coolBlue};
+  background-color: ${props => props.theme.coolBlue};
   color: #fff;
 `
 export default () => {

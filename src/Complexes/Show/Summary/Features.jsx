@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Row, Col} from 'react-flexbox-grid';
-import {colors, fonts} from '../../../constants';
 
 const Features = styled.section`
   padding-top: 2rem;
@@ -10,7 +9,7 @@ const Features = styled.section`
 
 const Title = styled.h2`
   margin: 0 0 1.125rem 0;
-  font-family: ${fonts.philosopher};
+  font-family: ${props => props.theme.philosopher};
   font-size: 1.5rem;
   line-height: 1.75rem;
 `;
@@ -27,7 +26,7 @@ const Feature = styled.dl`
 
 const Label = styled.dt`
   width: 50%;
-  color: ${colors.hueGrey};
+  color: ${props => props.theme.hueGrey};
 `;
 
 const Value = styled.dd`

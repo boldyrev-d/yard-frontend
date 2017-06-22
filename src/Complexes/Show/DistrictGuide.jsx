@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Grid, Row, Col} from 'react-flexbox-grid';
-import {colors, fonts} from '../../constants';
 import {Link as RouterLink} from 'react-router-dom';
 
 import ImageSet from '../../ImageSet';
@@ -9,21 +8,21 @@ import ImageSet from '../../ImageSet';
 const DistrictGuide = styled.section`
   padding-top: 4rem;
   padding-bottom: 12.125rem;
-  background-color: ${colors.charcoalGrey};
+  background-color: ${props => props.theme.charcoalGrey};
 `;
 
 const Name = styled.div`
   margin-top: 7.25rem;
   margin-bottom: 3rem;
-  font-family: ${fonts.philosopher};
+  font-family: ${props => props.theme.philosopher};
   font-size: 1.5rem;
   font-weight: bold;
-  color: ${colors.hueGrey};
+  color: ${props => props.theme.hueGrey};
 `;
 
 const Description = styled.div`
   margin-bottom: 3rem;
-  font-family: ${fonts.philosopher};
+  font-family: ${props => props.theme.philosopher};
   font-size: 3rem;
   line-height: 3.75rem;
   color: #fff;
@@ -31,7 +30,7 @@ const Description = styled.div`
 
 const Link = styled(RouterLink)`
   position: relative;
-  color: ${colors.coolBlue};
+  color: ${props => props.theme.coolBlue};
 `;
 
 const Image = styled(ImageSet)`

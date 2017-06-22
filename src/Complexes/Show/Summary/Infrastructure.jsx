@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Row, Col} from 'react-flexbox-grid';
-import {fonts} from '../../../constants';
 
 const Infrastructure = styled.section`
   padding-top: 2rem;
@@ -10,7 +9,7 @@ const Infrastructure = styled.section`
 
 const Title = styled.h2`
   margin: 0 0 1rem;
-  font-family: ${fonts.philosopher};
+  font-family: ${props => props.theme.philosopher};
   font-size: 1.5rem;
   line-height: 1.75rem;
 `;

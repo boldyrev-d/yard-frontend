@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Grid} from 'react-flexbox-grid';
-import {colors, fonts} from '../../constants';
 
 const Header = styled.section`
   padding: 1.5rem 0 1rem;
@@ -16,7 +15,7 @@ const Inner = styled.div`
 
 const Title = styled.h1`
   margin: 0;
-  font-family: ${fonts.philosopher};
+  font-family: ${props => props.theme.philosopher};
   font-size: 2rem;
   line-height: 2rem;
 `;
@@ -24,22 +23,22 @@ const Title = styled.h1`
 const Address = styled.small`
   display: block;
   margin-top: .5rem;
-  font-family: ${fonts.fira};
+  font-family: ${props => props.theme.fira};
   font-size: .875rem;
   font-weight: 300;
-  color: ${colors.hueGrey};
+  color: ${props => props.theme.hueGrey};
 `;
 
 const Button = styled.button`
   padding: .5rem 1rem;
-  font-family: ${fonts.fira};
+  font-family: ${props => props.theme.fira};
   font-size: .625rem;
   line-height: .625rem;
   font-weight: 300;
   background-color: transparent;
-  border: 1px solid ${colors.anotherGrey};
+  border: 1px solid ${props => props.theme.anotherGrey};
   border-radius: 2px;
-  color: ${colors.coolBlue};
+  color: ${props => props.theme.coolBlue};
   outline: none;
   cursor: pointer;
 `;
