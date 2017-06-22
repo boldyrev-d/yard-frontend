@@ -6,19 +6,19 @@ import ComplexesList from './ComplexesList';
 import Complex from './Complexes/Show';
 import Footer from './Footer';
 
-import {theme} from './themes';
+import theme from './theme';
 
 class App extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
         <Router>
-          <div className="App">
+          <main>
             <Header />
             <Route exact path="/" component={ComplexesList} />
             <Route path="/complexes/:id" component={Complex} />
             <Footer />
-          </div>
+          </main>
         </Router>
       </ThemeProvider>
     );

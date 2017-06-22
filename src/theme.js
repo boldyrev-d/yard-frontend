@@ -1,4 +1,4 @@
-export const theme = {
+export default {
   fira: `"Fira Sans", "Helvetica", sans-serif`,
   monaco: `"Monaco", "Consolas", "Lucida Console", monospace`,
   philosopher: `"Philosopher", sans-serif`,
