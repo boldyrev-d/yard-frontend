@@ -5,7 +5,7 @@ import {fonts} from '../../../constants';
 
 const Infrastructure = styled.section`
   padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 3.5rem;
 `;
 
 const Title = styled.h2`
@@ -16,12 +16,8 @@ const Title = styled.h2`
 `;
 
 const Text = styled.p`
-  margin: 0;
+  margin: 0 0 .5rem;
   line-height: 1.375rem;
-
-  &:not(:last-child) {
-    margin-bottom: .5rem;
-  }
 `;
 
 export default () => {
@@ -31,14 +27,20 @@ export default () => {
       <Row>
         <Col lg={2}>
           <Text>Бассейн</Text>
+        </Col>
+        <Col lg={2}>
           <Text>Частная школа</Text>
         </Col>
         <Col lg={2}>
           <Text>Детский сад</Text>
+        </Col>
+        <Col lg={2}>
           <Text>Частная школа</Text>
         </Col>
         <Col lg={2}>
           <Text>Частная школа</Text>
+        </Col>
+        <Col lg={2}>
           <Text>Частная школа</Text>
         </Col>
         <Col lg={2}>
