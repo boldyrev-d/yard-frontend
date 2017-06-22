@@ -1,8 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import {colors, fonts} from './constants';
 
-const Button = styled.button`
+export const Button = styled.button`
   padding: .75rem 2rem;
   color: #fff;
   font-family: ${fonts.fira};
@@ -12,9 +11,3 @@ const Button = styled.button`
   outline: none;
   cursor: pointer;
 `;
-
-export default (props) => {
-  return (
-    <Button>{props.children}</Button>
-  );
-};
