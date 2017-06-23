@@ -2,12 +2,10 @@ import React from 'react';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
-import logo from './compass-logo.svg';
-import {colors} from './constants';
 
 const Header = styled.header`
   background-color: #fff;
-  border-bottom: 1px solid ${colors.paleGrey};
+  border-bottom: 1px solid ${props => props.theme.paleGrey};
 `;
 
 const LogoLink = styled(Link)`
@@ -33,7 +31,7 @@ export default () => {
         <Row between="lg" middle="lg">
           <Col lg={6}>
             <LogoLink to="/" title="Compass">
-              <img src={logo} alt="Compass" title="Compass" />
+              <img src={`${process.env.PUBLIC_URL}/images/compass-logo.svg`} alt="Compass" title="Compass" />
             </LogoLink>
           </Col>
           <Col lg={6}>

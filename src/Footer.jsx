@@ -2,22 +2,21 @@ import React from 'react';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 import {Link as RouterLink} from 'react-router-dom';
 import styled from 'styled-components';
-import {colors} from './constants';
 import arrow from './arrow.svg';
 
 const Footer = styled.footer`
   padding-top: 2rem;
   padding-bottom: 1.75rem;
-  color: ${colors.hueGrey};
+  color: ${props => props.theme.hueGrey};
   font-size: .875rem;
   font-weight: 300;
-  background-color: ${colors.blackThree};
+  background-color: ${props => props.theme.blackThree};
 `;
 
 const Title = styled.h4`
   margin: 0 0 .5rem;
   line-height: 1.4rem;
-  color: ${colors.slateGrey};
+  color: ${props => props.theme.slateGrey};
 `;
 
 const Info = styled.p`
@@ -31,8 +30,8 @@ const InfoPhone = Info.extend`
 const Divider = styled.hr`
   height: 2px;
   margin-bottom: 1rem;
-  color: ${colors.charcoalGrey};
-  background-color: ${colors.charcoalGrey};
+  color: ${props => props.theme.charcoalGrey};
+  background-color: ${props => props.theme.charcoalGrey};
   border: none;
 `;
 
