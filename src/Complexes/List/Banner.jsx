@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Grid} from 'react-flexbox-grid';
-import {colors} from '../constants';
-import developmentLogoImg from './compass-development-logo.svg';
 
 const Banner = styled.section`
-  background-color: ${colors.black};
+  background-color: ${props => props.theme.black};
   text-align: center;
 `
 
@@ -18,7 +16,7 @@ export default () => {
   return (
     <Banner>
       <Grid>
-        <DevelopmentLogo src={developmentLogoImg} alt="Compass" title="Compass" />
+        <DevelopmentLogo src={`${process.env.PUBLIC_URL}/images/compass-development-logo.svg`} alt="Compass" title="Compass" />
       </Grid>
     </Banner>
   )

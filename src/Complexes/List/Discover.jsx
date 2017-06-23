@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 import {Button} from '../../Button';
 
-const Header = styled.div`
+const Discover = styled.div`
   margin-bottom: 4rem;
   text-align: center;
 `;
@@ -22,7 +22,7 @@ const Description = styled.p`
 
 export default () => {
   return (
-    <Header>
+    <Discover>
       <Grid>
         <Row>
           <Col lgOffset={2} lg={8}>
@@ -32,6 +32,6 @@ export default () => {
           </Col>
         </Row>
       </Grid>
-    </Header>
+    </Discover>
   );
 };

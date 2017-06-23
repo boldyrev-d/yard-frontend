@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import {ThemeProvider} from 'styled-components';
 import Header from './Header';
-import ComplexesList from './ComplexesList';
+import ComplexesList from './Complexes/List';
 import Complex from './Complexes/Show';
 import Footer from './Footer';
 
