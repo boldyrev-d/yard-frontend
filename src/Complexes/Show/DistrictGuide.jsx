@@ -52,8 +52,8 @@ export default () => {
               x1={`${process.env.PUBLIC_URL}/images/polyanka-photo.jpg`}
               x2={`${process.env.PUBLIC_URL}/images/polyanka-photo@2x.jpg`}
               x3={`${process.env.PUBLIC_URL}/images/polyanka-photo@3x.jpg`}
-              alt={'Якиманка'}
-              title={'Якиманка'}
+              alt='Якиманка'
+              title='Якиманка'
             />
           </Col>
         </Row>
