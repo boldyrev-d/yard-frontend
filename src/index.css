@@ -11,7 +11,7 @@ html {
 
 body {
   line-height: 1.5rem;
-  background: url("bg-pattern.png") var(--bg-grey);
+  background: url("image/bg-pattern.png") var(--bg-grey);
   background-size: 1.5rem;
   text-rendering: optimizeLegibility !important; /* stylelint-disable-line declaration-no-important */
   -webkit-font-smoothing: antialiased;

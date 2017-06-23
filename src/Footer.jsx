@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Link as RouterLink } from 'react-router-dom';
 import styled from 'styled-components';
-import arrow from './arrow.svg';
+import arrow from './image/arrow.svg';
 
 const Footer = styled.footer`
   padding-top: 2rem;
