@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Row, Col} from 'react-flexbox-grid';
+import { Row, Col } from 'react-flexbox-grid';
 
 const Infrastructure = styled.section`
   padding-top: 2rem;
@@ -19,39 +19,36 @@ const Text = styled.p`
   line-height: 1.375rem;
 `;
 
-export default () => {
-  return (
-    <Infrastructure>
-      <Title>Инфраструктура</Title>
-      <Row>
-        <Col lg={2}>
-          <Text>Бассейн</Text>
-        </Col>
-        <Col lg={2}>
-          <Text>Частная школа</Text>
-        </Col>
-        <Col lg={2}>
-          <Text>Детский сад</Text>
-        </Col>
-        <Col lg={2}>
-          <Text>Частная школа</Text>
-        </Col>
-        <Col lg={2}>
-          <Text>Частная школа</Text>
-        </Col>
-        <Col lg={2}>
-          <Text>Частная школа</Text>
-        </Col>
-        <Col lg={2}>
-          <Text>Бассейн</Text>
-        </Col>
-        <Col lg={2}>
-          <Text>Детский сад</Text>
-        </Col>
-        <Col lg={2}>
-          <Text>Частная школа</Text>
-        </Col>
-      </Row>
-    </Infrastructure>
-  );
-};
+export default () =>
+  (<Infrastructure>
+    <Title>Инфраструктура</Title>
+    <Row>
+      <Col lg={2}>
+        <Text>Бассейн</Text>
+      </Col>
+      <Col lg={2}>
+        <Text>Частная школа</Text>
+      </Col>
+      <Col lg={2}>
+        <Text>Детский сад</Text>
+      </Col>
+      <Col lg={2}>
+        <Text>Частная школа</Text>
+      </Col>
+      <Col lg={2}>
+        <Text>Частная школа</Text>
+      </Col>
+      <Col lg={2}>
+        <Text>Частная школа</Text>
+      </Col>
+      <Col lg={2}>
+        <Text>Бассейн</Text>
+      </Col>
+      <Col lg={2}>
+        <Text>Детский сад</Text>
+      </Col>
+      <Col lg={2}>
+        <Text>Частная школа</Text>
+      </Col>
+    </Row>
+  </Infrastructure>);

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
+export default styled.button`
   padding: .75rem 2rem;
   color: #fff;
   font-family: ${props => props.theme.fira};

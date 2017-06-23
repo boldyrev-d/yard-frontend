@@ -29,21 +29,18 @@ const Subtitle = styled.small`
   color: ${props => props.theme.hueGrey};
 `;
 
-export default () => {
-  return (
-    <Header>
-      <Title>
-        950
-        <Subtitle>предложений</Subtitle>
-      </Title>
-      <Title>
-        John McAslan + Partners
-        <Subtitle>архитектор</Subtitle>
-      </Title>
-      <Title>
-        Группа «ПСН»
-        <Subtitle>застройщик</Subtitle>
-      </Title>
-    </Header>
-  )
-};
+export default () =>
+  (<Header>
+    <Title>
+      950
+      <Subtitle>предложений</Subtitle>
+    </Title>
+    <Title>
+      John McAslan + Partners
+      <Subtitle>архитектор</Subtitle>
+    </Title>
+    <Title>
+      Группа «ПСН»
+      <Subtitle>застройщик</Subtitle>
+    </Title>
+  </Header>);

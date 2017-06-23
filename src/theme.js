@@ -1,7 +1,7 @@
 export default {
-  fira: `"Fira Sans", "Helvetica", sans-serif`,
-  monaco: `"Monaco", "Consolas", "Lucida Console", monospace`,
-  philosopher: `"Philosopher", sans-serif`,
+  fira: '"Fira Sans", "Helvetica", sans-serif',
+  monaco: '"Monaco", "Consolas", "Lucida Console", monospace',
+  philosopher: '"Philosopher", sans-serif',
   charcoalGrey: '#3e4247',
   slateGrey: '#646971',
   black: '#161616',
@@ -12,5 +12,5 @@ export default {
   paleGrey: '#eaebf0',
   anotherGrey: '#e0e0e1',
   otherGrey: '#f4f5f9',
-  coolBlue: '#00779a'
-}
+  coolBlue: '#00779a',
+};

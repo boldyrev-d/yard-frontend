@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Grid, Row, Col} from 'react-flexbox-grid';
-import {Button as BasicButton} from '../../Button';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+import BasicButton from '../../Button';
 
 const Offers = styled.section`
   padding-top: 4rem;
@@ -46,68 +46,65 @@ const Text = styled.div`
 const ButtonWrapper = styled.div`
   margin-top: 2rem;
   text-align: center;
-`
+`;
 
 const Button = styled(BasicButton)`
   line-height: 1rem;
 `;
 
-export default () => {
-  return (
-    <Offers>
-      <Grid>
-        <SectionTitle>Предложения в ЖК «Полянка/44»</SectionTitle>
-        <Row>
-          <Col lg={4}>
-            <Card>
-              <CardTitle>1-комнатные квартиры</CardTitle>
-              <Feature>
-                <Title>Площадь</Title>
-                <Text>от 59 до 120 м²</Text>
-              </Feature>
-              <Feature>
-                <Title>Стоимость</Title>
-                <Text>от 20.3 до 84.2 млн руб</Text>
-              </Feature>
-              <ButtonWrapper>
-                <Button>Посмотреть предложения</Button>
-              </ButtonWrapper>
-            </Card>
-          </Col>
-          <Col lg={4}>
-            <Card>
-              <CardTitle>2-комнатные квартиры</CardTitle>
-              <Feature>
-                <Title>Площадь</Title>
-                <Text>от 59 до 120 м²</Text>
-              </Feature>
-              <Feature>
-                <Title>Стоимость</Title>
-                <Text>от 20.3 до 84.2 млн руб</Text>
-              </Feature>
-              <ButtonWrapper>
-                <Button>Посмотреть предложения</Button>
-              </ButtonWrapper>
-            </Card>
-          </Col>
-          <Col lg={4}>
-            <Card>
-              <CardTitle>3-комнатные квартиры</CardTitle>
-              <Feature>
-                <Title>Площадь</Title>
-                <Text>от 59 до 120 м²</Text>
-              </Feature>
-              <Feature>
-                <Title>Стоимость</Title>
-                <Text>от 20.3 до 84.2 млн руб</Text>
-              </Feature>
-              <ButtonWrapper>
-                <Button>Посмотреть предложения</Button>
-              </ButtonWrapper>
-            </Card>
-          </Col>
-        </Row>
-      </Grid>
-    </Offers>
-  );
-};
+export default () =>
+  (<Offers>
+    <Grid>
+      <SectionTitle>Предложения в ЖК «Полянка/44»</SectionTitle>
+      <Row>
+        <Col lg={4}>
+          <Card>
+            <CardTitle>1-комнатные квартиры</CardTitle>
+            <Feature>
+              <Title>Площадь</Title>
+              <Text>от 59 до 120 м²</Text>
+            </Feature>
+            <Feature>
+              <Title>Стоимость</Title>
+              <Text>от 20.3 до 84.2 млн руб</Text>
+            </Feature>
+            <ButtonWrapper>
+              <Button>Посмотреть предложения</Button>
+            </ButtonWrapper>
+          </Card>
+        </Col>
+        <Col lg={4}>
+          <Card>
+            <CardTitle>2-комнатные квартиры</CardTitle>
+            <Feature>
+              <Title>Площадь</Title>
+              <Text>от 59 до 120 м²</Text>
+            </Feature>
+            <Feature>
+              <Title>Стоимость</Title>
+              <Text>от 20.3 до 84.2 млн руб</Text>
+            </Feature>
+            <ButtonWrapper>
+              <Button>Посмотреть предложения</Button>
+            </ButtonWrapper>
+          </Card>
+        </Col>
+        <Col lg={4}>
+          <Card>
+            <CardTitle>3-комнатные квартиры</CardTitle>
+            <Feature>
+              <Title>Площадь</Title>
+              <Text>от 59 до 120 м²</Text>
+            </Feature>
+            <Feature>
+              <Title>Стоимость</Title>
+              <Text>от 20.3 до 84.2 млн руб</Text>
+            </Feature>
+            <ButtonWrapper>
+              <Button>Посмотреть предложения</Button>
+            </ButtonWrapper>
+          </Card>
+        </Col>
+      </Row>
+    </Grid>
+  </Offers>);

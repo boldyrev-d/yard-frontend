@@ -1,7 +1,7 @@
 import React from 'react';
-import {Grid, Row, Col} from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = styled.header`
   background-color: #fff;
@@ -24,25 +24,26 @@ const NavLink = styled(Link)`
   }
 `;
 
-export default () => {
-  return (
-    <Header>
-      <Grid>
-        <Row between="lg" middle="lg">
-          <Col lg={6}>
-            <LogoLink to="/" title="Compass">
-              <img src={`${process.env.PUBLIC_URL}/images/compass-logo.svg`} alt="Compass" title="Compass" />
-            </LogoLink>
-          </Col>
-          <Col lg={6}>
-            <Nav>
-              <NavLink to="#" title="Купить">Купить</NavLink>
-              <NavLink to="#" title="Снять">Снять</NavLink>
-              <NavLink to="#" title="Наши агенты">Наши агенты</NavLink>
-            </Nav>
-          </Col>
-        </Row>
-      </Grid>
-    </Header>
-  );
-};
+export default () =>
+  (<Header>
+    <Grid>
+      <Row between="lg" middle="lg">
+        <Col lg={6}>
+          <LogoLink to="/" title="Compass">
+            <img
+              src={`${process.env.PUBLIC_URL}/images/compass-logo.svg`}
+              alt="Compass"
+              title="Compass"
+            />
+          </LogoLink>
+        </Col>
+        <Col lg={6}>
+          <Nav>
+            <NavLink to="#" title="Купить">Купить</NavLink>
+            <NavLink to="#" title="Снять">Снять</NavLink>
+            <NavLink to="#" title="Наши агенты">Наши агенты</NavLink>
+          </Nav>
+        </Col>
+      </Row>
+    </Grid>
+  </Header>);

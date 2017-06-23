@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
+
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Card = styled(Link)`
@@ -38,20 +40,16 @@ const Description = styled.p`
 `;
 
 export default (props) => {
-  const {id, image, title, place, children} = props;
+  const { id, image, title, place, children } = props;
 
   return (
     <Card to={`/complexes/${id}`} title={title}>
-      <img
-        src={image}
-        alt={title}
-        title={title}
-      />
+      <img src={image} alt={title} title={title} />
       <Info>
         <Place>{place}</Place>
         <Title>{title}</Title>
         <Description>{children}</Description>
       </Info>
     </Card>
-  )
-}
+  );
+};

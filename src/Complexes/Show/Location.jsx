@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Grid, Row, Col} from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
 const Location = styled.section`
   background-color: #fff;
@@ -38,36 +38,33 @@ const Distance = styled.p`
   margin: 0;
 `;
 
-export default () => {
-  return (
-    <Location>
-      <Grid>
-        <Row>
-          <Col lg={6}>
-            <MapImage
-              src={`${process.env.PUBLIC_URL}/images/map.png`}
-              alt="Якиманка"
-              title="Якиманка"
-            />
-          </Col>
-          <Col lg={6}>
-            <Places>
-              <Place>
-                <Title>Красный Октябрь</Title>
-                <Distance>24 минуты, 6 км</Distance>
-              </Place>
-              <Place>
-                <Title>World class</Title>
-                <Distance>2 минуты, 300 м</Distance>
-              </Place>
-              <Place>
-                <Title>Третьяковская галерея</Title>
-                <Distance>14 минут, 4 км</Distance>
-              </Place>
-            </Places>
-          </Col>
-        </Row>
-      </Grid>
-    </Location>
-  )
-}
+export default () =>
+  (<Location>
+    <Grid>
+      <Row>
+        <Col lg={6}>
+          <MapImage
+            src={`${process.env.PUBLIC_URL}/images/map.png`}
+            alt="Якиманка"
+            title="Якиманка"
+          />
+        </Col>
+        <Col lg={6}>
+          <Places>
+            <Place>
+              <Title>Красный Октябрь</Title>
+              <Distance>24 минуты, 6 км</Distance>
+            </Place>
+            <Place>
+              <Title>World class</Title>
+              <Distance>2 минуты, 300 м</Distance>
+            </Place>
+            <Place>
+              <Title>Третьяковская галерея</Title>
+              <Distance>14 минут, 4 км</Distance>
+            </Place>
+          </Places>
+        </Col>
+      </Row>
+    </Grid>
+  </Location>);
