@@ -24,6 +24,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "prepush": "./node_modules/.bin/eslint --ext .jsx --ext .js src/"
+    "prepush": "eslint --ext .jsx --ext .js src/"
   }
 }
