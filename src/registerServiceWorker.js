@@ -1,4 +1,3 @@
-/* eslint-env browser */
 /* eslint-disable arrow-parens, no-param-reassign, no-console */
 
 // In production, we register a service worker to serve assets from local cache.

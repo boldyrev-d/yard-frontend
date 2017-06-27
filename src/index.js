@@ -1,4 +1,3 @@
-/* eslint-env browser */
 /* eslint-disable react/jsx-filename-extension */
 
 import 'normalize.css';
