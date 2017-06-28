@@ -6,20 +6,13 @@ import { Grid } from 'react-flexbox-grid';
 import Banner from './Banner';
 import Discover from './Discover';
 import Card from './Card';
+import { getImageUrl } from '../../utils';
 import get from '../../api';
 
 const Content = styled.section`
   margin-top: 4rem;
   margin-bottom: 3rem;
 `;
-
-function getImageUrl(complex) {
-  if (complex.images.length) {
-    return `https://images.jqestate.ru/${complex.images[0].id}-jqestate-512`;
-  }
-
-  return '';
-}
 
 function getLocationString(...args) {
   return args.filter(arg => !!arg).join(', ');
@@ -50,7 +43,7 @@ class List extends Component {
                 (<Card
                   key={complex.id}
                   id={complex.id}
-                  image={getImageUrl(complex)}
+                  image={getImageUrl(complex.images[0], 512)}
                   title={complex.name}
                   place={getLocationString(
                     complex.location.subLocalityName,
