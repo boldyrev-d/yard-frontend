@@ -12,11 +12,11 @@ const Content = styled.section`
   margin-bottom: 3rem;
 `;
 
-function getImageUrl(id, size, imagesArray) {
-  if (imagesArray.length) {
-    return `https://images.jqestate.ru/${imagesArray[0].id}-jqestate-${size}`;
+function getImageUrl(complex) {
+  if (complex.images.length) {
+    return `https://images.jqestate.ru/${complex.images[0].id}-jqestate-512`;
   }
-  // TODO: implement else statement
+
   return '';
 }
 
@@ -44,7 +44,7 @@ class List extends Component {
       (<Card
         key={complex.id}
         id={complex.id}
-        image={getImageUrl(complex.id, 512, complex.images)}
+        image={getImageUrl(complex)}
         title={complex.name}
         place={getLocationString(
           complex.location.subLocalityName,
