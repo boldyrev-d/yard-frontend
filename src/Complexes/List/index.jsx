@@ -6,6 +6,7 @@ import { Grid } from 'react-flexbox-grid';
 import Banner from './Banner';
 import Discover from './Discover';
 import Card from './Card';
+import get from '../../api';
 
 const Content = styled.section`
   margin-top: 4rem;
@@ -34,9 +35,7 @@ class List extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.jqestate.ru/v1/complexes')
-      .then(response => response.json())
-      .then(data => this.setState(data));
+    get('complexes').then(data => this.setState(data));
   }
 
   render() {
