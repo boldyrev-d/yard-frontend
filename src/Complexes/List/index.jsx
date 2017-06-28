@@ -7,7 +7,7 @@ import Banner from './Banner';
 import Discover from './Discover';
 import Card from './Card';
 import { getImageUrl } from '../../utils';
-import get from '../../api';
+import { get } from '../../api';
 
 const Content = styled.section`
   margin-top: 4rem;
@@ -28,7 +28,7 @@ class List extends Component {
   }
 
   componentDidMount() {
-    get('complexes').then(data => this.setState({ items: data.items }));
+    get('/complexes').then(data => this.setState({ items: data.items }));
   }
 
   render() {
