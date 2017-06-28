@@ -14,6 +14,13 @@ const Card = styled(Link)`
   }
 `;
 
+const Image = styled.img`
+  width: 512px;
+  height: 350px;
+  flex-shrink: 0;
+  object-fit: cover;
+`;
+
 const Info = styled.div`
   padding: 1.5rem 6.25rem 1.5rem 2rem;
   background-color: #fff;
@@ -44,7 +51,7 @@ export default (props) => {
 
   return (
     <Card to={`/complexes/${id}`} title={title}>
-      <img src={image} alt={title} title={title} />
+      <Image src={image} alt={title} title={title} />
       <Info>
         <Place>{place}</Place>
         <Title>{title}</Title>
