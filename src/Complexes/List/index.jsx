@@ -28,7 +28,7 @@ class List extends Component {
   }
 
   componentDidMount() {
-    get('/complexes').then(data => this.setState({ items: data.items }));
+    get('/complexes').then(({ items }) => this.setState({ items }));
   }
 
   render() {
