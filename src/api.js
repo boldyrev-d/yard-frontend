@@ -1,7 +1,5 @@
 /* eslint-disable import/prefer-default-export */
 
-export function get(query) {
-  return fetch(`https://api.jqestate.ru/v1${query}?filter[state]=public`).then(response =>
-    response.json(),
-  );
-}
+import { API_BASE_URL } from './constants';
+
+export const get = resource => fetch(`${API_BASE_URL}${resource}`).then(res => res.json());
