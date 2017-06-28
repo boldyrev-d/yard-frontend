@@ -39,24 +39,6 @@ class List extends Component {
   }
 
   render() {
-    const complexes = this.state.items.map(complex =>
-      (<Card
-        key={complex.id}
-        id={complex.id}
-        image={getImageUrl(complex)}
-        title={complex.name}
-        place={getLocationString(
-          complex.location.subLocalityName,
-          complex.location.street,
-          complex.location.house,
-        )}
-      >
-        The Lewis Steel Building is a masterful industrial conversion located in the heart of
-        Williamsburg. Located at 76 North 4th Street, the former 1930's steel factory has been
-        transformed into 83 individually unique and luxury loft apartments.
-      </Card>),
-    );
-
     return (
       <div>
         <Banner />
@@ -64,7 +46,25 @@ class List extends Component {
           <Discover />
           <section>
             <Grid>
-              {complexes}
+              {this.state.items.map(complex =>
+                (<Card
+                  key={complex.id}
+                  id={complex.id}
+                  image={getImageUrl(complex)}
+                  title={complex.name}
+                  place={getLocationString(
+                    complex.location.subLocalityName,
+                    complex.location.street,
+                    complex.location.house,
+                  )}
+                >
+                  The Lewis Steel Building is a masterful industrial conversion located in the heart
+                  of
+                  Williamsburg. Located at 76 North 4th Street, the former 1930's steel factory has
+                  been
+                  transformed into 83 individually unique and luxury loft apartments.
+                </Card>),
+              )}
             </Grid>
           </section>
         </Content>
