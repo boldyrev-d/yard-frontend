@@ -43,7 +43,7 @@ class List extends Component {
                 (<Card
                   key={complex.id}
                   id={complex.id}
-                  image={getImageUrl(complex.images[0], 512)}
+                  image={getImageUrl(complex.images[0])}
                   title={complex.name}
                   place={getLocationString(
                     complex.location.subLocalityName,
