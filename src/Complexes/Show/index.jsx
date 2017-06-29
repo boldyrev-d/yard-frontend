@@ -15,17 +15,17 @@ class Complex extends Component {
   }
 
   componentDidMount() {
-    this.loadComplex();
+    this.loadComplex(this.props.match.params.id);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.match.params.id !== this.props.match.params.id) {
-      this.loadComplex();
+      this.loadComplex(nextProps.match.params.id);
     }
   }
 
-  loadComplex() {
-    get(`/complexes/${this.props.match.params.id}`).then(data => this.setState(data));
+  loadComplex(id) {
+    get(`/complexes/${id}`).then(data => this.setState(data));
   }
 
   render() {
