@@ -43,7 +43,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-function getLocationString(location) {
+function formatAddress(location) {
   const address = [location.subLocalityName, location.street, location.house]
     .filter(item => !!item)
     .join(', ');
@@ -53,16 +53,15 @@ function getLocationString(location) {
   return address;
 }
 
-export default props => (
-  <Header>
+export default props =>
+  (<Header>
     <Grid>
       <Inner>
         <div>
           <Title>{props.name}</Title>
-          <Address>{getLocationString(props.location)}</Address>
+          <Address>{formatAddress(props.location)}</Address>
         </div>
         <Button>В избранное</Button>
       </Inner>
     </Grid>
-  </Header>
-  );
+  </Header>);
