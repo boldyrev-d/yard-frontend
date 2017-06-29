@@ -1,9 +1,5 @@
 [ignore]
-
-[include]
+.*/node_modules/
 
 [libs]
-
-[options]
-
-[lints]
+flow-typed

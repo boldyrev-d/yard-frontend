@@ -1,8 +1,14 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
   "rules": {
     "react/prop-types": 0
   },
+  "plugins": [
+    "flowtype"
+  ],
   "env": {
     "browser": true,
     "mocha": true
