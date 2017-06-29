@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
 
-import { API_BASE_URL } from './constants';
+const API_BASE_URL = 'https://api.jqestate.ru/v1';
 
-export const get = resource => fetch(`${API_BASE_URL}${resource}`).then(res => res.json());
+export const get = resource => fetch(API_BASE_URL + resource).then(res => res.json());
