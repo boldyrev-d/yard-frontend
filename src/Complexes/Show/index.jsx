@@ -15,6 +15,16 @@ class Complex extends Component {
   }
 
   componentDidMount() {
+    this.loadComplex();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.match.params.id !== this.props.match.params.id) {
+      this.loadComplex();
+    }
+  }
+
+  loadComplex() {
     get(`/complexes/${this.props.match.params.id}`).then(data => this.setState(data));
   }
 
