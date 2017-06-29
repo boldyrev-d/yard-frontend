@@ -19,9 +19,11 @@ class Complex extends Component {
   }
 
   render() {
+    const { name, location = {} } = this.state;
+
     return (
       <div>
-        <Header />
+        <Header name={name} location={location} />
         <Gallery />
         <Summary />
         <Offers />

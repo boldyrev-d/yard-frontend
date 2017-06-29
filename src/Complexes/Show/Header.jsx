@@ -43,13 +43,23 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default () => (
+function getLocationString(location) {
+  const address = [location.subLocalityName, location.street, location.house]
+    .filter(item => !!item)
+    .join(', ');
+
+  if (location.postalCode) return `${address} • ${location.postalCode}`;
+
+  return address;
+}
+
+export default props => (
   <Header>
     <Grid>
       <Inner>
         <div>
-          <Title>Жилой комплекс «Полянка/44»</Title>
-          <Address>Район Якиманка, улица Большая Полянка, дом 44 • 119180</Address>
+          <Title>{props.name}</Title>
+          <Address>{getLocationString(props.location)}</Address>
         </div>
         <Button>В избранное</Button>
       </Inner>
