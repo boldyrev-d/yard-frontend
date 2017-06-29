@@ -1,19 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from './Header';
 import Gallery from './Gallery';
 import Summary from './Summary';
 import Offers from './Offers';
 import DistrictGuide from './DistrictGuide';
 import Location from './Location';
+import { get } from '../../api';
 
-const Complex = () =>
-  (<div>
-    <Header />
-    <Gallery />
-    <Summary />
-    <Offers />
-    <DistrictGuide />
-    <Location />
-  </div>);
+class Complex extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
+  componentDidMount() {
+    get(`/complexes/${this.props.match.params.id}`).then(data => this.setState(data));
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <Gallery />
+        <Summary />
+        <Offers />
+        <DistrictGuide />
+        <Location />
+      </div>
+    );
+  }
+}
 
 export default Complex;
