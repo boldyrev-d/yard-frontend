@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import BasicButton from '../../Button';
+import { getImageUrl } from '../../utils';
 
 const Photos = styled.div`
   display: flex;
@@ -25,34 +26,12 @@ const Button = styled(BasicButton)`
   background-color: ${props => props.theme.coolBlue};
   color: #fff;
 `;
-export default () =>
+export default props =>
   (<div>
     <Photos>
-      <Photo
-        src={`${process.env.PUBLIC_URL}/images/complexImage1.png`}
-        alt="complexImage1"
-        title="complexImage1"
-      />
-      <Photo
-        src={`${process.env.PUBLIC_URL}/images/complexImage2.png`}
-        alt="complexImage2"
-        title="complexImage2"
-      />
-      <Photo
-        src={`${process.env.PUBLIC_URL}/images/complexImage3.png`}
-        alt="complexImage3"
-        title="complexImage3"
-      />
-      <Photo
-        src={`${process.env.PUBLIC_URL}/images/complexImage4.png`}
-        alt="complexImage4"
-        title="complexImage4"
-      />
-      <Photo
-        src={`${process.env.PUBLIC_URL}/images/complexImage5.png`}
-        alt="complexImage5"
-        title="complexImage5"
-      />
+      {props.images.map(image =>
+        <Photo key={image.id} src={getImageUrl(image)} alt="complexImage" title="complexImage" />,
+      )}
     </Photos>
     <Grid>
       <Button>41 фотография</Button>
