@@ -1,3 +1,5 @@
+/* @flow */
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -38,16 +40,14 @@ const Distance = styled.p`
   margin: 0;
 `;
 
+const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
+
 export default () =>
   (<Location>
     <Grid>
       <Row>
         <Col lg={6}>
-          <MapImage
-            src={`${process.env.PUBLIC_URL}/images/map.png`}
-            alt="Якиманка"
-            title="Якиманка"
-          />
+          <MapImage src={`${PUBLIC_URL}/images/map.png`} alt="Якиманка" title="Якиманка" />
         </Col>
         <Col lg={6}>
           <Places>

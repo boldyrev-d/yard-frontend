@@ -1,3 +1,5 @@
+/* @flow */
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
@@ -12,11 +14,13 @@ const DevelopmentLogo = styled.img`
   margin-bottom: 5rem;
 `;
 
+const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
+
 export default () =>
   (<Banner>
     <Grid>
       <DevelopmentLogo
-        src={`${process.env.PUBLIC_URL}/images/compass-development-logo.svg`}
+        src={`${PUBLIC_URL}/images/compass-development-logo.svg`}
         alt="Compass"
         title="Compass"
       />

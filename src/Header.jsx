@@ -1,3 +1,5 @@
+/* @flow */
+
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
@@ -24,17 +26,15 @@ const NavLink = styled(Link)`
   }
 `;
 
+const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
+
 export default () =>
   (<Header>
     <Grid>
       <Row between="lg" middle="lg">
         <Col lg={6}>
           <LogoLink to="/" title="Compass">
-            <img
-              src={`${process.env.PUBLIC_URL}/images/compass-logo.svg`}
-              alt="Compass"
-              title="Compass"
-            />
+            <img src={`${PUBLIC_URL}/images/compass-logo.svg`} alt="Compass" title="Compass" />
           </LogoLink>
         </Col>
         <Col lg={6}>
