@@ -57,17 +57,13 @@ type CardProps = {
   children: Children,
 };
 
-export default (props: CardProps) => {
-  const { id, image, title, place, children } = props;
-
-  return (
-    <Card to={`/complexes/${id}`} title={title}>
-      <Image src={image} alt={title} title={title} />
-      <Info>
-        <Place>{place}</Place>
-        <Title>{title}</Title>
-        <Description>{children}</Description>
-      </Info>
-    </Card>
+export default ({ id, image, title, place, children }: CardProps) => (
+  <Card to={`/complexes/${id}`} title={title}>
+    <Image src={image} alt={title} title={title} />
+    <Info>
+      <Place>{place}</Place>
+      <Title>{title}</Title>
+      <Description>{children}</Description>
+    </Info>
+  </Card>
   );
-};
