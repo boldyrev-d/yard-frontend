@@ -1,3 +1,5 @@
+/* @flow */
+
 import React, { Component } from 'react';
 import Header from './Header';
 import Gallery from './Gallery';
@@ -8,23 +10,25 @@ import Location from './Location';
 import { get } from '../../api';
 
 class Complex extends Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
     this.state = {};
   }
 
+  state: Object;
+
   componentDidMount() {
     this.loadComplex(this.props.match.params.id);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Object) {
     if (nextProps.match.params.id !== this.props.match.params.id) {
       this.loadComplex(nextProps.match.params.id);
     }
   }
 
-  loadComplex(id) {
+  loadComplex(id: string) {
     get(`/complexes/${id}`).then(data => this.setState(data));
   }
 

@@ -5,6 +5,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import type { Children } from 'react';
 
 const Card = styled(Link)`
   display: flex;
@@ -53,7 +54,7 @@ type CardProps = {
   image: string,
   title: string,
   place: string,
-  children: any,
+  children: Children,
 };
 
 export default (props: CardProps) => {

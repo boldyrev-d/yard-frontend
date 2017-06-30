@@ -1,3 +1,5 @@
+/* @flow */
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
@@ -43,8 +45,12 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-function formatAddress(location) {
-  const address = [location.subLocalityName, location.street, location.house]
+function formatAddress(location: Object): string {
+  const address: string = [
+    (location.subLocalityName: string),
+    (location.street: string),
+    (location.house: string),
+  ]
     .filter(item => !!item)
     .join(', ');
 
@@ -53,7 +59,7 @@ function formatAddress(location) {
   return address;
 }
 
-export default props =>
+export default (props: { name: number, location: Object }) =>
   (<Header>
     <Grid>
       <Inner>

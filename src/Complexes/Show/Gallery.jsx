@@ -1,3 +1,5 @@
+/* @flow */
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
@@ -26,7 +28,8 @@ const Button = styled(BasicButton)`
   background-color: ${props => props.theme.coolBlue};
   color: #fff;
 `;
-export default props =>
+
+export default (props: { images: Array<Object> }) =>
   (<div>
     <Photos>
       {props.images.map(image =>
