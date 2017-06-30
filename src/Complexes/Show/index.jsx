@@ -10,11 +10,7 @@ import Location from './Location';
 import { get } from '../../api';
 
 class Complex extends Component {
-  constructor(props: any) {
-    super(props);
-
-    this.state = {};
-  }
+  state = {};
 
   state: Object;
 

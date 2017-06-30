@@ -20,13 +20,9 @@ function getLocationString(...args: Array<?string>): string {
 }
 
 class List extends Component {
-  constructor(props: any) {
-    super(props);
-
-    this.state = {
-      items: [],
-    };
-  }
+  state = {
+    items: [],
+  };
 
   state: {
     items: Array<Object>,
