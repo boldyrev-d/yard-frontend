@@ -48,13 +48,15 @@ const Description = styled.p`
   color: ${props => props.theme.charcoalGrey};
 `;
 
-export default (props: {
+type CardProps = {
   id: string,
   image: string,
   title: string,
   place: string,
   children: any,
-}) => {
+};
+
+export default (props: CardProps) => {
   const { id, image, title, place, children } = props;
 
   return (
