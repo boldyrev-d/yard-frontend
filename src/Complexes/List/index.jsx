@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+/* @flow */
 
 import React, { Component } from 'react';
 import styled from 'styled-components';
@@ -14,18 +15,22 @@ const Content = styled.section`
   margin-bottom: 3rem;
 `;
 
-function getLocationString(...args) {
+function getLocationString(...args: Array<?string>): string {
   return args.filter(arg => !!arg).join(', ');
 }
 
 class List extends Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
     this.state = {
       items: [],
     };
   }
+
+  state: {
+    items: Array<Object>,
+  };
 
   componentDidMount() {
     get('/complexes?filter[state]=public').then(({ items }) => this.setState({ items }));

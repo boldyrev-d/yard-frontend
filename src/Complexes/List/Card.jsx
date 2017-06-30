@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+/* @flow */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -46,7 +48,13 @@ const Description = styled.p`
   color: ${props => props.theme.charcoalGrey};
 `;
 
-export default (props) => {
+export default (props: {
+  id: string,
+  image: string,
+  title: string,
+  place: string,
+  children: any,
+}) => {
   const { id, image, title, place, children } = props;
 
   return (
