@@ -29,10 +29,12 @@ const Button = styled(BasicButton)`
   color: #fff;
 `;
 
-export default (props: { images: Array<Object> }) =>
+type Props = { images: Array<Object> };
+
+export default ({ images }: Props) =>
   (<div>
     <Photos>
-      {props.images.map(image =>
+      {images.map(image =>
         <Photo key={image.id} src={getImageUrl(image)} alt="complexImage" title="complexImage" />,
       )}
     </Photos>

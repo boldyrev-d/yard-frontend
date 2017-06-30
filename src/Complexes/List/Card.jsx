@@ -49,7 +49,7 @@ const Description = styled.p`
   color: ${props => props.theme.charcoalGrey};
 `;
 
-type CardProps = {
+type Props = {
   id: string,
   image: string,
   title: string,
@@ -57,13 +57,12 @@ type CardProps = {
   children: Children,
 };
 
-export default ({ id, image, title, place, children }: CardProps) => (
-  <Card to={`/complexes/${id}`} title={title}>
+export default ({ id, image, title, place, children }: Props) =>
+  (<Card to={`/complexes/${id}`} title={title}>
     <Image src={image} alt={title} title={title} />
     <Info>
       <Place>{place}</Place>
       <Title>{title}</Title>
       <Description>{children}</Description>
     </Info>
-  </Card>
-  );
+  </Card>);

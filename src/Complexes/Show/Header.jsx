@@ -59,13 +59,18 @@ function formatAddress(location: Object): string {
   return address;
 }
 
-export default (props: { name: number, location: Object }) =>
+type Props = {
+  name: number,
+  location: Object,
+};
+
+export default ({ name, location }: Props) =>
   (<Header>
     <Grid>
       <Inner>
         <div>
-          <Title>{props.name}</Title>
-          <Address>{formatAddress(props.location)}</Address>
+          <Title>{name}</Title>
+          <Address>{formatAddress(location)}</Address>
         </div>
         <Button>В избранное</Button>
       </Inner>
