@@ -47,9 +47,9 @@ const Button = styled.button`
 
 function formatAddress(location: Object): string {
   const address: string = [
-    (location.subLocalityName: string),
-    (location.street: string),
-    (location.house: string),
+    (location.subLocalityName: ?string),
+    (location.street: ?string),
+    (location.house: ?string),
   ]
     .filter(item => !!item)
     .join(', ');
