@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unused-prop-types */
+
 /* @flow */
 
 import React from 'react';
@@ -59,12 +61,26 @@ function formatAddress(location: Object): string {
   return address;
 }
 
-type Props = {
-  name: number,
-  location: Object,
+type LocationShape = {
+  countryId: number,
+  countryName: string,
+  districtId: number,
+  districtName: string,
+  house: string,
+  latitude: string,
+  localityId: number,
+  localityName: string,
+  longitude: string,
+  postalCode: number,
+  regionId: number,
+  regionName: string,
+  street: string,
+  subLocalityId: number,
+  subLocalityName: string,
+  subwayIds: Array<number>,
 };
 
-export default ({ name, location }: Props) =>
+export default ({ name, location }: { name: string, location: LocationShape }) =>
   (<Header>
     <Grid>
       <Inner>
