@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 
+/* @flow */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import type { Children } from 'react';
 
 const Card = styled(Link)`
   display: flex;
@@ -46,17 +49,20 @@ const Description = styled.p`
   color: ${props => props.theme.charcoalGrey};
 `;
 
-export default (props) => {
-  const { id, image, title, place, children } = props;
-
-  return (
-    <Card to={`/complexes/${id}`} title={title}>
-      <Image src={image} alt={title} title={title} />
-      <Info>
-        <Place>{place}</Place>
-        <Title>{title}</Title>
-        <Description>{children}</Description>
-      </Info>
-    </Card>
-  );
+type Props = {
+  id: number,
+  image: string,
+  title: string,
+  place: string,
+  children: Children,
 };
+
+export default ({ id, image, title, place, children }: Props) =>
+  (<Card to={`/complexes/${id}`} title={title}>
+    <Image src={image} alt={title} title={title} />
+    <Info>
+      <Place>{place}</Place>
+      <Title>{title}</Title>
+      <Description>{children}</Description>
+    </Info>
+  </Card>);

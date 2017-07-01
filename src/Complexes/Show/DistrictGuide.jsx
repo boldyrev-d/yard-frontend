@@ -1,3 +1,5 @@
+/* @flow */
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
@@ -37,6 +39,8 @@ const Image = styled(ImageSet)`
   width: 100%;
 `;
 
+const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
+
 export default () =>
   (<DistrictGuide>
     <Grid>
@@ -48,9 +52,9 @@ export default () =>
         </Col>
         <Col lg={6}>
           <Image
-            x1={`${process.env.PUBLIC_URL}/images/polyanka-photo.jpg`}
-            x2={`${process.env.PUBLIC_URL}/images/polyanka-photo@2x.jpg`}
-            x3={`${process.env.PUBLIC_URL}/images/polyanka-photo@3x.jpg`}
+            x1={`${PUBLIC_URL}/images/polyanka-photo.jpg`}
+            x2={`${PUBLIC_URL}/images/polyanka-photo@2x.jpg`}
+            x3={`${PUBLIC_URL}/images/polyanka-photo@3x.jpg`}
             alt="Якиманка"
             title="Якиманка"
           />

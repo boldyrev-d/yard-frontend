@@ -1,6 +1,11 @@
+/* eslint-disable react/no-unused-prop-types */
+
+/* @flow */
+
 import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
+import type { LocationShape } from '../types';
 
 const Header = styled.section`
   padding: 1.5rem 0 1rem;
@@ -43,8 +48,12 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-function formatAddress(location) {
-  const address = [location.subLocalityName, location.street, location.house]
+function formatAddress(location: LocationShape): string {
+  const address: string = [
+    (location.subLocalityName: ?string),
+    (location.street: ?string),
+    (location.house: ?string),
+  ]
     .filter(item => !!item)
     .join(', ');
 
@@ -53,13 +62,17 @@ function formatAddress(location) {
   return address;
 }
 
-export default props =>
+export default ({ name, location }: { name: string, location: LocationShape }) =>
   (<Header>
     <Grid>
       <Inner>
         <div>
-          <Title>{props.name}</Title>
-          <Address>{formatAddress(props.location)}</Address>
+          <Title>
+            {name}
+          </Title>
+          <Address>
+            {formatAddress(location)}
+          </Address>
         </div>
         <Button>В избранное</Button>
       </Inner>

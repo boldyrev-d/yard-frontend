@@ -1,3 +1,5 @@
+/* @flow */
+
 export default {
   fira: '"Fira Sans", "Helvetica", sans-serif',
   monaco: '"Monaco", "Consolas", "Lucida Console", monospace',

@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+/* @flow */
 
 import React, { Component } from 'react';
 import styled from 'styled-components';
@@ -8,24 +9,23 @@ import Discover from './Discover';
 import Card from './Card';
 import { getImageUrl } from '../../utils';
 import { get } from '../../api';
+import type { ComplexShape } from '../types';
 
 const Content = styled.section`
   margin-top: 4rem;
   margin-bottom: 3rem;
 `;
 
-function getLocationString(...args) {
+function getLocationString(...args: Array<?string>): string {
   return args.filter(arg => !!arg).join(', ');
 }
 
 class List extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      items: [],
-    };
-  }
+  state: {
+    items: Array<ComplexShape>,
+  } = {
+    items: [],
+  };
 
   componentDidMount() {
     get('/complexes?filter[state]=public').then(({ items }) => this.setState({ items }));
@@ -52,10 +52,8 @@ class List extends Component {
                   )}
                 >
                   The Lewis Steel Building is a masterful industrial conversion located in the heart
-                  of
-                  Williamsburg. Located at 76 North 4th Street, the former 1930's steel factory has
-                  been
-                  transformed into 83 individually unique and luxury loft apartments.
+                  of Williamsburg. Located at 76 North 4th Street, the former 1930's steel factory
+                  has been transformed into 83 individually unique and luxury loft apartments.
                 </Card>),
               )}
             </Grid>
