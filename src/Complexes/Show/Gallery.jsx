@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import BasicButton from '../../Button';
 import { getImageUrl } from '../../utils';
+import type { ImageShape } from '../types';
 
 const Photos = styled.div`
   display: flex;
@@ -13,9 +14,7 @@ const Photos = styled.div`
   overflow-x: auto;
 `;
 
-const Photo = styled.img`
-  height: 400px;
-`;
+const Photo = styled.img`height: 400px;`;
 
 const Button = styled(BasicButton)`
   position: absolute;
@@ -28,11 +27,6 @@ const Button = styled(BasicButton)`
   background-color: ${props => props.theme.coolBlue};
   color: #fff;
 `;
-
-type ImageShape = {
-  id: string,
-  isPublic: ?boolean,
-};
 
 type Props = { images: Array<ImageShape> };
 

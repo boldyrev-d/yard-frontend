@@ -5,6 +5,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
+import type { LocationShape } from '../types';
 
 const Header = styled.section`
   padding: 1.5rem 0 1rem;
@@ -47,7 +48,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-function formatAddress(location: Object): string {
+function formatAddress(location: LocationShape): string {
   const address: string = [
     (location.subLocalityName: ?string),
     (location.street: ?string),
@@ -61,32 +62,17 @@ function formatAddress(location: Object): string {
   return address;
 }
 
-type LocationShape = {
-  countryId: number,
-  countryName: string,
-  districtId: number,
-  districtName: string,
-  house: string,
-  latitude: string,
-  localityId: number,
-  localityName: string,
-  longitude: string,
-  postalCode: number,
-  regionId: number,
-  regionName: string,
-  street: string,
-  subLocalityId: number,
-  subLocalityName: string,
-  subwayIds: Array<number>,
-};
-
 export default ({ name, location }: { name: string, location: LocationShape }) =>
   (<Header>
     <Grid>
       <Inner>
         <div>
-          <Title>{name}</Title>
-          <Address>{formatAddress(location)}</Address>
+          <Title>
+            {name}
+          </Title>
+          <Address>
+            {formatAddress(location)}
+          </Address>
         </div>
         <Button>В избранное</Button>
       </Inner>
