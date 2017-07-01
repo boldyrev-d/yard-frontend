@@ -50,7 +50,7 @@ const Description = styled.p`
 `;
 
 type Props = {
-  id: string,
+  id: number,
   image: string,
   title: string,
   place: string,
