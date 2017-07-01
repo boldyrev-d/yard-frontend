@@ -29,7 +29,12 @@ const Button = styled(BasicButton)`
   color: #fff;
 `;
 
-type Props = { images: Array<Object> };
+type ImageShape = {
+  id: string,
+  isPublic: ?boolean,
+};
+
+type Props = { images: Array<ImageShape> };
 
 export default ({ images }: Props) =>
   (<div>
