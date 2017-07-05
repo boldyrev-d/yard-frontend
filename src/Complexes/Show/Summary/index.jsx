@@ -8,9 +8,7 @@ import Features from './Features';
 import Description from './Description';
 import Infrastructure from './Infrastructure';
 
-const Summary = styled.section`
-  background-color: #fff;
-`;
+const Summary = styled.section`background-color: #fff;`;
 
 export default () =>
   (<Summary>

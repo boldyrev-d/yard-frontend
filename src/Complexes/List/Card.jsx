@@ -61,8 +61,14 @@ export default ({ id, image, title, place, children }: Props) =>
   (<Card to={`/complexes/${id}`} title={title}>
     <Image src={image} alt={title} title={title} />
     <Info>
-      <Place>{place}</Place>
-      <Title>{title}</Title>
-      <Description>{children}</Description>
+      <Place>
+        {place}
+      </Place>
+      <Title>
+        {title}
+      </Title>
+      <Description>
+        {children}
+      </Description>
     </Info>
   </Card>);

@@ -4,16 +4,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const Location = styled.section`
-  background-color: #fff;
-`;
+const Location = styled.section`background-color: #fff;`;
 
 const MapImage = styled.img`
   margin-top: -130px;
   margin-bottom: 4rem;
   max-width: 100%;
   max-height: 306px;
-  box-shadow: 0 6px 15px 3px rgba(0,0,0,.2);
+  box-shadow: 0 6px 15px 3px rgba(0, 0, 0, .2);
 `;
 
 const Places = styled.div`
@@ -21,7 +19,7 @@ const Places = styled.div`
   margin-bottom: 4rem;
   max-height: 306px;
   background-color: #fff;
-  box-shadow: 0 6px 15px 3px rgba(0,0,0,.2);
+  box-shadow: 0 6px 15px 3px rgba(0, 0, 0, .2);
 `;
 
 const Place = styled.div`

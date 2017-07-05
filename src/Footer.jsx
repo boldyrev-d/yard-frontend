@@ -21,13 +21,9 @@ const Title = styled.h4`
   color: ${props => props.theme.slateGrey};
 `;
 
-const Info = styled.p`
-  margin: 0 0 .5rem;
-`;
+const Info = styled.p`margin: 0 0 .5rem;`;
 
-const InfoPhone = Info.extend`
-  margin-top: 1rem;
-`;
+const InfoPhone = Info.extend`margin-top: 1rem;`;
 
 const Divider = styled.hr`
   height: 2px;
@@ -85,16 +81,24 @@ export default () =>
           <Title>Жилые комплексы</Title>
           <List>
             <ListItem>
-              <Link to="#" title="ВТБ Арена Парк">ВТБ Арена Парк</Link>
+              <Link to="#" title="ВТБ Арена Парк">
+                ВТБ Арена Парк
+              </Link>
             </ListItem>
             <ListItem>
-              <Link to="#" title="Садовые кварталы">Садовые кварталы</Link>
+              <Link to="#" title="Садовые кварталы">
+                Садовые кварталы
+              </Link>
             </ListItem>
             <ListItem>
-              <Link to="#" title="Резиденция Монэ">Резиденция Монэ</Link>
+              <Link to="#" title="Резиденция Монэ">
+                Резиденция Монэ
+              </Link>
             </ListItem>
             <ListItem>
-              <LinkArrowed to="#" title="Все ЖК Москвы">Все ЖК Москвы</LinkArrowed>
+              <LinkArrowed to="#" title="Все ЖК Москвы">
+                Все ЖК Москвы
+              </LinkArrowed>
             </ListItem>
           </List>
         </Col>
@@ -104,10 +108,14 @@ export default () =>
           <Title>Компания</Title>
           <List>
             <ListItem>
-              <Link to="#" title="Команда">Команда</Link>
+              <Link to="#" title="Команда">
+                Команда
+              </Link>
             </ListItem>
             <ListItem>
-              <Link to="#" title="О компании">О компании</Link>
+              <Link to="#" title="О компании">
+                О компании
+              </Link>
             </ListItem>
           </List>
         </Col>
@@ -116,8 +124,8 @@ export default () =>
         <Col lgOffset={4} lg={8}>
           <Warning>
             Любая информация, представленная на данном сайте, носит исключительно информационный
-            характер и ни при каких условиях не является публичной офертой, определяемой
-            положениями статьи 437 ГК РФ. © ООО «Ярд», 2017
+            характер и ни при каких условиях не является публичной офертой, определяемой положениями
+            статьи 437 ГК РФ. © ООО «Ярд», 2017
           </Warning>
         </Col>
       </Row>

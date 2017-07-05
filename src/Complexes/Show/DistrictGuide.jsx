@@ -48,7 +48,9 @@ export default () =>
         <Col lg={6}>
           <Name>Якиманка</Name>
           <Description>Исторический центр Москвы в двух километрах от Кремля</Description>
-          <Link to="#" title="Гид по Якиманке">Гид по Якиманке</Link>
+          <Link to="#" title="Гид по Якиманке">
+            Гид по Якиманке
+          </Link>
         </Col>
         <Col lg={6}>
           <Image

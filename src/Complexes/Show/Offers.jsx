@@ -31,9 +31,7 @@ const CardTitle = styled.h3`
   line-height: 1.375rem;
 `;
 
-const Feature = styled.div`
-  margin-bottom: 1.5rem;
-`;
+const Feature = styled.div`margin-bottom: 1.5rem;`;
 
 const Title = styled.div`
   margin-bottom: .625rem;
@@ -41,9 +39,7 @@ const Title = styled.div`
   line-height: 1.375rem;
 `;
 
-const Text = styled.div`
-  line-height: 1.375rem;
-`;
+const Text = styled.div`line-height: 1.375rem;`;
 
 const ButtonWrapper = styled.div`
   margin-top: 2rem;

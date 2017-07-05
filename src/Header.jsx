@@ -16,9 +16,7 @@ const LogoLink = styled(Link)`
   margin-bottom: 1.25rem;
 `;
 
-const Nav = styled.nav`
-  text-align: right;
-`;
+const Nav = styled.nav`text-align: right;`;
 
 const NavLink = styled(Link)`
   &:not(:last-child) {
@@ -39,9 +37,15 @@ export default () =>
         </Col>
         <Col lg={6}>
           <Nav>
-            <NavLink to="#" title="Купить">Купить</NavLink>
-            <NavLink to="#" title="Снять">Снять</NavLink>
-            <NavLink to="#" title="Наши агенты">Наши агенты</NavLink>
+            <NavLink to="#" title="Купить">
+              Купить
+            </NavLink>
+            <NavLink to="#" title="Снять">
+              Снять
+            </NavLink>
+            <NavLink to="#" title="Наши агенты">
+              Наши агенты
+            </NavLink>
           </Nav>
         </Col>
       </Row>
