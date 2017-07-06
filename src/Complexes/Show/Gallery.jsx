@@ -6,6 +6,7 @@ import { Grid } from 'react-flexbox-grid';
 import BasicButton from '../../Button';
 import { getImageUrl } from '../../utils';
 import type { ImageShape } from '../types';
+import Pluralizer from '../../components/Pluralizer';
 
 const Photos = styled.div`
   display: flex;
@@ -38,6 +39,8 @@ export default ({ images }: Props) =>
       )}
     </Photos>
     <Grid>
-      <Button>41 фотография</Button>
+      <Button>
+        <Pluralizer number={images.length} one="фотография" few="фотографии" other="фотографий" />
+      </Button>
     </Grid>
   </div>);
