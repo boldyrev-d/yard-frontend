@@ -11,7 +11,8 @@ import { get } from '../../api';
 import type { ComplexShape } from '../types';
 
 class Complex extends Component {
-  state: ComplexShape = {};
+  state = {};
+  state: ComplexShape;
 
   componentDidMount() {
     this.loadComplex(this.props.match.params.id);
