@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "node"
+install:
+  - npm install
+  - npm run flow-typed install
+script:
+  - npm run lint
+  - npm run flow
+deploy:
+  skip_cleanup: true
+  on:
+    branch: master
+  provider: script
+  script:
+    - npm run build && now build --public --name yard-frontend --token $NOW_TOKEN && now alias --token $NOW_TOKEN
