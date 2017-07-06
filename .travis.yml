@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "node"
+install:
+  - yarn install
+  - yarn flow-typed install
+script:
+  - yarn lint
+deploy:
+  on:
+    branch: master
+  provider: script
+  script:
+    - yarn build && now build --public --token $NOW_TOKEN && now alias --token $NOW_TOKEN
