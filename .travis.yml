@@ -6,6 +6,7 @@ install:
   - yarn flow-typed install
 script:
   - yarn lint
+  - yarn flow
 deploy:
   on:
     branch: master
