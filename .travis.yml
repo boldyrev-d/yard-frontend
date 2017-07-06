@@ -13,4 +13,4 @@ deploy:
     branch: master
   provider: script
   script:
-    - npm run build && now build --public --token $NOW_TOKEN && now alias --token $NOW_TOKEN
+    - npm run build && now build --public --name yard-frontend --token $NOW_TOKEN && now alias --token $NOW_TOKEN
