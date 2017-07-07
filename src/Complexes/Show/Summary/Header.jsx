@@ -31,7 +31,6 @@ const Subtitle = styled.small`
   color: ${props => props.theme.hueGrey};
 `;
 
-// TODO: Object Shape
 type Props = {
   architect: string,
 };

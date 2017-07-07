@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-flexbox-grid';
 import { constructionKinds, quarters, kinds, securityKinds } from '../../dictionaries';
+import type { DetailsShape, StatisticsShape } from '../../types';
 
 const Features = styled.section`
   padding-top: 2rem;
@@ -43,10 +44,9 @@ const formatCeilHeight = height => Math.round(height * 100) / 100;
 
 const formatParkings = area => (!area ? 'Нет' : `${area} м/м`);
 
-// TODO: Object Shape
 type Props = {
-  statistics: Object,
-  details: Object,
+  statistics: StatisticsShape,
+  details: DetailsShape,
 };
 
 export default ({ statistics, details }: Props) => {
