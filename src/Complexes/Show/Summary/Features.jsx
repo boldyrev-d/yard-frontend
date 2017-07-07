@@ -149,20 +149,18 @@ export default ({ statistics, details }: Props) => {
                 {quarters[commissioningQuarter]} квартал {commissioningYear} года
               </Value>
             </Feature>}
-          {parkings &&
-            <Feature>
-              <Label>Наземная парковка</Label>
-              <Value>
-                {formatParkings(parkings)}
-              </Value>
-            </Feature>}
-          {undergroundGarages &&
-            <Feature>
-              <Label>Подземная парковка</Label>
-              <Value>
-                {formatParkings(undergroundGarages)}
-              </Value>
-            </Feature>}
+          <Feature>
+            <Label>Наземная парковка</Label>
+            <Value>
+              {formatParkings(parkings)}
+            </Value>
+          </Feature>
+          <Feature>
+            <Label>Подземная парковка</Label>
+            <Value>
+              {formatParkings(undergroundGarages)}
+            </Value>
+          </Feature>
         </Col>
       </Row>
     </Features>
