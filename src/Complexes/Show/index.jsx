@@ -29,13 +29,13 @@ class Complex extends Component {
   }
 
   render() {
-    const { name, location = {}, images = [] } = this.state;
+    const { name, location = {}, images = [], details = {}, statistics = {} } = this.state;
 
     return (
       <div>
         <Header name={name} location={location} />
         <Gallery images={images} />
-        <Summary />
+        <Summary details={details} statistics={statistics} />
         <Offers />
         <DistrictGuide />
         <Location />

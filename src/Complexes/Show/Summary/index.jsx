@@ -10,11 +10,17 @@ import Infrastructure from './Infrastructure';
 
 const Summary = styled.section`background-color: #fff;`;
 
-export default () =>
+// TODO: Object Shape
+type Props = {
+  details: Object,
+  statistics: Object,
+};
+
+export default ({ details, statistics }: Props) =>
   (<Summary>
     <Grid>
-      <Header />
-      <Features />
+      <Header architect={details.architect} />
+      <Features statistics={statistics} details={details} />
       <Description />
       <Infrastructure />
     </Grid>
