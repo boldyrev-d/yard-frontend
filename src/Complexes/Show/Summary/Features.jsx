@@ -42,7 +42,7 @@ const formatArea = area => Math.round(area);
 
 const formatCeilHeight = height => Math.round(height * 100) / 100;
 
-const formatParkings = area => (!area ? 'Нет' : `${area} м/м`);
+const formatParkings = area => (area ? `${area} м/м` : 'Нет');
 
 type Props = {
   statistics: StatisticsShape,
