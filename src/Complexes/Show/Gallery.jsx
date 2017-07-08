@@ -1,12 +1,13 @@
 /* @flow */
 
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import BasicButton from '../../Button';
 import { getImageUrl } from '../../utils';
 import type { ImageShape } from '../types';
 import Pluralizer from '../../components/Pluralizer';
+import Carousel from './Carousel';
 
 const Photos = styled.div`
   display: flex;
@@ -29,18 +30,49 @@ const Button = styled(BasicButton)`
   color: #fff;
 `;
 
-type Props = { images: Array<ImageShape> };
+class Gallery extends Component {
+  state = {
+    carouselIsOpen: false,
+  };
 
-export default ({ images }: Props) =>
-  (<div>
-    <Photos>
-      {images.map(image =>
-        <Photo key={image.id} src={getImageUrl(image)} alt="complexImage" title="complexImage" />,
-      )}
-    </Photos>
-    <Grid>
-      <Button>
-        <Pluralizer number={images.length} one="фотография" few="фотографии" other="фотографий" />
-      </Button>
-    </Grid>
-  </div>);
+  toggleCarousel = () => {
+    this.setState({
+      carouselIsOpen: !this.state.carouselIsOpen,
+    });
+  };
+
+  render() {
+    const { images } = this.props;
+
+    return (
+      <div>
+        <Photos>
+          {images.map(image =>
+            (<Photo
+              key={image.id}
+              src={getImageUrl(image)}
+              // TODO: add normal alt
+              alt="complexImage"
+              title="complexImage"
+            />),
+          )}
+        </Photos>
+        <Grid>
+          <Button onClick={this.toggleCarousel}>
+            <Pluralizer
+              number={images.length}
+              one="фотография"
+              few="фотографии"
+              other="фотографий"
+            />
+          </Button>
+        </Grid>
+
+        {this.state.carouselIsOpen &&
+          <Carousel images={images} toggleCarousel={this.toggleCarousel} />}
+      </div>
+    );
+  }
+}
+
+export default Gallery;
