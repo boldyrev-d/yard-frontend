@@ -64,7 +64,7 @@ class Gallery extends Component {
   };
 
   render() {
-    const { images }: { images: Array<ImageShape> } = this.props;
+    const { images, name }: { images: Array<ImageShape>, name: string } = this.props;
 
     return (
       <div>
@@ -73,9 +73,8 @@ class Gallery extends Component {
             (<Photo
               key={image.id}
               src={getImageUrl(image)}
-              // TODO: add normal alt
-              alt="complexImage"
-              title="complexImage"
+              alt={name}
+              title={name}
               onClick={() => this.handleImageClick(index)}
             />),
           )}

@@ -34,7 +34,7 @@ class Complex extends Component {
     return (
       <div>
         <Header name={name} location={location} />
-        <Gallery images={images} />
+        <Gallery images={images} name={name} />
         <Summary details={details} statistics={statistics} />
         <Offers />
         <DistrictGuide />
