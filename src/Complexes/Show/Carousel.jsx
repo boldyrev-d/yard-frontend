@@ -18,23 +18,22 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   height: 90vh;
-  z-index: 200;
 `;
 
 const Image = styled.img`
   position: absolute;
-  z-index: 300;
-  opacity: 1;
-  top: 50%;
-  left: 50%;
-  max-width: 80vw;
+  bottom: 0;
+  max-width: 100%;
   max-height: 80vh;
-  transform: translate(-50%, -50%);
+  transition: all .3s ease-in-out;
 `;
 
 const Counter = styled.div`
-  text-align: center;
+  height: 10vh;
   line-height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: ${props => props.theme.hueGrey};
 `;
 
@@ -43,19 +42,54 @@ class Carousel extends Component {
     activeImage: 0,
   };
 
+  setTransform = (index) => {
+    if (index < this.state.activeImage) {
+      return {
+        transform: `translate(${-80 * (this.state.activeImage - index)}%)`,
+        left: 0,
+        maxHeight: 'calc(80vh / 1.2)',
+      };
+    } else if (index > this.state.activeImage) {
+      return {
+        transform: `translate(${80 * (index - this.state.activeImage)}%)`,
+        right: 0,
+        maxHeight: 'calc(80vh / 1.2)',
+      };
+    }
+
+    return { transform: 'translate(-50%)', left: '50%' };
+  };
+
+  slideImage = (index) => {
+    if (index < this.state.activeImage) {
+      this.setState({
+        activeImage: this.state.activeImage - 1,
+      });
+    } else {
+      this.setState({
+        activeImage: this.state.activeImage + 1,
+      });
+    }
+  };
+
   render() {
     const { activeImage } = this.state;
-    const { images } = this.props;
-
-    const imagesComponent = images.map((image) => {
-      console.log();
-      return <Image key={image.id} src={getImageUrl(image, 2048)} />;
-    });
+    const { images, toggleCarousel } = this.props;
 
     return (
-      <Backdrop onClick={this.props.toggleCarousel}>
+      <Backdrop onClick={toggleCarousel}>
         <Wrapper>
-          {imagesComponent}
+          {images.map((image, index) =>
+            (<Image
+              key={image.id}
+              src={getImageUrl(image, 2048)}
+              style={this.setTransform(index)}
+              onClick={(e) => {
+                e.stopPropagation();
+                this.slideImage(index);
+              }}
+            />),
+          )}
         </Wrapper>
         <Counter>
           {activeImage + 1}/{images.length}
