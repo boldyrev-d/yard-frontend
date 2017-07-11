@@ -78,8 +78,6 @@ class Carousel extends Component {
   };
 
   render() {
-    // console.log(this.props);
-
     const { activeImage }: { activeImage: number } = this.state;
     const {
       images,
