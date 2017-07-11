@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { getImageUrl } from '../../utils';
+import type { ImageShape } from '../types';
 
 const Backdrop = styled.div`
   position: fixed;
@@ -42,7 +43,7 @@ class Carousel extends Component {
     activeImage: 0,
   };
 
-  setTransform = (index) => {
+  setTransform = (index: number): Object => {
     if (index < this.state.activeImage) {
       return {
         transform: `translate(${-80 * (this.state.activeImage - index)}%)`,
@@ -60,7 +61,7 @@ class Carousel extends Component {
     return { transform: 'translate(-50%)', left: '50%' };
   };
 
-  slideImage = (index, length) => {
+  slideImage = (index: number, length: number) => {
     if (index < this.state.activeImage) {
       this.setState({
         activeImage: this.state.activeImage - 1,
@@ -77,8 +78,11 @@ class Carousel extends Component {
   };
 
   render() {
-    const { activeImage } = this.state;
-    const { images, toggleCarousel } = this.props;
+    const { activeImage }: { activeImage: number } = this.state;
+    const {
+      images,
+      toggleCarousel,
+    }: { images: Array<ImageShape>, toggleCarousel: Function } = this.props;
 
     return (
       <Backdrop onClick={toggleCarousel}>

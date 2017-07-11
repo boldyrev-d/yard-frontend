@@ -42,7 +42,7 @@ class Gallery extends Component {
   };
 
   render() {
-    const { images } = this.props;
+    const { images }: { images: Array<ImageShape> } = this.props;
 
     return (
       <div>
