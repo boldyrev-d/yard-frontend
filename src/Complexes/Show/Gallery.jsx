@@ -16,7 +16,10 @@ const Photos = styled.div`
   overflow-x: auto;
 `;
 
-const Photo = styled.img`height: 400px;`;
+const Photo = styled.img`
+  height: 400px;
+  cursor: pointer;
+`;
 
 const Button = styled(BasicButton)`
   position: absolute;
@@ -33,6 +36,7 @@ const Button = styled(BasicButton)`
 class Gallery extends Component {
   state = {
     carouselIsOpen: false,
+    activeImage: 0,
   };
 
   toggleCarousel = () => {
@@ -41,24 +45,43 @@ class Gallery extends Component {
     });
   };
 
+  handleButtonClick = () => {
+    this.setState(
+      {
+        activeImage: 0,
+      },
+      this.toggleCarousel,
+    );
+  };
+
+  handleImageClick = (index) => {
+    this.setState(
+      {
+        activeImage: index,
+      },
+      this.toggleCarousel,
+    );
+  };
+
   render() {
     const { images }: { images: Array<ImageShape> } = this.props;
 
     return (
       <div>
         <Photos>
-          {images.map(image =>
+          {images.map((image, index) =>
             (<Photo
               key={image.id}
               src={getImageUrl(image)}
               // TODO: add normal alt
               alt="complexImage"
               title="complexImage"
+              onClick={() => this.handleImageClick(index)}
             />),
           )}
         </Photos>
         <Grid>
-          <Button onClick={this.toggleCarousel}>
+          <Button onClick={this.handleButtonClick}>
             <Pluralizer
               number={images.length}
               one="фотография"
@@ -69,7 +92,11 @@ class Gallery extends Component {
         </Grid>
 
         {this.state.carouselIsOpen &&
-          <Carousel images={images} toggleCarousel={this.toggleCarousel} />}
+          <Carousel
+            images={images}
+            toggleCarousel={this.toggleCarousel}
+            activeImage={this.state.activeImage}
+          />}
       </div>
     );
   }

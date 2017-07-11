@@ -30,17 +30,17 @@ const Image = styled.img`
 `;
 
 const Counter = styled.div`
-  height: 10vh;
-  line-height: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 10vh;
+  line-height: 22px;
   color: ${props => props.theme.hueGrey};
 `;
 
 class Carousel extends Component {
   state = {
-    activeImage: 0,
+    activeImage: this.props.activeImage,
   };
 
   setTransform = (index: number): Object => {
@@ -78,6 +78,8 @@ class Carousel extends Component {
   };
 
   render() {
+    // console.log(this.props);
+
     const { activeImage }: { activeImage: number } = this.state;
     const {
       images,
