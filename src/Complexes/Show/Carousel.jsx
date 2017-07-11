@@ -60,10 +60,14 @@ class Carousel extends Component {
     return { transform: 'translate(-50%)', left: '50%' };
   };
 
-  slideImage = (index) => {
+  slideImage = (index, length) => {
     if (index < this.state.activeImage) {
       this.setState({
         activeImage: this.state.activeImage - 1,
+      });
+    } else if (index + 1 === length) {
+      this.setState({
+        activeImage: 0,
       });
     } else {
       this.setState({
@@ -86,7 +90,7 @@ class Carousel extends Component {
               style={this.setTransform(index)}
               onClick={(e) => {
                 e.stopPropagation();
-                this.slideImage(index);
+                this.slideImage(index, images.length);
               }}
             />),
           )}
