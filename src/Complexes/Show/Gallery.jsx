@@ -54,7 +54,7 @@ class Gallery extends Component {
     );
   };
 
-  handleImageClick = (index) => {
+  handleImageClick = (index: number) => {
     this.setState(
       {
         activeImage: index,
