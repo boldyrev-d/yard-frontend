@@ -26,7 +26,7 @@ const Image = styled.img`
   bottom: 0;
   max-width: 100%;
   max-height: 80vh;
-  transition: all .3s ease-in-out;
+  transition: all .35s linear;
 `;
 
 const Counter = styled.div`
@@ -56,12 +56,14 @@ class Carousel extends Component {
       return {
         transform: `translate(${-80 * (this.state.activeImage - index)}%)`,
         left: 0,
+        opacity: 0.5,
         maxHeight: 'calc(80vh / 1.2)',
       };
     } else if (index > this.state.activeImage) {
       return {
         transform: `translate(${80 * (index - this.state.activeImage)}%)`,
         right: 0,
+        opacity: 0.5,
         maxHeight: 'calc(80vh / 1.2)',
       };
     }
