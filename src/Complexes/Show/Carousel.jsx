@@ -43,6 +43,14 @@ class Carousel extends Component {
     activeImage: this.props.activeImage,
   };
 
+  componentDidMount() {
+    window.addEventListener('keydown', this.handleKeyDown);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.handleKeyDown);
+  }
+
   setTransform = (index: number): Object => {
     if (index < this.state.activeImage) {
       return {
@@ -62,18 +70,38 @@ class Carousel extends Component {
   };
 
   slideImage = (index: number, length: number) => {
-    if (index < this.state.activeImage) {
+    if (index < 0) {
+      this.setState({
+        activeImage: length - 1,
+      });
+    } else if (index < this.state.activeImage) {
       this.setState({
         activeImage: this.state.activeImage - 1,
       });
-    } else if (index + 1 === length) {
+    } else if (index + 1 > length) {
       this.setState({
         activeImage: 0,
       });
-    } else {
+    } else if (index > this.state.activeImage) {
       this.setState({
         activeImage: this.state.activeImage + 1,
       });
+    }
+  };
+
+  handleKeyDown = (ev: KeyboardEvent) => {
+    ev.preventDefault();
+
+    if (ev.key === 'ArrowRight') {
+      this.slideImage(this.state.activeImage + 1, this.props.images.length);
+    }
+
+    if (ev.key === 'ArrowLeft') {
+      this.slideImage(this.state.activeImage - 1, this.props.images.length);
+    }
+
+    if (ev.key === 'Escape') {
+      this.props.toggleCarousel();
     }
   };
 
@@ -92,8 +120,8 @@ class Carousel extends Component {
               key={image.id}
               src={getImageUrl(image, 2048)}
               style={this.setTransform(index)}
-              onClick={(e) => {
-                e.stopPropagation();
+              onClick={(ev) => {
+                ev.stopPropagation();
                 this.slideImage(index, images.length);
               }}
             />),
