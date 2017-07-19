@@ -15,6 +15,13 @@ const Card = styled(Link)`
     box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
     transition: box-shadow .25s ease;
   }
+
+  @media (max-width: 64rem) {
+    flex-direction: column;
+    margin-bottom: 2rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
 `;
 
 const Image = styled.img`
@@ -22,11 +29,20 @@ const Image = styled.img`
   height: 350px;
   flex-shrink: 0;
   object-fit: cover;
+
+  @media (max-width: 64rem) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const Info = styled.div`
   padding: 1.5rem 6.25rem 1.5rem 2rem;
   background-color: #fff;
+
+  @media (max-width: 64rem) {
+    padding: 1rem 1rem 1.5rem;
+  }
 `;
 
 const Place = styled.p`
@@ -42,6 +58,12 @@ const Title = styled.h3`
   color: ${props => props.theme.blackTwo};
   font-size: 2.5rem;
   line-height: 3.5rem;
+
+  @media (max-width: 64rem) {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
 `;
 
 const Description = styled.p`

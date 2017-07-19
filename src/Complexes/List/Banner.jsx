@@ -7,6 +7,10 @@ import { Grid } from 'react-flexbox-grid';
 const Banner = styled.section`
   background-color: ${props => props.theme.black};
   text-align: center;
+
+  @media (max-width: 64rem) {
+    display: none;
+  }
 `;
 
 const DevelopmentLogo = styled.img`

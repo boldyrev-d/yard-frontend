@@ -13,6 +13,12 @@ const Footer = styled.footer`
   font-size: .875rem;
   font-weight: 300;
   background-color: ${props => props.theme.blackThree};
+
+  @media (max-width: 64rem) {
+    padding-left: .5rem;
+    padding-bottom: 3rem;
+    padding-right: .5rem;
+  }
 `;
 
 const Title = styled.h4`
@@ -31,6 +37,10 @@ const Divider = styled.hr`
   color: ${props => props.theme.charcoalGrey};
   background-color: ${props => props.theme.charcoalGrey};
   border: none;
+
+  @media (max-width: 64rem) {
+    margin-top: 2rem;
+  }
 `;
 
 const List = styled.ul`
@@ -63,20 +73,24 @@ const Warning = styled.p`
   margin: 6rem 0 0;
   font-size: .6875rem;
   line-height: 1.2rem;
+
+  @media (max-width: 64rem) {
+    margin-top: 3rem;
+  }
 `;
 
 export default () =>
   (<Footer>
     <Grid>
       <Row>
-        <Col lg={2}>
+        <Col xs={12} lg={2}>
           <Title>ООО «Ярд»</Title>
           <Info>ОГРН 1175074002531</Info>
           <Info>ИНН 5036165365</Info>
           <InfoPhone>+7 (999) 821-14-88</InfoPhone>
         </Col>
 
-        <Col lgOffset={2} lg={2}>
+        <Col xs={12} lgOffset={2} lg={2}>
           <Divider />
           <Title>Жилые комплексы</Title>
           <List>
@@ -103,7 +117,7 @@ export default () =>
           </List>
         </Col>
 
-        <Col lg={2}>
+        <Col xs={12} lg={2}>
           <Divider />
           <Title>Компания</Title>
           <List>
@@ -121,7 +135,7 @@ export default () =>
         </Col>
       </Row>
       <Row>
-        <Col lgOffset={4} lg={8}>
+        <Col xs={12} lgOffset={4} lg={8}>
           <Warning>
             Любая информация, представленная на данном сайте, носит исключительно информационный
             характер и ни при каких условиях не является публичной офертой, определяемой положениями

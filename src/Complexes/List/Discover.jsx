@@ -8,6 +8,12 @@ import Button from '../../Button';
 const Discover = styled.div`
   margin-bottom: 4rem;
   text-align: center;
+
+  @media (max-width: 64rem) {
+    margin-bottom: 2rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
 `;
 
 const Title = styled.h2`
@@ -15,6 +21,10 @@ const Title = styled.h2`
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 2rem;
+
+  @media (max-width: 64rem) {
+    font-size: 1.25rem;
+  }
 `;
 
 const Description = styled.p`
@@ -26,7 +36,7 @@ export default () =>
   (<Discover>
     <Grid>
       <Row>
-        <Col lgOffset={2} lg={8}>
+        <Col xs={12} lgOffset={2} lg={8}>
           <Title>Discover Out New Developments</Title>
           <Description>
             Compass brings a modern approach to new development marketing and sales. From boutique

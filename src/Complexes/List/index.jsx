@@ -14,6 +14,10 @@ import type { ComplexShape } from '../types';
 const Content = styled.section`
   margin-top: 4rem;
   margin-bottom: 3rem;
+
+  @media (max-width: 64rem) {
+    margin-top: 2rem;
+  }
 `;
 
 function getLocationString(...args: Array<?string>): string {
