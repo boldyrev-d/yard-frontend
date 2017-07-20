@@ -54,12 +54,12 @@ export default () =>
   (<Header>
     <Grid>
       <Row between="xs" middle="xs">
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} sm={6}>
           <LogoLink to="/" title="Compass">
             <Logo src={`${PUBLIC_URL}/images/compass-logo.svg`} alt="Compass" title="Compass" />
           </LogoLink>
         </Col>
-        <Col xs={12} md={6} lg={6}>
+        <Col xs={12} sm={6}>
           <Nav>
             <NavLink to="#" title="Купить">
               Купить

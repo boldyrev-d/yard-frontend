@@ -5,7 +5,7 @@ import { css } from 'styled-components';
 
 export const media = {
   mobile: (...args: Array<any>) => css`
-    @media (max-width: 64rem) {
+    @media (max-width: 48rem) {
       ${css(...args)}
     }
   `,
