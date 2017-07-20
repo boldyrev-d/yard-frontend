@@ -4,16 +4,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Button from '../../Button';
+import { media } from '../../style-utils';
 
 const Discover = styled.div`
   margin-bottom: 4rem;
   text-align: center;
 
-  @media (max-width: 64rem) {
+  ${media.mobile`
     margin-bottom: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
-  }
+  `};
 `;
 
 const Title = styled.h2`
@@ -22,9 +23,9 @@ const Title = styled.h2`
   font-weight: bold;
   line-height: 2rem;
 
-  @media (max-width: 64rem) {
+  ${media.mobile`
     font-size: 1.25rem;
-  }
+  `};
 `;
 
 const Description = styled.p`

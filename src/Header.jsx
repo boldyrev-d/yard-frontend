@@ -4,15 +4,16 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { media } from './style-utils';
 
 const Header = styled.header`
   background-color: #fff;
   border-bottom: 1px solid ${props => props.theme.paleGrey};
 
-  @media (max-width: 64rem) {
+  ${media.mobile`
     padding-left: 1rem;
     padding-right: 1rem;
-  }
+  `};
 `;
 
 const LogoLink = styled(Link)`
@@ -20,25 +21,25 @@ const LogoLink = styled(Link)`
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 
-  @media (max-width: 64rem) {
+  ${media.mobile`
     margin-top: 1rem;
     margin-bottom: 1rem;
-  }
+  `};
 `;
 
 const Logo = styled.img`
-  @media (max-width: 64rem) {
+  ${media.mobile`
     width: auto;
     height: 1rem;
-  }
+  `};
 `;
 
 const Nav = styled.nav`
   text-align: right;
 
-  @media (max-width: 64rem) {
+  ${media.mobile`
     display: none;
-  }
+  `};
 `;
 
 const NavLink = styled(Link)`

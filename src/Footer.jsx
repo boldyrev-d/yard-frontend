@@ -5,6 +5,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Link as RouterLink } from 'react-router-dom';
 import styled from 'styled-components';
 import arrow from './images/arrow.svg';
+import { media } from './style-utils';
 
 const Footer = styled.footer`
   padding-top: 2rem;
@@ -14,11 +15,11 @@ const Footer = styled.footer`
   font-weight: 300;
   background-color: ${props => props.theme.blackThree};
 
-  @media (max-width: 64rem) {
+  ${media.mobile`
     padding-left: 1rem;
     padding-bottom: 3rem;
     padding-right: 1rem;
-  }
+  `};
 `;
 
 const Title = styled.h4`
@@ -38,9 +39,9 @@ const Divider = styled.hr`
   background-color: ${props => props.theme.charcoalGrey};
   border: none;
 
-  @media (max-width: 64rem) {
+  ${media.mobile`
     margin-top: 2rem;
-  }
+  `};
 `;
 
 const List = styled.ul`
@@ -74,9 +75,9 @@ const Warning = styled.p`
   font-size: .6875rem;
   line-height: 1.2rem;
 
-  @media (max-width: 64rem) {
+  ${media.mobile`
     margin-top: 3rem;
-  }
+  `};
 `;
 
 export default () =>

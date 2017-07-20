@@ -6,6 +6,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import type { Children } from 'react';
+import { media } from '../../style-utils';
 
 const Card = styled(Link)`
   display: flex;
@@ -16,12 +17,12 @@ const Card = styled(Link)`
     transition: box-shadow .25s ease;
   }
 
-  @media (max-width: 64rem) {
+  ${media.mobile`
     flex-direction: column;
     margin-bottom: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
-  }
+  `};
 `;
 
 const Image = styled.img`
@@ -30,19 +31,19 @@ const Image = styled.img`
   flex-shrink: 0;
   object-fit: cover;
 
-  @media (max-width: 64rem) {
+  ${media.mobile`
     width: 100%;
     height: auto;
-  }
+  `};
 `;
 
 const Info = styled.div`
   padding: 1.5rem 6.25rem 1.5rem 2rem;
   background-color: #fff;
 
-  @media (max-width: 64rem) {
+  ${media.mobile`
     padding: 1rem 1rem 1.5rem;
-  }
+  `};
 `;
 
 const Place = styled.p`
@@ -59,11 +60,11 @@ const Title = styled.h3`
   font-size: 2.5rem;
   line-height: 3.5rem;
 
-  @media (max-width: 64rem) {
+  ${media.mobile`
     margin-bottom: 1rem;
     font-size: 2rem;
     line-height: 2.5rem;
-  }
+  `};
 `;
 
 const Description = styled.p`
