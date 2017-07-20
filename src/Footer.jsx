@@ -15,9 +15,9 @@ const Footer = styled.footer`
   background-color: ${props => props.theme.blackThree};
 
   @media (max-width: 64rem) {
-    padding-left: .5rem;
+    padding-left: 1rem;
     padding-bottom: 3rem;
-    padding-right: .5rem;
+    padding-right: 1rem;
   }
 `;
 

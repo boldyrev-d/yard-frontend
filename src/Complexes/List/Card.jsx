@@ -19,8 +19,8 @@ const Card = styled(Link)`
   @media (max-width: 64rem) {
     flex-direction: column;
     margin-bottom: 2rem;
-    padding-left: .5rem;
-    padding-right: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `;
 

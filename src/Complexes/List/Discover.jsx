@@ -11,8 +11,8 @@ const Discover = styled.div`
 
   @media (max-width: 64rem) {
     margin-bottom: 2rem;
-    padding-left: .5rem;
-    padding-right: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `;
 

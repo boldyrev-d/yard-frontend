@@ -10,8 +10,8 @@ const Header = styled.header`
   border-bottom: 1px solid ${props => props.theme.paleGrey};
 
   @media (max-width: 64rem) {
-    padding-left: .5rem;
-    padding-right: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `;
 
