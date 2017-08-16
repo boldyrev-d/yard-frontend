@@ -38,7 +38,7 @@ class Complex extends Component {
         <Summary details={details} statistics={statistics} />
         <Offers />
         <DistrictGuide />
-        <Location />
+        <Location location={location} />
       </div>
     );
   }

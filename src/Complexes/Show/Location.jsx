@@ -2,15 +2,16 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import MapBox from './MapBox';
+import type { LocationShape } from '../types';
 
 const Location = styled.section`background-color: #fff;`;
 
-const MapImage = styled.img`
+const StyledMapbox = styled(MapBox)`
   margin-top: -130px;
   margin-bottom: 4rem;
+  height: 303px;
   max-width: 100%;
-  max-height: 306px;
   box-shadow: 0 6px 15px 3px rgba(0, 0, 0, .2);
 `;
 
@@ -38,16 +39,18 @@ const Distance = styled.p`
   margin: 0;
 `;
 
-const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
+type Props = {
+  location: LocationShape,
+};
 
-export default () =>
+export default ({ location }: Props) =>
   (<Location>
-    <Grid>
-      <Row>
-        <Col lg={6}>
-          <MapImage src={`${PUBLIC_URL}/images/map.png`} alt="Якиманка" title="Якиманка" />
-        </Col>
-        <Col lg={6}>
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6">
+          <StyledMapbox location={location} />
+        </div>
+        <div className="col-lg-6">
           <Places>
             <Place>
               <Title>Красный Октябрь</Title>
@@ -62,7 +65,7 @@ export default () =>
               <Distance>14 минут, 4 км</Distance>
             </Place>
           </Places>
-        </Col>
-      </Row>
-    </Grid>
+        </div>
+      </div>
+    </div>
   </Location>);
