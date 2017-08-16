@@ -2,7 +2,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
 import BasicButton from '../../Button';
 
 const Offers = styled.section`
@@ -52,10 +51,10 @@ const Button = styled(BasicButton)`
 
 export default () =>
   (<Offers>
-    <Grid>
+    <div className="container">
       <SectionTitle>Предложения в ЖК «Полянка/44»</SectionTitle>
-      <Row>
-        <Col lg={4}>
+      <div className="row">
+        <div className="col-lg-4">
           <Card>
             <CardTitle>1-комнатные квартиры</CardTitle>
             <Feature>
@@ -70,8 +69,8 @@ export default () =>
               <Button>Посмотреть предложения</Button>
             </ButtonWrapper>
           </Card>
-        </Col>
-        <Col lg={4}>
+        </div>
+        <div className="col-lg-4">
           <Card>
             <CardTitle>2-комнатные квартиры</CardTitle>
             <Feature>
@@ -86,8 +85,8 @@ export default () =>
               <Button>Посмотреть предложения</Button>
             </ButtonWrapper>
           </Card>
-        </Col>
-        <Col lg={4}>
+        </div>
+        <div className="col-lg-4">
           <Card>
             <CardTitle>3-комнатные квартиры</CardTitle>
             <Feature>
@@ -102,7 +101,7 @@ export default () =>
               <Button>Посмотреть предложения</Button>
             </ButtonWrapper>
           </Card>
-        </Col>
-      </Row>
-    </Grid>
+        </div>
+      </div>
+    </div>
   </Offers>);

@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Grid } from 'react-flexbox-grid';
 import BasicButton from '../../Button';
 import { getImageUrl } from '../../utils';
 import type { ImageShape } from '../types';
@@ -79,7 +78,7 @@ class Gallery extends Component {
             />),
           )}
         </Photos>
-        <Grid>
+        <div className="container">
           <Button onClick={this.handleButtonClick}>
             <Pluralizer
               number={images.length}
@@ -88,7 +87,7 @@ class Gallery extends Component {
               other="фотографий"
             />
           </Button>
-        </Grid>
+        </div>
 
         {this.state.carouselIsOpen &&
           <Carousel

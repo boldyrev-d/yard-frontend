@@ -2,7 +2,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Row, Col } from 'react-flexbox-grid';
 import { constructionKinds, quarters, kinds, securityKinds } from '../../dictionaries';
 import type { DetailsShape, StatisticsShape } from '../../types';
 
@@ -68,8 +67,8 @@ export default ({ statistics, details }: Props) => {
   return (
     <Features>
       <Title>Характеристики</Title>
-      <Row>
-        <Col lg={4}>
+      <div className="row">
+        <div className="col-lg-4">
           {propertiesCount &&
             <Feature>
               <Label>Количество квартир</Label>
@@ -99,8 +98,8 @@ export default ({ statistics, details }: Props) => {
                 {securityKinds[security]}
               </Value>
             </Feature>}
-        </Col>
-        <Col lg={4}>
+        </div>
+        <div className="col-lg-4">
           {constructionKind &&
             <Feature>
               <Label>Конструкция корпусов</Label>
@@ -131,8 +130,8 @@ export default ({ statistics, details }: Props) => {
                 {maintenanceCosts} руб / м² / месяц
               </Value>
             </Feature>}
-        </Col>
-        <Col lg={4}>
+        </div>
+        <div className="col-lg-4">
           {startQuarter &&
             startYear &&
             <Feature>
@@ -161,8 +160,8 @@ export default ({ statistics, details }: Props) => {
               {formatParkings(undergroundGarages)}
             </Value>
           </Feature>
-        </Col>
-      </Row>
+        </div>
+      </div>
     </Features>
   );
 };

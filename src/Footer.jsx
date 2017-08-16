@@ -1,7 +1,8 @@
 /* @flow */
 
+// TODO: fix mobile
+
 import React from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Link as RouterLink } from 'react-router-dom';
 import styled from 'styled-components';
 import arrow from './images/arrow.svg';
@@ -9,16 +10,14 @@ import { media } from './style-utils';
 
 const Footer = styled.footer`
   padding-top: 2rem;
-  padding-bottom: 1.75rem;
+  padding-bottom: 3rem;
   color: ${props => props.theme.hueGrey};
   font-size: .875rem;
   font-weight: 300;
   background-color: ${props => props.theme.blackThree};
 
-  ${media.mobile`
-    padding-left: 1rem;
-    padding-bottom: 3rem;
-    padding-right: 1rem;
+  ${media.lg`
+    padding-bottom: 1.75rem;
   `};
 `;
 
@@ -34,13 +33,14 @@ const InfoPhone = Info.extend`margin-top: 1rem;`;
 
 const Divider = styled.hr`
   height: 2px;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   color: ${props => props.theme.charcoalGrey};
   background-color: ${props => props.theme.charcoalGrey};
   border: none;
 
-  ${media.mobile`
-    margin-top: 2rem;
+  ${media.lg`
+    margin-top: 0;
   `};
 `;
 
@@ -71,27 +71,27 @@ const LinkArrowed = Link.extend`
 `;
 
 const Warning = styled.p`
-  margin: 6rem 0 0;
+  margin: 3rem 0 0;
   font-size: .6875rem;
   line-height: 1.2rem;
 
-  ${media.mobile`
-    margin-top: 3rem;
+  ${media.lg`
+    margin-top: 6rem;
   `};
 `;
 
 export default () =>
   (<Footer>
-    <Grid>
-      <Row>
-        <Col xs={12} lg={2}>
+    <div className="container">
+      <div className="row">
+        <div className="col-xs-12 col-lg-2">
           <Title>ООО «Ярд»</Title>
           <Info>ОГРН 1175074002531</Info>
           <Info>ИНН 5036165365</Info>
           <InfoPhone>+7 (999) 821-14-88</InfoPhone>
-        </Col>
+        </div>
 
-        <Col xs={12} lgOffset={2} lg={2}>
+        <div className="col-xs-12 col-lg-2 col-lg-offset-2">
           <Divider />
           <Title>Жилые комплексы</Title>
           <List>
@@ -116,9 +116,9 @@ export default () =>
               </LinkArrowed>
             </ListItem>
           </List>
-        </Col>
+        </div>
 
-        <Col xs={12} lg={2}>
+        <div className="col-xs-12 col-lg-2">
           <Divider />
           <Title>Компания</Title>
           <List>
@@ -133,16 +133,16 @@ export default () =>
               </Link>
             </ListItem>
           </List>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={12} lgOffset={4} lg={8}>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-xs-12 col-lg-8 col-lg-offset-4">
           <Warning>
             Любая информация, представленная на данном сайте, носит исключительно информационный
             характер и ни при каких условиях не является публичной офертой, определяемой положениями
             статьи 437 ГК РФ. © ООО «Ярд», 2017
           </Warning>
-        </Col>
-      </Row>
-    </Grid>
+        </div>
+      </div>
+    </div>
   </Footer>);

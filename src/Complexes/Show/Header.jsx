@@ -4,7 +4,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Grid } from 'react-flexbox-grid';
 import type { LocationShape } from '../types';
 
 const Header = styled.section`
@@ -64,7 +63,7 @@ function formatAddress(location: LocationShape): string {
 
 export default ({ name, location }: { name: string, location: LocationShape }) =>
   (<Header>
-    <Grid>
+    <div className="container">
       <Inner>
         <div>
           <Title>
@@ -76,5 +75,5 @@ export default ({ name, location }: { name: string, location: LocationShape }) =
         </div>
         <Button>В избранное</Button>
       </Inner>
-    </Grid>
+    </div>
   </Header>);

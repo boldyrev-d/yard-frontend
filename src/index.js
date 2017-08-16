@@ -3,6 +3,7 @@
 /* @flow */
 
 import 'normalize.css';
+import 'flexboxgrid2/flexboxgrid2.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';

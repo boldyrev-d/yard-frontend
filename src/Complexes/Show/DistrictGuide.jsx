@@ -2,7 +2,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Link as RouterLink } from 'react-router-dom';
 
 import ImageSet from '../../ImageSet';
@@ -43,16 +42,16 @@ const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
 
 export default () =>
   (<DistrictGuide>
-    <Grid>
-      <Row>
-        <Col lg={6}>
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6">
           <Name>Якиманка</Name>
           <Description>Исторический центр Москвы в двух километрах от Кремля</Description>
           <Link to="#" title="Гид по Якиманке">
             Гид по Якиманке
           </Link>
-        </Col>
-        <Col lg={6}>
+        </div>
+        <div className="col-lg-6">
           <Image
             x1={`${PUBLIC_URL}/images/polyanka-photo.jpg`}
             x2={`${PUBLIC_URL}/images/polyanka-photo@2x.jpg`}
@@ -60,7 +59,7 @@ export default () =>
             alt="Якиманка"
             title="Якиманка"
           />
-        </Col>
-      </Row>
-    </Grid>
+        </div>
+      </div>
+    </div>
   </DistrictGuide>);

@@ -2,29 +2,26 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
 import Button from '../../Button';
 import { media } from '../../style-utils';
 
 const Discover = styled.div`
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   text-align: center;
 
-  ${media.mobile`
-    margin-bottom: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+  ${media.sm`
+    margin-bottom: 4rem;
   `};
 `;
 
 const Title = styled.h2`
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   line-height: 2rem;
 
-  ${media.mobile`
-    font-size: 1.25rem;
+  ${media.sm`
+    font-size: 1.5rem;
   `};
 `;
 
@@ -35,9 +32,9 @@ const Description = styled.p`
 
 export default () =>
   (<Discover>
-    <Grid>
-      <Row>
-        <Col xs={12} lgOffset={2} lg={8}>
+    <div className="container">
+      <div className="row">
+        <div className="col-xs-12 col-lg-8 col-lg-offset-2">
           <Title>Discover Out New Developments</Title>
           <Description>
             Compass brings a modern approach to new development marketing and sales. From boutique
@@ -45,7 +42,7 @@ export default () =>
             offerings.
           </Description>
           <Button>Contact The Team</Button>
-        </Col>
-      </Row>
-    </Grid>
+        </div>
+      </div>
+    </div>
   </Discover>);

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Row, Col } from 'react-flexbox-grid';
 
 const Description = styled.section`
   padding-bottom: 1.5rem;
@@ -27,11 +26,11 @@ const Paragraph = styled.p`
 
 export default () =>
   (<Description>
-    <Row>
-      <Col lg={2}>
+    <div className="row">
+      <div className="col-lg-2">
         <Title>Описание</Title>
-      </Col>
-      <Col lg={10}>
+      </div>
+      <div className="col-lg-10">
         <article>
           <Paragraph>
             ВТБ Арена Парк — современный квартал в 10 минутах езды от Кремля. Территория разделена
@@ -58,6 +57,6 @@ export default () =>
             подышать свежим воздухом во время рабочего перерыва.
           </Paragraph>
         </article>
-      </Col>
-    </Row>
+      </div>
+    </div>
   </Description>);
