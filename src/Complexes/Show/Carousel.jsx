@@ -12,31 +12,89 @@ const Backdrop = styled.div`
   bottom: 0;
   left: 0;
   z-index: 100;
-  background-color: rgba(0, 0, 0, .9);
+  background-color: rgba(17, 17, 17, .9);
 `;
 
 const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-  height: 90vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding-bottom: calc(0.8125 * ${props => props.gutter});
+  padding-top: ${props => props.gutter};
+`;
+
+const Images = styled.div`
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  max-width: 100vw;
+  will-change: transform;
+  transform: translate(0, -50%);
+
+  @media (min-width: 64rem) {
+    position: relative;
+    top: auto;
+    will-change: auto;
+    transform: none;
+  }
 `;
 
 const Image = styled.img`
-  position: absolute;
-  bottom: 0;
-  max-width: 100%;
-  max-height: 80vh;
-  transition: all .35s linear;
+  max-height: 100vh;
+  max-width: 80%;
+  transition: transform 0.25s ease-out;
+  will-change: transform, opacity;
+  transform: ${props => props.transform};
+  transform-origin: center bottom;
+  opacity: ${props => props.opacity};
+  cursor: pointer;
+
+  @media (min-width: 64rem) {
+    max-height: calc(
+      100vh - ${props => props.gutter} - 0.8125 * ${props => props.gutter} - 2.875rem
+    );
+  }
 `;
 
 const Counter = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
-  line-height: 22px;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  display: inline-block;
+  padding: 0.125rem 0.25rem;
+  font-weight: 300;
+  line-height: 1.375;
   color: ${props => props.theme.hueGrey};
+  background-color: rgba(17, 17, 17, .9);
+  will-change: transform, text-shadow;
+  transform: translate(-50%, 0);
+
+  @media (min-width: 64rem) {
+    position: relative;
+    bottom: auto;
+    margin-top: 1.5rem;
+    padding: 0;
+    will-change: auto;
+    transform: none;
+    text-shadow: none;
+    background: none;
+  }
 `;
+
+function getTransform(i: number, active: number, scaleRatio: number, gutter: string): string {
+  const activeShiftX: string = `50vw - 50% - ${active * 100}%`;
+
+  if (i === active) {
+    return `translateX(calc(${activeShiftX}))`;
+  }
+  return `translateX(calc(${activeShiftX} + ${i - active} * ${gutter})) scaleY(${1 / scaleRatio})`;
+}
 
 class Carousel extends Component {
   state = {
@@ -71,40 +129,26 @@ class Carousel extends Component {
     return { transform: 'translate(-50%)', left: '50%' };
   };
 
-  slideImage = (index: number, length: number) => {
-    if (index < 0) {
-      this.setState({
-        activeImage: length - 1,
-      });
-    } else if (index < this.state.activeImage) {
-      this.setState({
-        activeImage: this.state.activeImage - 1,
-      });
-    } else if (index + 1 > length) {
-      this.setState({
-        activeImage: 0,
-      });
-    } else if (index > this.state.activeImage) {
-      this.setState({
-        activeImage: this.state.activeImage + 1,
-      });
+  slideImageRight = () => {
+    if (this.state.activeImage === this.props.images.length - 1) {
+      this.setState({ activeImage: 0 });
+    } else {
+      this.setState({ activeImage: this.state.activeImage + 1 });
+    }
+  };
+
+  slideImageLeft = () => {
+    if (this.state.activeImage === 0) {
+      this.setState({ activeImage: this.props.images.length - 1 });
+    } else {
+      this.setState({ activeImage: this.state.activeImage - 1 });
     }
   };
 
   handleKeyDown = (ev: KeyboardEvent) => {
-    ev.preventDefault();
-
-    if (ev.key === 'ArrowRight') {
-      this.slideImage(this.state.activeImage + 1, this.props.images.length);
-    }
-
-    if (ev.key === 'ArrowLeft') {
-      this.slideImage(this.state.activeImage - 1, this.props.images.length);
-    }
-
-    if (ev.key === 'Escape') {
-      this.props.toggleCarousel();
-    }
+    if (ev.key === 'ArrowRight') this.slideImageRight();
+    if (ev.key === 'ArrowLeft') this.slideImageLeft();
+    if (ev.key === 'Escape') this.props.toggleCarousel();
   };
 
   render() {
@@ -112,26 +156,41 @@ class Carousel extends Component {
     const {
       images,
       toggleCarousel,
-    }: { images: Array<ImageShape>, toggleCarousel: Function } = this.props;
+      gutter = '5vw',
+      scaleRatio = 1.2,
+    }: {
+      images: Array<ImageShape>,
+      toggleCarousel: Function,
+      gutter: string,
+      scaleRatio: number,
+    } = this.props;
 
     return (
       <Backdrop onClick={toggleCarousel}>
-        <Wrapper>
-          {images.map((image, index) =>
-            (<Image
-              key={image.id}
-              src={getImageUrl(image, 2048)}
-              style={this.setTransform(index)}
-              onClick={(ev) => {
-                ev.stopPropagation();
-                this.slideImage(index, images.length);
-              }}
-            />),
-          )}
+        <Wrapper gutter={gutter}>
+          <Images>
+            {images.map((image, index) =>
+              (<Image
+                key={image.id}
+                src={getImageUrl(image, 2048)}
+                gutter={gutter}
+                transform={getTransform(index, activeImage, scaleRatio, gutter)}
+                onClick={(ev) => {
+                  ev.stopPropagation();
+
+                  if (index >= this.state.activeImage) {
+                    this.slideImageRight();
+                  } else {
+                    this.slideImageLeft();
+                  }
+                }}
+              />),
+            )}
+          </Images>
+          <Counter>
+            {activeImage + 1}/{images.length}
+          </Counter>
         </Wrapper>
-        <Counter>
-          {activeImage + 1}/{images.length}
-        </Counter>
       </Backdrop>
     );
   }

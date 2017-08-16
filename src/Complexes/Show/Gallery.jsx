@@ -95,6 +95,8 @@ class Gallery extends Component {
             images={images}
             toggleCarousel={this.toggleCarousel}
             activeImage={this.state.activeImage}
+            gutter={'5vw'}
+            scaleRatio={1.2}
           />}
       </div>
     );
