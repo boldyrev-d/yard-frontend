@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 
-/* @flow */
+// FIXME: fix flow for flexboxgrid2
 
 import 'normalize.css';
 import 'flexboxgrid2/flexboxgrid2.css';
