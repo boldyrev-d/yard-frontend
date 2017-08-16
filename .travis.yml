@@ -13,4 +13,4 @@ deploy:
     branch: master
   provider: script
   script:
-    - yarn build && now build --public --name yard-frontend --token $NOW_TOKEN && now alias --token $NOW_TOKEN
+    - yarn build && now build --public -e REACT_APP_MAPBOX_TOKEN=@yard-mapbox-token --name yard-frontend --token $NOW_TOKEN && now alias --token $NOW_TOKEN
