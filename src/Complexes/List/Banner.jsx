@@ -3,10 +3,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
+import { media } from '../../style-utils';
 
 const Banner = styled.section`
   background-color: ${props => props.theme.black};
   text-align: center;
+
+  ${media.mobile`
+    display: none;
+  `};
 `;
 
 const DevelopmentLogo = styled.img`

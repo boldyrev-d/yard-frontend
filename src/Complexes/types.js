@@ -6,6 +6,11 @@ export type ImageShape = {
   isPublic?: boolean,
 };
 
+export type RangeShape = {
+  from: number,
+  to: number,
+};
+
 export type LocationShape = {
   latitude?: string,
   localityId?: number,
@@ -22,6 +27,66 @@ export type LocationShape = {
   regionName?: string,
 };
 
+export type DetailsShape = {
+  architect: string,
+  startYear: number,
+  startQuarter: string,
+  commissioningYear: number,
+  commissioningQuarter: string,
+  ceilHeight: RangeShape,
+  parkings: number,
+  maintenanceCosts: number,
+  propertyKind: string,
+  security: string,
+  undergroundGarages: number,
+  constructionKind: string,
+};
+
+export type StatisticsShape = {
+  resalePropertiesCount: number,
+  price: {
+    from: {
+      usd: number,
+      eur: number,
+      rub: number,
+    },
+    to: {
+      usd: number,
+      eur: number,
+      rub: number,
+    },
+  },
+  totalResaleArea: RangeShape,
+  resalePrice: {
+    from: {
+      usd: number,
+      eur: number,
+      rub: number,
+    },
+    to: {
+      usd: number,
+      eur: number,
+      rub: number,
+    },
+  },
+  propertiesCount: number,
+  totalPrimaryArea: RangeShape,
+  primaryPrice: {
+    from: {
+      usd: number,
+      eur: number,
+      rub: number,
+    },
+    to: {
+      usd: number,
+      eur: number,
+      rub: number,
+    },
+  },
+  primaryPropertiesCount: number,
+  totalArea: RangeShape,
+};
+
 export type ComplexShape = {
   commissioningYear?: number,
   adjacentTerritory?: {
@@ -35,59 +100,8 @@ export type ComplexShape = {
   updatedAt?: string,
   location: LocationShape,
   state: string,
-  statistics: {
-    resalePropertiesCount: number,
-    price: {
-      from: {
-        usd: number,
-        eur: number,
-        rub: number,
-      },
-      to: {
-        usd: number,
-        eur: number,
-        rub: number,
-      },
-    },
-    totalResaleArea: {
-      from: number,
-      to: number,
-    },
-    resalePrice: {
-      from: {
-        usd: number,
-        eur: number,
-        rub: number,
-      },
-      to: {
-        usd: number,
-        eur: number,
-        rub: number,
-      },
-    },
-    propertiesCount: number,
-    totalPrimaryArea: {
-      from: number,
-      to: number,
-    },
-    primaryPrice: {
-      from: {
-        usd: number,
-        eur: number,
-        rub: number,
-      },
-      to: {
-        usd: number,
-        eur: number,
-        rub: number,
-      },
-    },
-    primaryPropertiesCount: number,
-    totalArea: {
-      from: number,
-      to: number,
-    },
-  },
+  statistics: StatisticsShape,
+  details: DetailsShape,
   keysIssueDate?: string,
   purchaseTimeConditions?: {
     agreementPreparation?: number,

@@ -31,14 +31,18 @@ const Subtitle = styled.small`
   color: ${props => props.theme.hueGrey};
 `;
 
-export default () =>
+type Props = {
+  architect: string,
+};
+
+export default ({ architect }: Props) =>
   (<Header>
     <Title>
       950
       <Subtitle>предложений</Subtitle>
     </Title>
     <Title>
-      John McAslan + Partners
+      {architect}
       <Subtitle>архитектор</Subtitle>
     </Title>
     <Title>
