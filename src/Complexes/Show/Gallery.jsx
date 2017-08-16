@@ -1,12 +1,13 @@
 /* @flow */
 
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Grid } from 'react-flexbox-grid';
 import BasicButton from '../../Button';
 import { getImageUrl } from '../../utils';
 import type { ImageShape } from '../types';
 import Pluralizer from '../../components/Pluralizer';
+import Carousel from './Carousel';
 
 const Photos = styled.div`
   display: flex;
@@ -15,7 +16,10 @@ const Photos = styled.div`
   overflow-x: auto;
 `;
 
-const Photo = styled.img`height: 400px;`;
+const Photo = styled.img`
+  height: 400px;
+  cursor: pointer;
+`;
 
 const Button = styled(BasicButton)`
   position: absolute;
@@ -29,18 +33,74 @@ const Button = styled(BasicButton)`
   color: #fff;
 `;
 
-type Props = { images: Array<ImageShape> };
+class Gallery extends Component {
+  state = {
+    carouselIsOpen: false,
+    activeImage: 0,
+  };
 
-export default ({ images }: Props) =>
-  (<div>
-    <Photos>
-      {images.map(image =>
-        <Photo key={image.id} src={getImageUrl(image)} alt="complexImage" title="complexImage" />,
-      )}
-    </Photos>
-    <Grid>
-      <Button>
-        <Pluralizer number={images.length} one="фотография" few="фотографии" other="фотографий" />
-      </Button>
-    </Grid>
-  </div>);
+  toggleCarousel = () => {
+    this.setState({
+      carouselIsOpen: !this.state.carouselIsOpen,
+    });
+  };
+
+  handleButtonClick = () => {
+    this.setState(
+      {
+        activeImage: 0,
+      },
+      this.toggleCarousel,
+    );
+  };
+
+  handleImageClick = (index: number) => {
+    this.setState(
+      {
+        activeImage: index,
+      },
+      this.toggleCarousel,
+    );
+  };
+
+  render() {
+    const { images, name }: { images: Array<ImageShape>, name: string } = this.props;
+
+    return (
+      <div>
+        <Photos>
+          {images.map((image, index) =>
+            (<Photo
+              key={image.id}
+              src={getImageUrl(image)}
+              alt={name}
+              title={name}
+              onClick={() => this.handleImageClick(index)}
+            />),
+          )}
+        </Photos>
+        <Grid>
+          <Button onClick={this.handleButtonClick}>
+            <Pluralizer
+              number={images.length}
+              one="фотография"
+              few="фотографии"
+              other="фотографий"
+            />
+          </Button>
+        </Grid>
+
+        {this.state.carouselIsOpen &&
+          <Carousel
+            images={images}
+            toggleCarousel={this.toggleCarousel}
+            activeImage={this.state.activeImage}
+            gutter={'5vw'}
+            scaleRatio={1.2}
+          />}
+      </div>
+    );
+  }
+}
+
+export default Gallery;
