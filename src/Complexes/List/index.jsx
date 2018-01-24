@@ -44,10 +44,9 @@ class List extends Component {
           <section>
             <div className="container">
               <div className="row">
-                {this.state.items.map(complex =>
-                  (<div className="col-sm-12">
+                {this.state.items.map(complex => (
+                  <div key={complex.id} className="col-sm-12">
                     <Card
-                      key={complex.id}
                       id={complex.id}
                       image={getImageUrl(complex.images[0])}
                       title={complex.name}
@@ -62,8 +61,8 @@ class List extends Component {
                       factory has been transformed into 83 individually unique and luxury loft
                       apartments.
                     </Card>
-                  </div>),
-                )}
+                  </div>
+                ))}
               </div>
             </div>
           </section>
