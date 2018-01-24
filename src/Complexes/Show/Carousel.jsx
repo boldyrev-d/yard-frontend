@@ -172,7 +172,7 @@ class Carousel extends Component {
             {images.map((image, index) => (
               <Image
                 key={image.id}
-                src={getImageUrl(image, 2048)}
+                src={getImageUrl(2048)}
                 gutter={gutter}
                 transform={getTransform(index, activeImage, scaleRatio, gutter)}
                 onClick={(ev) => {
