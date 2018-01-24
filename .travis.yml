@@ -6,7 +6,6 @@ install:
   - yarn flow-typed install
 script:
   - yarn lint
-  - yarn flow
 deploy:
   skip_cleanup: true
   on:
