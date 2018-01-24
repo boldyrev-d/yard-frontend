@@ -21,7 +21,7 @@ const Feature = styled.dl`
   display: flex;
   margin: 0;
   line-height: 1.375rem;
-  margin-bottom: .6875rem;
+  margin-bottom: 0.6875rem;
 `;
 
 const Label = styled.dt`
@@ -69,96 +69,92 @@ export default ({ statistics, details }: Props) => {
       <Title>Характеристики</Title>
       <div className="row">
         <div className="col-lg-4">
-          {propertiesCount &&
+          {propertiesCount && (
             <Feature>
               <Label>Количество квартир</Label>
-              <Value>
-                {propertiesCount}
-              </Value>
-            </Feature>}
-          {propertyKind &&
+              <Value>{propertiesCount}</Value>
+            </Feature>
+          )}
+          {propertyKind && (
             <Feature>
               <Label>Статус</Label>
-              <Value>
-                {kinds[propertyKind]}
-              </Value>
-            </Feature>}
+              <Value>{kinds[propertyKind]}</Value>
+            </Feature>
+          )}
           {price.from &&
-            price.to &&
-            <Feature>
-              <Label>Цены</Label>
-              <Value>
-                от {formatPrice(price.from.rub)} до {formatPrice(price.to.rub)} м²
-              </Value>
-            </Feature>}
-          {security &&
+            price.to && (
+              <Feature>
+                <Label>Цены</Label>
+                <Value>
+                  от {formatPrice(price.from.rub)} до {formatPrice(price.to.rub)} м²
+                </Value>
+              </Feature>
+            )}
+          {security && (
             <Feature>
               <Label>Безопасность</Label>
-              <Value>
-                {securityKinds[security]}
-              </Value>
-            </Feature>}
+              <Value>{securityKinds[security]}</Value>
+            </Feature>
+          )}
         </div>
         <div className="col-lg-4">
-          {constructionKind &&
+          {constructionKind && (
             <Feature>
               <Label>Конструкция корпусов</Label>
-              <Value>
-                {constructionKinds[constructionKind]}
-              </Value>
-            </Feature>}
+              <Value>{constructionKinds[constructionKind]}</Value>
+            </Feature>
+          )}
           {totalArea.from &&
-            totalArea.to &&
-            <Feature>
-              <Label>Площадь</Label>
-              <Value>
-                от {formatArea(totalArea.from)} до {formatArea(totalArea.to)} м²
-              </Value>
-            </Feature>}
+            totalArea.to && (
+              <Feature>
+                <Label>Площадь</Label>
+                <Value>
+                  от {formatArea(totalArea.from)} до {formatArea(totalArea.to)} м²
+                </Value>
+              </Feature>
+            )}
           {ceilHeight.from &&
-            ceilHeight.to &&
-            <Feature>
-              <Label>Высота потолков</Label>
-              <Value>
-                {formatCeilHeight(ceilHeight.from)} − {formatCeilHeight(ceilHeight.to)} м
-              </Value>
-            </Feature>}
-          {maintenanceCosts &&
+            ceilHeight.to && (
+              <Feature>
+                <Label>Высота потолков</Label>
+                <Value>
+                  {formatCeilHeight(ceilHeight.from)} − {formatCeilHeight(ceilHeight.to)} м
+                </Value>
+              </Feature>
+            )}
+          {maintenanceCosts && (
             <Feature>
               <Label>Обслуживание</Label>
-              <Value>
-                {maintenanceCosts} руб / м² / месяц
-              </Value>
-            </Feature>}
+              <Value>{maintenanceCosts} руб / м² / месяц</Value>
+            </Feature>
+          )}
         </div>
         <div className="col-lg-4">
           {startQuarter &&
-            startYear &&
-            <Feature>
-              <Label>Начало строительства</Label>
-              <Value>
-                {quarters[startQuarter]} квартал {startYear} года
-              </Value>
-            </Feature>}
+            startYear && (
+              <Feature>
+                <Label>Начало строительства</Label>
+                <Value>
+                  {quarters[startQuarter]} квартал {startYear} года
+                </Value>
+              </Feature>
+            )}
           {commissioningQuarter &&
-            commissioningYear &&
-            <Feature>
-              <Label>Конец строительства</Label>
-              <Value>
-                {quarters[commissioningQuarter]} квартал {commissioningYear} года
-              </Value>
-            </Feature>}
+            commissioningYear && (
+              <Feature>
+                <Label>Конец строительства</Label>
+                <Value>
+                  {quarters[commissioningQuarter]} квартал {commissioningYear} года
+                </Value>
+              </Feature>
+            )}
           <Feature>
             <Label>Наземная парковка</Label>
-            <Value>
-              {formatParkings(parkings)}
-            </Value>
+            <Value>{formatParkings(parkings)}</Value>
           </Feature>
           <Feature>
             <Label>Подземная парковка</Label>
-            <Value>
-              {formatParkings(undergroundGarages)}
-            </Value>
+            <Value>{formatParkings(undergroundGarages)}</Value>
           </Feature>
         </div>
       </div>

@@ -29,7 +29,9 @@ class Complex extends Component {
   }
 
   render() {
-    const { name, location = {}, images = [], details = {}, statistics = {} } = this.state;
+    const {
+      name, location = {}, images = [], details = {}, statistics = {},
+    } = this.state;
 
     return (
       <div>

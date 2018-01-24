@@ -24,8 +24,8 @@ const Paragraph = styled.p`
   }
 `;
 
-export default () =>
-  (<Description>
+export default () => (
+  <Description>
     <div className="row">
       <div className="col-lg-2">
         <Title>Описание</Title>
@@ -59,4 +59,5 @@ export default () =>
         </article>
       </div>
     </div>
-  </Description>);
+  </Description>
+);

@@ -26,12 +26,12 @@ const Title = styled.h2`
 `;
 
 const Description = styled.p`
-  margin: .5rem 0 1rem;
+  margin: 0.5rem 0 1rem;
   line-height: 1.5rem;
 `;
 
-export default () =>
-  (<Discover>
+export default () => (
+  <Discover>
     <div className="container">
       <div className="row">
         <div className="col-xs-12 col-lg-8 col-lg-offset-2">
@@ -45,4 +45,5 @@ export default () =>
         </div>
       </div>
     </div>
-  </Discover>);
+  </Discover>
+);

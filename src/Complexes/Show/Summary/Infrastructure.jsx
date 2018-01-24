@@ -16,12 +16,12 @@ const Title = styled.h2`
 `;
 
 const Text = styled.p`
-  margin: 0 0 .5rem;
+  margin: 0 0 0.5rem;
   line-height: 1.375rem;
 `;
 
-export default () =>
-  (<Infrastructure>
+export default () => (
+  <Infrastructure>
     <Title>Инфраструктура</Title>
     <div className="row">
       <div className="col-lg-2">
@@ -52,4 +52,5 @@ export default () =>
         <Text>Частная школа</Text>
       </div>
     </div>
-  </Infrastructure>);
+  </Infrastructure>
+);

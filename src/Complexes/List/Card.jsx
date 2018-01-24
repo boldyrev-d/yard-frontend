@@ -16,8 +16,8 @@ const Card = styled(Link)`
   padding-right: 0.5rem;
 
   &:hover {
-    box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
-    transition: box-shadow .25s ease;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.25s ease;
   }
 
   ${media.lg`
@@ -83,18 +83,15 @@ type Props = {
   children: Children,
 };
 
-export default ({ id, image, title, place, children }: Props) =>
-  (<Card to={`/complexes/${id}`} title={title}>
+export default ({
+  id, image, title, place, children,
+}: Props) => (
+  <Card to={`/complexes/${id}`} title={title}>
     <Image src={image} alt={title} title={title} />
     <Info>
-      <Place>
-        {place}
-      </Place>
-      <Title>
-        {title}
-      </Title>
-      <Description>
-        {children}
-      </Description>
+      <Place>{place}</Place>
+      <Title>{title}</Title>
+      <Description>{children}</Description>
     </Info>
-  </Card>);
+  </Card>
+);

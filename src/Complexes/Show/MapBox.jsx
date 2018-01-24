@@ -20,14 +20,14 @@ export default (props: Props) => {
 
   return (
     <MapBox
-      style={'mapbox://styles/mapbox/light-v9'}
+      style="mapbox://styles/mapbox/light-v9"
       zoom={[11]}
       center={[longitude, latitude]}
       {...props}
     >
       <Layer
-        type={'symbol'}
-        id={'marker'}
+        type="symbol"
+        id="marker"
         layout={{
           'icon-image': 'marker-15',
         }}

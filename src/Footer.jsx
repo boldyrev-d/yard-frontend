@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* @flow */
 
 // TODO: fix mobile
@@ -12,7 +13,7 @@ const Footer = styled.footer`
   padding-top: 2rem;
   padding-bottom: 3rem;
   color: ${props => props.theme.hueGrey};
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 300;
   background-color: ${props => props.theme.blackThree};
 
@@ -22,14 +23,18 @@ const Footer = styled.footer`
 `;
 
 const Title = styled.h4`
-  margin: 0 0 .5rem;
+  margin: 0 0 0.5rem;
   line-height: 1.4rem;
   color: ${props => props.theme.slateGrey};
 `;
 
-const Info = styled.p`margin: 0 0 .5rem;`;
+const Info = styled.p`
+  margin: 0 0 0.5rem;
+`;
 
-const InfoPhone = Info.extend`margin-top: 1rem;`;
+const InfoPhone = Info.extend`
+  margin-top: 1rem;
+`;
 
 const Divider = styled.hr`
   height: 2px;
@@ -52,7 +57,7 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   &:not(:last-child) {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 `;
 
@@ -65,14 +70,14 @@ const LinkArrowed = Link.extend`
   margin-top: 1rem;
 
   &:after {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     content: url(${arrow});
   }
 `;
 
 const Warning = styled.p`
   margin: 3rem 0 0;
-  font-size: .6875rem;
+  font-size: 0.6875rem;
   line-height: 1.2rem;
 
   ${media.lg`
@@ -80,8 +85,8 @@ const Warning = styled.p`
   `};
 `;
 
-export default () =>
-  (<Footer>
+export default () => (
+  <Footer>
     <div className="container">
       <div className="row">
         <div className="col-xs-12 col-lg-2">
@@ -145,4 +150,5 @@ export default () =>
         </div>
       </div>
     </div>
-  </Footer>);
+  </Footer>
+);

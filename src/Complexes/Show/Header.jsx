@@ -26,18 +26,18 @@ const Title = styled.h1`
 
 const Address = styled.small`
   display: block;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   font-family: ${props => props.theme.fira};
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 300;
   color: ${props => props.theme.hueGrey};
 `;
 
 const Button = styled.button`
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   font-family: ${props => props.theme.fira};
-  font-size: .625rem;
-  line-height: .625rem;
+  font-size: 0.625rem;
+  line-height: 0.625rem;
   font-weight: 300;
   background-color: transparent;
   border: 1px solid ${props => props.theme.anotherGrey};
@@ -61,19 +61,16 @@ function formatAddress(location: LocationShape): string {
   return address;
 }
 
-export default ({ name, location }: { name: string, location: LocationShape }) =>
-  (<Header>
+export default ({ name, location }: { name: string, location: LocationShape }) => (
+  <Header>
     <div className="container">
       <Inner>
         <div>
-          <Title>
-            {name}
-          </Title>
-          <Address>
-            {formatAddress(location)}
-          </Address>
+          <Title>{name}</Title>
+          <Address>{formatAddress(location)}</Address>
         </div>
         <Button>В избранное</Button>
       </Inner>
     </div>
-  </Header>);
+  </Header>
+);

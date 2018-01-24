@@ -21,8 +21,8 @@ const DevelopmentLogo = styled.img`
 
 const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
 
-export default () =>
-  (<Banner>
+export default () => (
+  <Banner>
     <div className="container">
       <DevelopmentLogo
         src={`${PUBLIC_URL}/images/compass-development-logo.svg`}
@@ -30,4 +30,5 @@ export default () =>
         title="Compass"
       />
     </div>
-  </Banner>);
+  </Banner>
+);

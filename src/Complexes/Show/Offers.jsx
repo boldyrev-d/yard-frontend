@@ -30,15 +30,19 @@ const CardTitle = styled.h3`
   line-height: 1.375rem;
 `;
 
-const Feature = styled.div`margin-bottom: 1.5rem;`;
+const Feature = styled.div`
+  margin-bottom: 1.5rem;
+`;
 
 const Title = styled.div`
-  margin-bottom: .625rem;
+  margin-bottom: 0.625rem;
   color: ${props => props.theme.hueGrey};
   line-height: 1.375rem;
 `;
 
-const Text = styled.div`line-height: 1.375rem;`;
+const Text = styled.div`
+  line-height: 1.375rem;
+`;
 
 const ButtonWrapper = styled.div`
   margin-top: 2rem;
@@ -49,8 +53,8 @@ const Button = styled(BasicButton)`
   line-height: 1rem;
 `;
 
-export default () =>
-  (<Offers>
+export default () => (
+  <Offers>
     <div className="container">
       <SectionTitle>Предложения в ЖК «Полянка/44»</SectionTitle>
       <div className="row">
@@ -104,4 +108,5 @@ export default () =>
         </div>
       </div>
     </div>
-  </Offers>);
+  </Offers>
+);

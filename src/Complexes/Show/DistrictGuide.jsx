@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* @flow */
 
 import React from 'react';
@@ -40,8 +41,8 @@ const Image = styled(ImageSet)`
 
 const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
 
-export default () =>
-  (<DistrictGuide>
+export default () => (
+  <DistrictGuide>
     <div className="container">
       <div className="row">
         <div className="col-lg-6">
@@ -62,4 +63,5 @@ export default () =>
         </div>
       </div>
     </div>
-  </DistrictGuide>);
+  </DistrictGuide>
+);

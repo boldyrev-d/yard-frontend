@@ -24,9 +24,9 @@ const Button = styled(BasicButton)`
   position: absolute;
   display: block;
   margin-top: -3.75rem;
-  padding: .5rem 1rem;
-  font-size: .625rem;
-  line-height: .625rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.625rem;
+  line-height: 0.625rem;
   font-weight: 300;
   background-color: ${props => props.theme.coolBlue};
   color: #fff;
@@ -68,15 +68,15 @@ class Gallery extends Component {
     return (
       <div>
         <Photos>
-          {images.map((image, index) =>
-            (<Photo
+          {images.map((image, index) => (
+            <Photo
               key={image.id}
               src={getImageUrl(image)}
               alt={name}
               title={name}
               onClick={() => this.handleImageClick(index)}
-            />),
-          )}
+            />
+          ))}
         </Photos>
         <div className="container">
           <Button onClick={this.handleButtonClick}>
@@ -89,14 +89,15 @@ class Gallery extends Component {
           </Button>
         </div>
 
-        {this.state.carouselIsOpen &&
+        {this.state.carouselIsOpen && (
           <Carousel
             images={images}
             toggleCarousel={this.toggleCarousel}
             activeImage={this.state.activeImage}
-            gutter={'5vw'}
+            gutter="5vw"
             scaleRatio={1.2}
-          />}
+          />
+        )}
       </div>
     );
   }

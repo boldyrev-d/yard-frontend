@@ -5,14 +5,16 @@ import styled from 'styled-components';
 import MapBox from './MapBox';
 import type { LocationShape } from '../types';
 
-const Location = styled.section`background-color: #fff;`;
+const Location = styled.section`
+  background-color: #fff;
+`;
 
 const StyledMapbox = styled(MapBox)`
   margin-top: -130px;
   margin-bottom: 4rem;
   height: 303px;
   max-width: 100%;
-  box-shadow: 0 6px 15px 3px rgba(0, 0, 0, .2);
+  box-shadow: 0 6px 15px 3px rgba(0, 0, 0, 0.2);
 `;
 
 const Places = styled.div`
@@ -20,7 +22,7 @@ const Places = styled.div`
   margin-bottom: 4rem;
   max-height: 306px;
   background-color: #fff;
-  box-shadow: 0 6px 15px 3px rgba(0, 0, 0, .2);
+  box-shadow: 0 6px 15px 3px rgba(0, 0, 0, 0.2);
 `;
 
 const Place = styled.div`
@@ -29,7 +31,7 @@ const Place = styled.div`
 `;
 
 const Title = styled.p`
-  margin: 0 0 .5rem;
+  margin: 0 0 0.5rem;
   line-height: 1.375rem;
   font-weight: 500;
 `;
@@ -43,8 +45,8 @@ type Props = {
   location: LocationShape,
 };
 
-export default ({ location }: Props) =>
-  (<Location>
+export default ({ location }: Props) => (
+  <Location>
     <div className="container">
       <div className="row">
         <div className="col-lg-6">
@@ -68,4 +70,5 @@ export default ({ location }: Props) =>
         </div>
       </div>
     </div>
-  </Location>);
+  </Location>
+);

@@ -12,7 +12,7 @@ const Backdrop = styled.div`
   bottom: 0;
   left: 0;
   z-index: 100;
-  background-color: rgba(17, 17, 17, .9);
+  background-color: rgba(17, 17, 17, 0.9);
 `;
 
 const Wrapper = styled.div`
@@ -71,7 +71,7 @@ const Counter = styled.div`
   font-weight: 300;
   line-height: 1.375;
   color: ${props => props.theme.hueGrey};
-  background-color: rgba(17, 17, 17, .9);
+  background-color: rgba(17, 17, 17, 0.9);
   will-change: transform, text-shadow;
   transform: translate(-50%, 0);
 
@@ -169,8 +169,8 @@ class Carousel extends Component {
       <Backdrop onClick={toggleCarousel}>
         <Wrapper gutter={gutter}>
           <Images>
-            {images.map((image, index) =>
-              (<Image
+            {images.map((image, index) => (
+              <Image
                 key={image.id}
                 src={getImageUrl(image, 2048)}
                 gutter={gutter}
@@ -184,8 +184,8 @@ class Carousel extends Component {
                     this.slideImageLeft();
                   }
                 }}
-              />),
-            )}
+              />
+            ))}
           </Images>
           <Counter>
             {activeImage + 1}/{images.length}

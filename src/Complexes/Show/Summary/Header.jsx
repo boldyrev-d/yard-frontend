@@ -23,9 +23,9 @@ const Title = styled.h2`
 
 const Subtitle = styled.small`
   display: block;
-  margin-top: .625rem;
+  margin-top: 0.625rem;
   font-family: ${props => props.theme.fira};
-  font-size: .875rem;
+  font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 300;
   color: ${props => props.theme.hueGrey};
@@ -35,8 +35,8 @@ type Props = {
   architect: string,
 };
 
-export default ({ architect }: Props) =>
-  (<Header>
+export default ({ architect }: Props) => (
+  <Header>
     <Title>
       950
       <Subtitle>предложений</Subtitle>
@@ -49,4 +49,5 @@ export default ({ architect }: Props) =>
       Группа «ПСН»
       <Subtitle>застройщик</Subtitle>
     </Title>
-  </Header>);
+  </Header>
+);

@@ -10,8 +10,8 @@ import Footer from './Footer';
 
 import theme from './theme';
 
-export default () =>
-  (<ThemeProvider theme={theme}>
+export default () => (
+  <ThemeProvider theme={theme}>
     <Router>
       <main>
         <Header />
@@ -20,4 +20,5 @@ export default () =>
         <Footer />
       </main>
     </Router>
-  </ThemeProvider>);
+  </ThemeProvider>
+);

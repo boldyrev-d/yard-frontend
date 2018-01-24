@@ -18,7 +18,7 @@ const LogoLink = styled(Link)`
   ${media.sm`
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
-  `}
+  `};
 `;
 
 const Logo = styled.img`
@@ -47,8 +47,8 @@ const NavLink = styled(Link)`
 
 const PUBLIC_URL: string = process.env.PUBLIC_URL || '';
 
-export default () =>
-  (<Header>
+export default () => (
+  <Header>
     <div className="container">
       <div className="row between-xs middle-xs">
         <div className="col-xs-12 col-sm-6">
@@ -71,4 +71,5 @@ export default () =>
         </div>
       </div>
     </div>
-  </Header>);
+  </Header>
+);

@@ -7,7 +7,9 @@ import Features from './Features';
 import Description from './Description';
 import Infrastructure from './Infrastructure';
 
-const Summary = styled.section`background-color: #fff;`;
+const Summary = styled.section`
+  background-color: #fff;
+`;
 
 // TODO: Object Shape
 type Props = {
@@ -15,12 +17,13 @@ type Props = {
   statistics: Object,
 };
 
-export default ({ details, statistics }: Props) =>
-  (<Summary>
+export default ({ details, statistics }: Props) => (
+  <Summary>
     <div className="container">
       <Header architect={details.architect} />
       <Features statistics={statistics} details={details} />
       <Description />
       <Infrastructure />
     </div>
-  </Summary>);
+  </Summary>
+);

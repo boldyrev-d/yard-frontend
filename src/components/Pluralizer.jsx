@@ -10,7 +10,8 @@ type Props = {
   other: string,
 };
 
-export default ({ number, one, few, other }: Props) =>
-  (<span>
-    {pluralize(number, one, few, other)}
-  </span>);
+export default ({
+  number, one, few, other,
+}: Props) => (
+  <span>{pluralize(number, one, few, other)}</span>
+);
