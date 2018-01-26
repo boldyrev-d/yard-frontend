@@ -48,7 +48,7 @@ class List extends Component {
                   <div key={complex.id} className="col-sm-12">
                     <Card
                       id={complex.id}
-                      image={getImageUrl()}
+                      image={getImageUrl(complex.images[0].id)}
                       title={complex.name}
                       place={getLocationString(
                         complex.location.subLocalityName,

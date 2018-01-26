@@ -71,7 +71,7 @@ class Gallery extends Component {
           {images.map((image, index) => (
             <Photo
               key={image.id}
-              src={getImageUrl()}
+              src={getImageUrl(image.id)}
               alt={name}
               title={name}
               onClick={() => this.handleImageClick(index)}
