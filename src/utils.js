@@ -1,6 +1,6 @@
 /* @flow */
 
-export const getImageUrl = (id: string): string => `https://yard-image-api.now.sh/images/${id}.jpg`;
+export const getImageUrl = (id: string): string => `https://yard-images-api.now.sh/api/v1/${id}`;
 
 export const pluralize = (number: number, one: string, few: string, other: string): string => {
   const modulo: number = number % 10;
