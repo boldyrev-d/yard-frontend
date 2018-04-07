@@ -4,10 +4,10 @@
   "private": true,
   "dependencies": {
     "flexboxgrid2": "^7.2.1",
-    "mapbox-gl": "^0.44.1",
+    "mapbox-gl": "^0.44.2",
     "normalize.css": "^8.0.0",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
     "react-mapbox-gl": "^3.8.0",
     "react-router-dom": "^4.2.2",
     "styled-components": "^3.2.5"
@@ -22,8 +22,8 @@
     "flow-bin": "^0.69.0",
     "flow-typed": "^2.4.0",
     "husky": "^0.14.1",
-    "now": "^10.2.2",
-    "react-scripts": "1.1.1"
+    "now": "^11.0.6",
+    "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
