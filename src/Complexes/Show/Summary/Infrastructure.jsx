@@ -10,7 +10,7 @@ const Infrastructure = styled.section`
 
 const Title = styled.h2`
   margin: 0 0 1rem;
-  font-family: ${props => props.theme.philosopher};
+  font-family: ${({ theme: { philosopher } }) => philosopher};
   font-size: 1.5rem;
   line-height: 1.75rem;
 `;
@@ -22,34 +22,54 @@ const Text = styled.p`
 
 export default () => (
   <Infrastructure>
-    <Title>Инфраструктура</Title>
+    <Title>
+Инфраструктура
+    </Title>
     <div className="row">
       <div className="col-lg-2">
-        <Text>Бассейн</Text>
+        <Text>
+Бассейн
+        </Text>
       </div>
       <div className="col-lg-2">
-        <Text>Частная школа</Text>
+        <Text>
+Частная школа
+        </Text>
       </div>
       <div className="col-lg-2">
-        <Text>Детский сад</Text>
+        <Text>
+Детский сад
+        </Text>
       </div>
       <div className="col-lg-2">
-        <Text>Частная школа</Text>
+        <Text>
+Частная школа
+        </Text>
       </div>
       <div className="col-lg-2">
-        <Text>Частная школа</Text>
+        <Text>
+Частная школа
+        </Text>
       </div>
       <div className="col-lg-2">
-        <Text>Частная школа</Text>
+        <Text>
+Частная школа
+        </Text>
       </div>
       <div className="col-lg-2">
-        <Text>Бассейн</Text>
+        <Text>
+Бассейн
+        </Text>
       </div>
       <div className="col-lg-2">
-        <Text>Детский сад</Text>
+        <Text>
+Детский сад
+        </Text>
       </div>
       <div className="col-lg-2">
-        <Text>Частная школа</Text>
+        <Text>
+Частная школа
+        </Text>
       </div>
     </div>
   </Infrastructure>

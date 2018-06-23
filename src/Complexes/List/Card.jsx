@@ -51,15 +51,15 @@ const Info = styled.div`
 
 const Place = styled.p`
   margin: 0 0 1.5rem;
-  color: ${props => props.theme.slateGrey};
-  font-family: ${props => props.theme.monaco};
+  color: ${({ theme: { slateGrey } }) => slateGrey};
+  font-family: ${({ theme: { monaco } }) => monaco};
   line-height: 1rem;
   text-transform: uppercase;
 `;
 
 const Title = styled.h3`
   margin: 0 0 1rem;
-  color: ${props => props.theme.blackTwo};
+  color: ${({ theme: { blackTwo } }) => blackTwo};
   font-size: 2rem;
   line-height: 2.5rem;
 
@@ -72,7 +72,7 @@ const Title = styled.h3`
 
 const Description = styled.p`
   margin: 0;
-  color: ${props => props.theme.charcoalGrey};
+  color: ${({ theme: { charcoalGrey } }) => charcoalGrey};
 `;
 
 type Props = {
@@ -89,9 +89,15 @@ export default ({
   <Card to={`/complexes/${id}`} title={title}>
     <Image src={image} alt={title} title={title} />
     <Info>
-      <Place>{place}</Place>
-      <Title>{title}</Title>
-      <Description>{children}</Description>
+      <Place>
+        {place}
+      </Place>
+      <Title>
+        {title}
+      </Title>
+      <Description>
+        {children}
+      </Description>
     </Info>
   </Card>
 );

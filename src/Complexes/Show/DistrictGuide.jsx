@@ -10,21 +10,21 @@ import ImageSet from '../../ImageSet';
 const DistrictGuide = styled.section`
   padding-top: 4rem;
   padding-bottom: 12.125rem;
-  background-color: ${props => props.theme.charcoalGrey};
+  background-color: ${({ theme: { charcoalGrey } }) => charcoalGrey};
 `;
 
 const Name = styled.div`
   margin-top: 7.25rem;
   margin-bottom: 3rem;
-  font-family: ${props => props.theme.philosopher};
+  font-family: ${({ theme: { philosopher } }) => philosopher};
   font-size: 1.5rem;
   font-weight: bold;
-  color: ${props => props.theme.hueGrey};
+  color: ${({ theme: { hueGrey } }) => hueGrey};
 `;
 
 const Description = styled.div`
   margin-bottom: 3rem;
-  font-family: ${props => props.theme.philosopher};
+  font-family: ${({ theme: { philosopher } }) => philosopher};
   font-size: 3rem;
   line-height: 3.75rem;
   color: #fff;
@@ -32,7 +32,7 @@ const Description = styled.div`
 
 const Link = styled(RouterLink)`
   position: relative;
-  color: ${props => props.theme.coolBlue};
+  color: ${({ theme: { coolBlue } }) => coolBlue};
 `;
 
 const Image = styled(ImageSet)`
@@ -46,8 +46,12 @@ export default () => (
     <div className="container">
       <div className="row">
         <div className="col-lg-6">
-          <Name>Якиманка</Name>
-          <Description>Исторический центр Москвы в двух километрах от Кремля</Description>
+          <Name>
+Якиманка
+          </Name>
+          <Description>
+Исторический центр Москвы в двух километрах от Кремля
+          </Description>
           <Link to="#" title="Гид по Якиманке">
             Гид по Якиманке
           </Link>

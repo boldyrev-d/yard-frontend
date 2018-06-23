@@ -27,7 +27,7 @@ const Places = styled.div`
 
 const Place = styled.div`
   padding: 1.5rem;
-  border-bottom: 1px solid ${props => props.theme.anotherGrey};
+  border-bottom: 1px solid ${({ theme: { anotherGrey } }) => anotherGrey};
 `;
 
 const Title = styled.p`
@@ -55,16 +55,28 @@ export default ({ location }: Props) => (
         <div className="col-lg-6">
           <Places>
             <Place>
-              <Title>Красный Октябрь</Title>
-              <Distance>24 минуты, 6 км</Distance>
+              <Title>
+Красный Октябрь
+              </Title>
+              <Distance>
+24 минуты, 6 км
+              </Distance>
             </Place>
             <Place>
-              <Title>World class</Title>
-              <Distance>2 минуты, 300 м</Distance>
+              <Title>
+World class
+              </Title>
+              <Distance>
+2 минуты, 300 м
+              </Distance>
             </Place>
             <Place>
-              <Title>Третьяковская галерея</Title>
-              <Distance>14 минут, 4 км</Distance>
+              <Title>
+Третьяковская галерея
+              </Title>
+              <Distance>
+14 минут, 4 км
+              </Distance>
             </Place>
           </Places>
         </div>

@@ -7,7 +7,7 @@ import { media } from './style-utils';
 
 const Header = styled.header`
   background-color: #fff;
-  border-bottom: 1px solid ${props => props.theme.paleGrey};
+  border-bottom: 1px solid ${({ theme: { paleGrey } }) => paleGrey};
 `;
 
 const LogoLink = styled(Link)`

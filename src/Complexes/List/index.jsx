@@ -36,6 +36,8 @@ class List extends Component {
   }
 
   render() {
+    const { items } = this.state;
+
     return (
       <div>
         <Banner />
@@ -44,7 +46,7 @@ class List extends Component {
           <section>
             <div className="container">
               <div className="row">
-                {this.state.items.map(complex => (
+                {items.map(complex => (
                   <div key={complex.id} className="col-sm-12">
                     <Card
                       id={complex.id}

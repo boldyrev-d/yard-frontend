@@ -12,14 +12,27 @@ import type { ComplexShape } from '../types';
 
 class Complex extends Component {
   state = {};
+
   state: ComplexShape;
 
   componentDidMount() {
-    this.loadComplex(this.props.match.params.id);
+    const {
+      match: {
+        params: { id },
+      },
+    } = this.props;
+
+    this.loadComplex(id);
   }
 
   componentWillReceiveProps(nextProps: Object) {
-    if (nextProps.match.params.id !== this.props.match.params.id) {
+    const {
+      match: {
+        params: { id },
+      },
+    } = this.props;
+
+    if (nextProps.match.params.id !== id) {
       this.loadComplex(nextProps.match.params.id);
     }
   }

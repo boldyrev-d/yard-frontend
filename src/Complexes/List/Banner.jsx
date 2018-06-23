@@ -6,7 +6,7 @@ import { media } from '../../style-utils';
 
 const Banner = styled.section`
   display: none;
-  background-color: ${props => props.theme.black};
+  background-color: ${({ theme: { black } }) => black};
   text-align: center;
 
   ${media.sm`

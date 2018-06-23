@@ -12,10 +12,10 @@ import { media } from './style-utils';
 const Footer = styled.footer`
   padding-top: 2rem;
   padding-bottom: 3rem;
-  color: ${props => props.theme.hueGrey};
+  color: ${({ theme: { hueGrey } }) => hueGrey};
   font-size: 0.875rem;
   font-weight: 300;
-  background-color: ${props => props.theme.blackThree};
+  background-color: ${({ theme: { blackThree } }) => blackThree};
 
   ${media.lg`
     padding-bottom: 1.75rem;
@@ -25,7 +25,7 @@ const Footer = styled.footer`
 const Title = styled.h4`
   margin: 0 0 0.5rem;
   line-height: 1.4rem;
-  color: ${props => props.theme.slateGrey};
+  color: ${({ theme: { slateGrey } }) => slateGrey};
 `;
 
 const Info = styled.p`
@@ -40,8 +40,8 @@ const Divider = styled.hr`
   height: 2px;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: ${props => props.theme.charcoalGrey};
-  background-color: ${props => props.theme.charcoalGrey};
+  color: ${({ theme: { charcoalGrey } }) => charcoalGrey};
+  background-color: ${({ theme: { charcoalGrey } }) => charcoalGrey};
   border: none;
 
   ${media.lg`
@@ -90,15 +90,25 @@ export default () => (
     <div className="container">
       <div className="row">
         <div className="col-xs-12 col-lg-2">
-          <Title>ООО «Ярд»</Title>
-          <Info>ОГРН 1175074002531</Info>
-          <Info>ИНН 5036165365</Info>
-          <InfoPhone>+7 (999) 821-14-88</InfoPhone>
+          <Title>
+ООО «Ярд»
+          </Title>
+          <Info>
+ОГРН 1175074002531
+          </Info>
+          <Info>
+ИНН 5036165365
+          </Info>
+          <InfoPhone>
++7 (999) 821-14-88
+          </InfoPhone>
         </div>
 
         <div className="col-xs-12 col-lg-2 col-lg-offset-2">
           <Divider />
-          <Title>Жилые комплексы</Title>
+          <Title>
+Жилые комплексы
+          </Title>
           <List>
             <ListItem>
               <Link to="#" title="ВТБ Арена Парк">
@@ -125,7 +135,9 @@ export default () => (
 
         <div className="col-xs-12 col-lg-2">
           <Divider />
-          <Title>Компания</Title>
+          <Title>
+Компания
+          </Title>
           <List>
             <ListItem>
               <Link to="#" title="Команда">

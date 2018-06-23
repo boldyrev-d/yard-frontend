@@ -28,7 +28,7 @@ const Button = styled(BasicButton)`
   font-size: 0.625rem;
   line-height: 0.625rem;
   font-weight: 300;
-  background-color: ${props => props.theme.coolBlue};
+  background-color: ${({ theme: { coolBlue } }) => coolBlue};
   color: #fff;
 `;
 
@@ -39,9 +39,9 @@ class Gallery extends Component {
   };
 
   toggleCarousel = () => {
-    this.setState({
-      carouselIsOpen: !this.state.carouselIsOpen,
-    });
+    this.setState(prevState => ({
+      carouselIsOpen: !prevState.carouselIsOpen,
+    }));
   };
 
   handleButtonClick = () => {
@@ -63,6 +63,10 @@ class Gallery extends Component {
   };
 
   render() {
+    const {
+      carouselIsOpen,
+      activeImage,
+    }: { carouselIsOpen: boolean, activeImage: number } = this.state;
     const { images, name }: { images: Array<ImageShape>, name: string } = this.props;
 
     return (
@@ -89,11 +93,11 @@ class Gallery extends Component {
           </Button>
         </div>
 
-        {this.state.carouselIsOpen && (
+        {carouselIsOpen && (
           <Carousel
             images={images}
             toggleCarousel={this.toggleCarousel}
-            activeImage={this.state.activeImage}
+            activeImage={activeImage}
             gutter="5vw"
             scaleRatio={1.2}
           />

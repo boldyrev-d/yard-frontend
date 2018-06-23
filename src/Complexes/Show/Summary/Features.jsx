@@ -2,7 +2,9 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { constructionKinds, quarters, kinds, securityKinds } from '../../dictionaries';
+import {
+  constructionKinds, quarters, kinds, securityKinds,
+} from '../../dictionaries';
 import type { DetailsShape, StatisticsShape } from '../../types';
 
 const Features = styled.section`
@@ -12,7 +14,7 @@ const Features = styled.section`
 
 const Title = styled.h2`
   margin: 0 0 1.125rem 0;
-  font-family: ${props => props.theme.philosopher};
+  font-family: ${({ theme: { philosopher } }) => philosopher};
   font-size: 1.5rem;
   line-height: 1.75rem;
 `;
@@ -26,7 +28,7 @@ const Feature = styled.dl`
 
 const Label = styled.dt`
   width: 50%;
-  color: ${props => props.theme.hueGrey};
+  color: ${({ theme: { hueGrey } }) => hueGrey};
 `;
 
 const Value = styled.dd`
@@ -66,95 +68,168 @@ export default ({ statistics, details }: Props) => {
 
   return (
     <Features>
-      <Title>Характеристики</Title>
+      <Title>
+Характеристики
+      </Title>
       <div className="row">
         <div className="col-lg-4">
           {propertiesCount && (
             <Feature>
-              <Label>Количество квартир</Label>
-              <Value>{propertiesCount}</Value>
+              <Label>
+Количество квартир
+              </Label>
+              <Value>
+                {propertiesCount}
+              </Value>
             </Feature>
           )}
           {propertyKind && (
             <Feature>
-              <Label>Статус</Label>
-              <Value>{kinds[propertyKind]}</Value>
+              <Label>
+Статус
+              </Label>
+              <Value>
+                {kinds[propertyKind]}
+              </Value>
             </Feature>
           )}
-          {price.from &&
-            price.to && (
+          {price.from
+            && price.to && (
               <Feature>
-                <Label>Цены</Label>
+                <Label>
+Цены
+                </Label>
                 <Value>
-                  от {formatPrice(price.from.rub)} до {formatPrice(price.to.rub)} м²
+                  от
+                  {' '}
+                  {formatPrice(price.from.rub)}
+                  {' '}
+до
+                  {' '}
+                  {formatPrice(price.to.rub)}
+                  {' '}
+м²
                 </Value>
               </Feature>
-            )}
+          )}
           {security && (
             <Feature>
-              <Label>Безопасность</Label>
-              <Value>{securityKinds[security]}</Value>
+              <Label>
+Безопасность
+              </Label>
+              <Value>
+                {securityKinds[security]}
+              </Value>
             </Feature>
           )}
         </div>
         <div className="col-lg-4">
           {constructionKind && (
             <Feature>
-              <Label>Конструкция корпусов</Label>
-              <Value>{constructionKinds[constructionKind]}</Value>
+              <Label>
+Конструкция корпусов
+              </Label>
+              <Value>
+                {constructionKinds[constructionKind]}
+              </Value>
             </Feature>
           )}
-          {totalArea.from &&
-            totalArea.to && (
+          {totalArea.from
+            && totalArea.to && (
               <Feature>
-                <Label>Площадь</Label>
+                <Label>
+Площадь
+                </Label>
                 <Value>
-                  от {formatArea(totalArea.from)} до {formatArea(totalArea.to)} м²
+                  от
+                  {' '}
+                  {formatArea(totalArea.from)}
+                  {' '}
+до
+                  {' '}
+                  {formatArea(totalArea.to)}
+                  {' '}
+м²
                 </Value>
               </Feature>
-            )}
-          {ceilHeight.from &&
-            ceilHeight.to && (
+          )}
+          {ceilHeight.from
+            && ceilHeight.to && (
               <Feature>
-                <Label>Высота потолков</Label>
+                <Label>
+Высота потолков
+                </Label>
                 <Value>
-                  {formatCeilHeight(ceilHeight.from)} − {formatCeilHeight(ceilHeight.to)} м
+                  {formatCeilHeight(ceilHeight.from)}
+                  {' '}
+−
+                  {formatCeilHeight(ceilHeight.to)}
+                  {' '}
+м
                 </Value>
               </Feature>
-            )}
+          )}
           {maintenanceCosts && (
             <Feature>
-              <Label>Обслуживание</Label>
-              <Value>{maintenanceCosts} руб / м² / месяц</Value>
+              <Label>
+Обслуживание
+              </Label>
+              <Value>
+                {maintenanceCosts}
+                {' '}
+руб / м² / месяц
+              </Value>
             </Feature>
           )}
         </div>
         <div className="col-lg-4">
-          {startQuarter &&
-            startYear && (
+          {startQuarter
+            && startYear && (
               <Feature>
-                <Label>Начало строительства</Label>
+                <Label>
+Начало строительства
+                </Label>
                 <Value>
-                  {quarters[startQuarter]} квартал {startYear} года
+                  {quarters[startQuarter]}
+                  {' '}
+квартал
+                  {startYear}
+                  {' '}
+года
                 </Value>
               </Feature>
-            )}
-          {commissioningQuarter &&
-            commissioningYear && (
+          )}
+          {commissioningQuarter
+            && commissioningYear && (
               <Feature>
-                <Label>Конец строительства</Label>
+                <Label>
+Конец строительства
+                </Label>
                 <Value>
-                  {quarters[commissioningQuarter]} квартал {commissioningYear} года
+                  {quarters[commissioningQuarter]}
+                  {' '}
+квартал
+                  {commissioningYear}
+                  {' '}
+года
                 </Value>
               </Feature>
-            )}
+          )}
           <Feature>
-            <Label>Наземная парковка</Label>
-            <Value>{formatParkings(parkings)}</Value>
+            <Label>
+Наземная парковка
+            </Label>
+            <Value>
+              {formatParkings(parkings)}
+            </Value>
           </Feature>
           <Feature>
-            <Label>Подземная парковка</Label>
-            <Value>{formatParkings(undergroundGarages)}</Value>
+            <Label>
+Подземная парковка
+            </Label>
+            <Value>
+              {formatParkings(undergroundGarages)}
+            </Value>
           </Feature>
         </div>
       </div>

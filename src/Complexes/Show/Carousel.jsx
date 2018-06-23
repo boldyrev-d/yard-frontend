@@ -22,8 +22,8 @@ const Wrapper = styled.div`
   bottom: 0;
   right: 0;
   margin: 0;
-  padding-bottom: calc(0.8125 * ${props => props.gutter});
-  padding-top: ${props => props.gutter};
+  padding-bottom: calc(0.8125 * ${({ gutter }) => gutter});
+  padding-top: ${({ gutter }) => gutter};
 `;
 
 const Images = styled.div`
@@ -50,14 +50,14 @@ const Image = styled.img`
   max-width: 80%;
   transition: transform 0.25s ease-out;
   will-change: transform, opacity;
-  transform: ${props => props.transform};
+  transform: ${({ transform }) => transform};
   transform-origin: center bottom;
-  opacity: ${props => props.opacity};
+  opacity: ${({ opacity }) => opacity};
   cursor: pointer;
 
   @media (min-width: 64rem) {
     max-height: calc(
-      100vh - ${props => props.gutter} - 0.8125 * ${props => props.gutter} - 2.875rem
+      100vh - ${({ gutter }) => gutter} - 0.8125 * ${({ gutter }) => gutter} - 2.875rem
     );
   }
 `;
@@ -70,7 +70,7 @@ const Counter = styled.div`
   padding: 0.125rem 0.25rem;
   font-weight: 300;
   line-height: 1.375;
-  color: ${props => props.theme.hueGrey};
+  color: ${({ theme: { hueGrey } }) => hueGrey};
   background-color: rgba(17, 17, 17, 0.9);
   will-change: transform, text-shadow;
   transform: translate(-50%, 0);
@@ -98,11 +98,17 @@ function getTransform(i: number, active: number, scaleRatio: number, gutter: str
 
 class Carousel extends Component {
   state = {
-    activeImage: this.props.activeImage,
+    activeImage: 0,
   };
 
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
+
+    const { activeImage } = this.props;
+
+    this.setState({
+      activeImage,
+    });
   }
 
   componentWillUnmount() {
@@ -110,16 +116,19 @@ class Carousel extends Component {
   }
 
   setTransform = (index: number): Object => {
-    if (index < this.state.activeImage) {
+    const { activeImage } = this.state;
+
+    if (index < activeImage) {
       return {
-        transform: `translate(${-80 * (this.state.activeImage - index)}%)`,
+        transform: `translate(${-80 * (activeImage - index)}%)`,
         left: 0,
         opacity: 0.5,
         maxHeight: 'calc(80vh / 1.2)',
       };
-    } else if (index > this.state.activeImage) {
+    }
+    if (index > activeImage) {
       return {
-        transform: `translate(${80 * (index - this.state.activeImage)}%)`,
+        transform: `translate(${80 * (index - activeImage)}%)`,
         right: 0,
         opacity: 0.5,
         maxHeight: 'calc(80vh / 1.2)',
@@ -130,25 +139,33 @@ class Carousel extends Component {
   };
 
   slideImageRight = () => {
-    if (this.state.activeImage === this.props.images.length - 1) {
+    const { activeImage } = this.state;
+    const { images } = this.props;
+
+    if (activeImage === images.length - 1) {
       this.setState({ activeImage: 0 });
     } else {
-      this.setState({ activeImage: this.state.activeImage + 1 });
+      this.setState({ activeImage: activeImage + 1 });
     }
   };
 
   slideImageLeft = () => {
-    if (this.state.activeImage === 0) {
-      this.setState({ activeImage: this.props.images.length - 1 });
+    const { activeImage } = this.state;
+    const { images } = this.props;
+
+    if (activeImage === 0) {
+      this.setState({ activeImage: images.length - 1 });
     } else {
-      this.setState({ activeImage: this.state.activeImage - 1 });
+      this.setState({ activeImage: activeImage - 1 });
     }
   };
 
   handleKeyDown = (ev: KeyboardEvent) => {
+    const { toggleCarousel } = this.props;
+
     if (ev.key === 'ArrowRight') this.slideImageRight();
     if (ev.key === 'ArrowLeft') this.slideImageLeft();
-    if (ev.key === 'Escape') this.props.toggleCarousel();
+    if (ev.key === 'Escape') toggleCarousel();
   };
 
   render() {
@@ -178,7 +195,7 @@ class Carousel extends Component {
                 onClick={(ev) => {
                   ev.stopPropagation();
 
-                  if (index >= this.state.activeImage) {
+                  if (index >= activeImage) {
                     this.slideImageRight();
                   } else {
                     this.slideImageLeft();
@@ -188,7 +205,9 @@ class Carousel extends Component {
             ))}
           </Images>
           <Counter>
-            {activeImage + 1}/{images.length}
+            {activeImage + 1}
+            /
+            {images.length}
           </Counter>
         </Wrapper>
       </Backdrop>

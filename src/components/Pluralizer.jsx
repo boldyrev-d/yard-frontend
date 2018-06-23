@@ -1,7 +1,7 @@
 /* @flow */
 
 import React from 'react';
-import { pluralize } from './../utils';
+import { pluralize } from '../utils';
 
 type Props = {
   number: number,
@@ -13,5 +13,7 @@ type Props = {
 export default ({
   number, one, few, other,
 }: Props) => (
-  <span>{pluralize(number, one, few, other)}</span>
+  <span>
+    {pluralize(number, one, few, other)}
+  </span>
 );

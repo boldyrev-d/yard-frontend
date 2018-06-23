@@ -5,12 +5,12 @@ import styled from 'styled-components';
 
 const Description = styled.section`
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid ${props => props.theme.anotherGrey};
+  border-bottom: 1px solid ${({ theme: { anotherGrey } }) => anotherGrey};
 `;
 
 const Title = styled.h2`
   margin: 0;
-  font-family: ${props => props.theme.philosopher};
+  font-family: ${({ theme: { philosopher } }) => philosopher};
   font-size: 1.5rem;
   line-height: 1.75rem;
 `;
@@ -28,7 +28,9 @@ export default () => (
   <Description>
     <div className="row">
       <div className="col-lg-2">
-        <Title>Описание</Title>
+        <Title>
+Описание
+        </Title>
       </div>
       <div className="col-lg-10">
         <article>

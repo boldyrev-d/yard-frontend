@@ -7,12 +7,12 @@ const Header = styled.header`
   display: flex;
   padding-top: 1.5rem;
   padding-bottom: 1.5em;
-  border-bottom: 1px solid ${props => props.theme.anotherGrey};
+  border-bottom: 1px solid ${({ theme: { anotherGrey } }) => anotherGrey};
 `;
 
 const Title = styled.h2`
   margin: 0;
-  font-family: ${props => props.theme.philosopher};
+  font-family: ${({ theme: { philosopher } }) => philosopher};
   font-size: 1.5rem;
   line-height: 1.75rem;
 
@@ -24,11 +24,11 @@ const Title = styled.h2`
 const Subtitle = styled.small`
   display: block;
   margin-top: 0.625rem;
-  font-family: ${props => props.theme.fira};
+  font-family: ${({ theme: { fira } }) => fira};
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-weight: 300;
-  color: ${props => props.theme.hueGrey};
+  color: ${({ theme: { hueGrey } }) => hueGrey};
 `;
 
 type Props = {
@@ -39,15 +39,21 @@ export default ({ architect }: Props) => (
   <Header>
     <Title>
       950
-      <Subtitle>предложений</Subtitle>
+      <Subtitle>
+предложений
+      </Subtitle>
     </Title>
     <Title>
       {architect}
-      <Subtitle>архитектор</Subtitle>
+      <Subtitle>
+архитектор
+      </Subtitle>
     </Title>
     <Title>
       Группа «ПСН»
-      <Subtitle>застройщик</Subtitle>
+      <Subtitle>
+застройщик
+      </Subtitle>
     </Title>
   </Header>
 );

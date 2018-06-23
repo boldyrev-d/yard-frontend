@@ -19,7 +19,7 @@ const Inner = styled.div`
 
 const Title = styled.h1`
   margin: 0;
-  font-family: ${props => props.theme.philosopher};
+  font-family: ${({ theme: { philosopher } }) => philosopher};
   font-size: 2rem;
   line-height: 2rem;
 `;
@@ -27,22 +27,22 @@ const Title = styled.h1`
 const Address = styled.small`
   display: block;
   margin-top: 0.5rem;
-  font-family: ${props => props.theme.fira};
+  font-family: ${({ theme: { fira } }) => fira};
   font-size: 0.875rem;
   font-weight: 300;
-  color: ${props => props.theme.hueGrey};
+  color: ${({ theme: { hueGrey } }) => hueGrey};
 `;
 
 const Button = styled.button`
   padding: 0.5rem 1rem;
-  font-family: ${props => props.theme.fira};
+  font-family: ${({ theme: { fira } }) => fira};
   font-size: 0.625rem;
   line-height: 0.625rem;
   font-weight: 300;
   background-color: transparent;
-  border: 1px solid ${props => props.theme.anotherGrey};
+  border: 1px solid ${({ theme: { anotherGrey } }) => anotherGrey};
   border-radius: 2px;
-  color: ${props => props.theme.coolBlue};
+  color: ${({ theme: { coolBlue } }) => coolBlue};
   outline: none;
   cursor: pointer;
 `;
@@ -66,10 +66,16 @@ export default ({ name, location }: { name: string, location: LocationShape }) =
     <div className="container">
       <Inner>
         <div>
-          <Title>{name}</Title>
-          <Address>{formatAddress(location)}</Address>
+          <Title>
+            {name}
+          </Title>
+          <Address>
+            {formatAddress(location)}
+          </Address>
         </div>
-        <Button>В избранное</Button>
+        <Button>
+В избранное
+        </Button>
       </Inner>
     </div>
   </Header>
